@@ -21,8 +21,12 @@ export default function Projects() {
     const checked = useWindowPosition('header');
     return (
         <div className={classes.root} id='go-to-work'>
-            <ImageCard project={Work[1]} checked={checked} />
             <ImageCard project={Work[0]} checked={checked} />
+            <ImageCard project={Work[1]} checked={checked} />
+            <ImageCard project={Work[2]} checked={checked} />
+            <ImageCard project={Work[3]} checked={checked} />
+            <ImageCard project={Work[4]} checked={checked} />
+            <ImageCard project={Work[5]} checked={checked} />
         </div>
     );
 }

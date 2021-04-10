@@ -36,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         fontSize: '4.5rem',
         [theme.breakpoints.down('md')]: {
-            fontSize: '2.5',
+            fontSize: '3.5rem',
+        },
+        [theme.breakpoints.down('415')]: {
+            fontSize: '2rem',
         }
     },
     arrowDown: {
@@ -59,7 +62,8 @@ function Header() {
             <AppBar className={classes.appbar} elevation={0}>
                 <Toolbar className={classes.appbarWrapper}>
                     <h1 className={classes.appbarName}>
-                        Bryson Palmer <span className={classes.appbarPortfolio}>Portfolio</span>
+                        Bryson Palmer <br /> 
+                        <span className={classes.appbarPortfolio}>Portfolio</span>
                     </h1>
                     <IconButton>
                         <SortIcon className={classes.icon} />
