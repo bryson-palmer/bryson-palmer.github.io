@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
         minHeight: '30vh',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#6bf9b9',
         textDecoration: 'none',
         fontSize: '2.5rem',
+        fontWeight: 'bolder',
         transition: 'all .5s ease-in-out',
         marginTop: '6rem',
         marginRight: '2rem',
@@ -49,9 +50,9 @@ function ContactMe() {
                 Affinity for the 
                 <span className={classes.cosmic}>_cosmic</span>
             </Typography>
-            <a target="_blank"
-                rel="noopener noreferrer"
-                href="mailto:brysonpalmer@gmail.com"
+            <a target='_blank'
+                rel='noopener noreferrer'
+                href='mailto:brysonpalmer@gmail.com'
                 className={classes.email}>
                     _contact
             </a>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         background: 'none',
+        position: 'absolute',
     },
     appbarWrapper: {
         width: '90%',
@@ -26,13 +28,21 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarName: {
         flexGrow: '1',
+        lineHeight: '1.5rem',
     },
     appbarPortfolio: {
-       color: '#6bf9b9',
+        color: '#6bf9b9',
     },
-    icon: {
-        color: '#fff',
-        fontSize: '2rem',
+    about: {
+        color: '#6bf9b9',
+        textDecoration: 'none',
+        fontSize: '1.5rem',
+        fontWeight: 'bolder',
+        transition: 'all .5s ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.02)',
+            textShadow: '0 0 5px #fff',
+        },
     },
     container: {
         textAlign: 'center',
@@ -40,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     welcome: {
         color: '#fff',
         fontSize: '4.5rem',
+        lineHeight: '4rem',
         [theme.breakpoints.down('md')]: {
             fontSize: '3.5rem',
         },
@@ -55,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
     const classes = useStyles();
+    const preventDefault = (event) => event.preventDefault();
 
     const [checked, setChecked] = useState(false);
 
@@ -70,9 +82,14 @@ function Header() {
                         Bryson Palmer <br /> 
                         <span className={classes.appbarPortfolio}>Portfolio</span>
                     </h1>
-                    <IconButton>
-                        <SortIcon className={classes.icon} />
-                    </IconButton>
+                    <Typography>
+                        <Link 
+                            href='../about'
+                            onClick={preventDefault}
+                            className={classes.about}>
+                                _about
+                        </Link>
+                    </Typography>
                 </Toolbar>
             </AppBar>
 
@@ -84,7 +101,7 @@ function Header() {
                 <div className={classes.container}>
                     <h1 className={classes.welcome}>
                         Welcome to <br /> 
-                        My <span className={classes.appbarPortfolio}>Portfolio</span>
+                        My Portfolio
                     </h1>
                     <Scroll to="go-to-work" smooth={true}>
                         <IconButton>
