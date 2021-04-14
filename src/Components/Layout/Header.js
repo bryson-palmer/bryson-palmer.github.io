@@ -10,13 +10,18 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh'
+        height: '100%',
+        minHeight: '100vh',
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
     },
     appbar: {
         background: 'none',
     },
     appbarWrapper: {
-        width: '80%',
+        width: '90%',
+        fontSize: '90%',
         margin: '0 auto',
     },
     appbarName: {
