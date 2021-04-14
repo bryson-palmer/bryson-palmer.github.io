@@ -1,27 +1,38 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        minHeight: '200px',
+        minHeight: '30vh',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         color: '#fff',
+        marginTop: '10rem',
+    },
+    contactTitle: {
+        fontSize: '1rem',
+        marginBottom: '6rem',
+        marginLeft: '2rem',
+    },
+    cosmic: {
+        color: '#6bf9b9',
     },
     email: {
         color: '#6bf9b9',
         textDecoration: 'none',
-        fontSize: '1.5rem',
-        grow: 'transition: all .2s ease-in-out',
-        '&:hover': {
-            transform: 'scale(1.1)',
-            smooth: 'true',
-        },
+        fontSize: '2.5rem',
+        transition: 'all .5s ease-in-out',
+        marginTop: '6rem',
         marginRight: '2rem',
+        '&:hover': {
+            transform: 'scale(1.02)',
+            textShadow: '0 0 5px #fff',
+        },
     },
 }));
 
@@ -30,6 +41,14 @@ function ContactMe() {
     
     return (
         <div className={classes.root} id='contactMe'>
+            <Typography
+            className={classes.contactTitle}
+            >
+                A creative <br /> 
+                Problem solver <br /> 
+                Affinity for the 
+                <span className={classes.cosmic}>_cosmic</span>
+            </Typography>
             <a target="_blank"
                 rel="noopener noreferrer"
                 href="mailto:brysonpalmer@gmail.com"
