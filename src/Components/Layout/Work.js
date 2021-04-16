@@ -7,6 +7,8 @@ import { Collapse } from '@material-ui/core';
 import useWindowPosition from '../../hook/useWindowPosition';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import Snackbar from '@material-ui/core/Snackbar';
+// import Backdrop from '@material-ui/core/Backdrop';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 
@@ -59,11 +61,16 @@ const useStyles = makeStyles((theme) => ({
   dynamic: {
     color: '#00ffea',
     fontWeight: 'normal',
+    transition: 'all .5s ease-in-out',
+  },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
   },
   clock: {
-    background: '#fff',
+    background: 'rgba(255, 255, 255, 0.8)',
     borderRadius: '50%',
-    marginBottom: '2rem',
+    marginTop: '1rem',
   },
   image: {
     position: 'relative',
@@ -95,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#004675',
+    color: '#fff',
   },
   imageSrc: {
     position: 'absolute',
@@ -113,9 +120,11 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: '#00ffea',
+    backgroundColor: '#F6B2FF',
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/stars.jpg'})`,
     backgroundBlendMode: 'multiply',
-    opacity: 0.9,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     transition: theme.transitions.create('opacity'),
     borderRadius: '50px',
   },
@@ -130,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
   imageMarked: {
     height: 3,
     width: 18,
-    backgroundColor: '#004675',
+    backgroundColor: '#fff',
     position: 'absolute',
     bottom: -2,
     left: 'calc(50% - 9px)',
@@ -143,7 +152,7 @@ export default function Work() {
   const classes = useStyles();
   const checked = useWindowPosition('header');
 
-  const[ showTime, setShowTime ] = useState(false);
+  const [ showTime, setShowTime ] = useState(false);
   const [ value, setValue ] = useState(new Date());
 
   useEffect(() => {
@@ -184,11 +193,19 @@ export default function Work() {
       </Typography>
       {showTime && (
         <div>
-          <Clock 
-            value={value} 
-            className={classes.clock} 
-            size={100} 
-          />
+          {/* <Backdrop className={classes.backdrop} open={showTime} > */}
+            <Snackbar
+              className={classes.snackbar}
+              anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+              open={showTime}
+            >
+              <Clock 
+                value={value} 
+                className={classes.clock} 
+                size={130} 
+              />
+            </Snackbar>
+          {/* </Backdrop> */}
         </div>
       )}
 
