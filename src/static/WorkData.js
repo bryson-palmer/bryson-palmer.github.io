@@ -16,7 +16,7 @@ const WorkData = [
     },
     {
         title: 'Trick Trivia',
-        description: "This trivia game pits your wits against a diverse range of trivia questions. When you answer correctly or incorrectly, you get a related meme. Sometimes appropriate. Sometimes not so much. On the start up page you can customize your catergory, number of questions, and difficulty. Come test your knowledge and have a laugh or 20.",
+        description: "This trivia game pits your wits against a diverse range of trivia questions. When you answer correctly or incorrectly, you get a related Gif. Sometimes appropriate. Sometimes not so much. On the start up page you can customize your catergory, number of questions, and difficulty. Come test your knowledge and have a laugh or 20.",
         src: 'assets/tricktrivia.png',
         url: 'https://tomakpo.github.io/UWCB-P1-Trick-Trivia/',
         time: 1500,

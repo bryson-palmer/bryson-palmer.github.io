@@ -8,7 +8,7 @@ import useWindowPosition from '../../hook/useWindowPosition';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import Snackbar from '@material-ui/core/Snackbar';
-// import Backdrop from '@material-ui/core/Backdrop';
+import Backdrop from '@material-ui/core/Backdrop';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 
@@ -52,15 +52,19 @@ const useStyles = makeStyles((theme) => ({
   interactive: {
     color: '#00ffea',
     fontWeight: 'normal',
+    fontSize: '1.1rem',
+    margin: '0 0.3rem 0.15rem 0.3rem',
     transition: 'all .5s ease-in-out',
     '&:hover': {
-      fontSize: '1.15rem',
+      fontSize: '1.25rem',
       textShadow: '0 0 3px #fff',
     },
   },
   dynamic: {
     color: '#00ffea',
     fontWeight: 'normal',
+    fontSize: '1.1rem',
+    margin: '0 0.3rem 0.15rem 0.3rem',
     transition: 'all .5s ease-in-out',
   },
   backdrop: {
@@ -83,17 +87,17 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
-      border: '5px solid #00ffea',
+      border: '3px solid #00ffea',
       borderRadius: '55px',
       boxShadow: '0 0 5px #fff',
       '& $imageBackdrop': {
-        opacity: 0.15,
+        opacity: 0,
       },
       '& $imageMarked': {
         opacity: 0,
       },
       '& $imageTitle': {
-        opacity: 0.15,
+        opacity: 0,
       },
     },
   },
@@ -120,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: '#F6B2FF',
+    backgroundColor: '#B2FFF8',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/stars.jpg'})`,
     backgroundBlendMode: 'multiply',
     backgroundRepeat: 'no-repeat',
@@ -177,13 +181,12 @@ export default function Work() {
           <MenuRoundedIcon className={classes.stack} />
           {' '} Full Stack developer</span> <br />
           I'm able to build 
-          <span className={classes.interactive}> interactive </span> 
+          <ButtonBase className={classes.interactive}>interactive </ButtonBase> 
           and 
-          <span 
+          <ButtonBase 
             className={classes.dynamic}
-            onMouseEnter={() => setShowTime(true)}
-            onMouseLeave={() => setShowTime(false)}> 
-            {' '} dynamic </span> 
+            onClick={() => setShowTime(true)} > 
+            {' '} dynamic </ButtonBase> 
           web sites and web applications. <br />
           I'm at home in the creative process whether it's engineering or styling software.
           I might be
@@ -193,19 +196,16 @@ export default function Work() {
       </Typography>
       {showTime && (
         <div>
-          {/* <Backdrop className={classes.backdrop} open={showTime} > */}
-            <Snackbar
-              className={classes.snackbar}
-              anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
-              open={showTime}
-            >
+          <Backdrop 
+            className={classes.backdrop} 
+            open={showTime} 
+            onClick={() => setShowTime(false)} >
               <Clock 
                 value={value} 
                 className={classes.clock} 
-                size={130} 
+                size={300} 
               />
-            </Snackbar>
-          {/* </Backdrop> */}
+          </Backdrop>
         </div>
       )}
 
