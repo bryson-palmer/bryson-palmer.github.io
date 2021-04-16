@@ -4,6 +4,7 @@ import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MinimizeIcon from '@material-ui/icons/Minimize';
 import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,18 +32,24 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '1.5rem',
     },
     appbarPortfolio: {
-        color: '#6bf9b9',
+        color: '#00ffea',
     },
     about: {
-        color: '#6bf9b9',
+        color: '#00ffea',
         textDecoration: 'none',
         fontSize: '1.5rem',
         fontWeight: 'bolder',
         transition: 'all .5s ease-in-out',
         '&:hover': {
-            transform: 'scale(1.02)',
-            textShadow: '0 0 5px #fff',
+            textDecoration: 'none',
+            textShadow: '0 0 3px #fff',
         },
+    },
+    bar: {
+        color: '#00ffea',
+        fontSize: '1.5rem',
+        marginBottom: '-0.2rem',
+        marginRight: '-0.3rem',
     },
     container: {
         textAlign: 'center',
@@ -50,16 +57,18 @@ const useStyles = makeStyles((theme) => ({
     welcome: {
         color: '#fff',
         fontSize: '4.5rem',
-        lineHeight: '4rem',
+        lineHeight: '5rem',
         [theme.breakpoints.down('md')]: {
             fontSize: '3.5rem',
+            lineHeight: '4rem',
         },
         [theme.breakpoints.down('415')]: {
             fontSize: '2rem',
+            lineHeight: '2.5rem'
         }
     },
     arrowDown: {
-        color: '#6bf9b9',
+        color: '#00ffea',
         fontSize: '4rem',
     },
 }));
@@ -87,7 +96,8 @@ function Header() {
                             href='../about'
                             onClick={preventDefault}
                             className={classes.about}>
-                                _about
+                                <MinimizeIcon className={classes.bar}/>
+                                about
                         </Link>
                     </Typography>
                 </Toolbar>

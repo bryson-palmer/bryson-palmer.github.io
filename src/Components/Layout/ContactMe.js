@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import MinimizeIcon from '@material-ui/icons/Minimize';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         color: '#fff',
-        marginTop: '10rem',
+        marginTop: '4rem',
     },
     contactTitle: {
         fontSize: '1rem',
@@ -20,19 +22,24 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '2rem',
     },
     cosmic: {
-        color: '#6bf9b9',
+        color: '#00ffea',
+    },
+    bar: {
+        color: '#00ffea',
+        fontSize: '2.5rem',
+        marginBottom: '-0.31rem',
+        marginRight: '-0.5rem',
     },
     email: {
-        color: '#6bf9b9',
+        color: '#00ffea',
         textDecoration: 'none',
         fontSize: '2.5rem',
         fontWeight: 'bolder',
-        transition: 'all .5s ease-in-out',
         marginTop: '6rem',
         marginRight: '2rem',
+        transition: 'all .5s ease-in-out',
         '&:hover': {
-            transform: 'scale(1.02)',
-            textShadow: '0 0 5px #fff',
+            textShadow: '0 0 3px #fff',
         },
     },
 }));
@@ -50,12 +57,15 @@ function ContactMe() {
                 Affinity for the 
                 <span className={classes.cosmic}>_cosmic</span>
             </Typography>
-            <a target='_blank'
-                rel='noopener noreferrer'
-                href='mailto:brysonpalmer@gmail.com'
-                className={classes.email}>
-                    _contact
-            </a>
+            <Tooltip title="Let's connect" arrow>
+                <a target='_blank'
+                    rel='noopener noreferrer'
+                    href='mailto:brysonpalmer@gmail.com'
+                    className={classes.email}>
+                        <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
+                        contact
+                </a>
+            </Tooltip>
         </div>
     )
 }
