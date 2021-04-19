@@ -11,7 +11,7 @@ const WorkData = [
         title: 'SongBirdie',
         description: "Your personal online song book app. Enter in the lyrics and chords of your own song or a cover. Take your song book to the streets, open mic, or to a get together. SongBirdie will be ready when you are.",
         src: 'assets/songbirdie.png',
-        url: 'http://song-birdie.herokuapp.com/',
+        url: 'https://song-birdie.herokuapp.com/',
         time: 1500,
     },
     {

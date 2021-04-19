@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { AppBar, IconButton, Toolbar, Collapse, Typography, Link } 
+    from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import { Link as Scroll } from 'react-scroll';

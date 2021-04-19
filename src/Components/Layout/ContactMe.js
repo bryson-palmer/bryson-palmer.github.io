@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { Typography, Tooltip } from '@material-ui/core';
 import MinimizeIcon from '@material-ui/icons/Minimize';
-import Tooltip from '@material-ui/core/Tooltip';
+import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
         minHeight: '30vh',
         backgroundColor: '#F6B2FF',
@@ -22,7 +22,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.1rem',
         fontWeight: 'bold',
         marginBottom: '6rem',
-        marginLeft: '2rem',
+        marginLeft: '6rem',
+        [theme.breakpoints.down('xs')]: {
+            maxWidth: '40%',
+            marginLeft: '1.5rem',
+        },
     },
     cosmic: {
         color: '#00ffea',
@@ -33,40 +37,55 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '-0.31rem',
         marginRight: '-0.5rem',
     },
-    email: {
+    contact: {
         color: '#00ffea',
         textDecoration: 'none',
         fontSize: '2.5rem',
         fontWeight: 'bolder',
         marginTop: '6rem',
-        marginRight: '2rem',
+        marginRight: '6rem',
         transition: 'all .5s ease-in-out',
         '&:hover': {
             textShadow: '0 0 3px #fff',
         },
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '6rem',
+            marginRight: '1.5rem',
+        },
     },
+    email: {
+        color: '#00ffea',
+        fontSize: '1.1rem',
+        fontWeight: 'normal',
+        marginTop: '-0.5rem',
+        marginLeft: '7rem',
+      },
 }));
 
 function ContactMe() {
     const classes = useStyles();
-    
+    const window = useWindowWidth();
+
     return (
         <div className={classes.root} id='contactMe'>
             <Typography
             className={classes.contactTitle}
             >
                 A creative <br /> 
-                Problem solver <br /> 
-                Affinity for the 
+                problem solver <br /> 
+                affinity for the 
                 <span className={classes.cosmic}>_cosmic</span>
             </Typography>
             <Tooltip title="Let's connect" arrow>
                 <a target='_blank'
                     rel='noopener noreferrer'
                     href='mailto:brysonpalmer@gmail.com'
-                    className={classes.email}>
+                    className={classes.contact}>
                         <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
-                        contact
+                        contact 
+                        {(window.width <= 1024) && (
+                            <p className={classes.email}>email</p>
+                        )}
                 </a>
             </Tooltip>
         </div>
