@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Header() {
+export default function Header() {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
@@ -124,5 +124,3 @@ function Header() {
         </div>
     )
 }
-
-export default Header

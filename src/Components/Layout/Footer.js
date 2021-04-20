@@ -42,7 +42,7 @@ function Copyright() {
     );
 }
 
-function Footer() {
+export default function Footer() {
     const classes = useStyles();
     const window = useWindowWidth();
     
@@ -90,5 +90,3 @@ function Footer() {
         </div>
     )
 }
-
-export default Footer;

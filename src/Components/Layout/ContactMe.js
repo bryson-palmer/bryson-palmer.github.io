@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-function ContactMe() {
+export default function ContactMe() {
     const classes = useStyles();
     const window = useWindowWidth();
 
@@ -91,5 +91,3 @@ function ContactMe() {
         </div>
     )
 }
-
-export default ContactMe;

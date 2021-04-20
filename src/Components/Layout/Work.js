@@ -4,6 +4,7 @@ import { Typography, ButtonBase, Collapse, Backdrop, Snackbar }
   from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import ItemsCarousel from 'react-items-carousel';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 import WorkData from '../../static/WorkData';
@@ -172,13 +173,65 @@ const useStyles = makeStyles((theme) => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
+  entered: {
+    overflow: 'hidden',
+  },
+  // itemsCarousel: {
+  //   maxWidth: 'inherit !important',
+  // },
+  rightChevronWrapper: {
+    width: '40px !important',
+    height: '40px !important',
+    borderRadius: '5rem',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    paddingTop: '0.4rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignConten: 'center',
+    justifyDirection: 'space-between',
+    '&:hover, &$chevronWrapper': {
+
+    }
+  },
+  leftChevronWrapper: {
+    width: '40px !important',
+    height: '40px !important',
+    borderRadius: '5rem',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    paddingTop: '0.4rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignConten: 'center',
+    justifyDirection: 'space-between',
+    '&:hover, &$chevronWrapper': {
+
+    }
+  },
+  chevron: {
+    color: '#fff',
+    fontSize: '1.5rem',
+    backgroundColor: 'transparent !important',
+    // margin: '1rem',
+    border: 'none !important',
+    width: '20px !important',
+    height: '20px !important'
+  },
+  // items: {
+  //   height: '300px',
+  //   width: '300px',
+  //   margin: '0 0.5rem',
+  //   border: 'solid 0.5px black',
+  //   background: 'lightblue',
+  // },
 
 }));
+
+
 
 export default function Work() {
   const classes = useStyles();
   const checked = useWindowPosition('header');
-  const windowWidth = useWindowWidth();
+  const windowX = useWindowWidth();
 
   // State for hiding and showing the clock
   const [showTime, setShowTime] = useState(false);
@@ -186,6 +239,21 @@ export default function Work() {
   const [value, setValue] = useState(new Date());
   // State for snackbar
   const [showMern, setShowMern] = useState(false);
+  // State for active item in carousel
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  // width for carousel buttons
+  const chevronWidth = 40;
+  // // State for button event
+  // const [buttonState, setButtonState] = useState('');
+  // const handleStateChange = (e) => {
+  //   const { target } = e;
+  //   const { value } = target;
+
+  //   setButtonState(
+  //     value
+  //   )
+
+  // }
 
   useEffect(() => {
     const interval = setInterval(
@@ -198,6 +266,7 @@ export default function Work() {
     }
   }, []);
 
+  // console.log('buttonState', buttonState)
   return (
     <div className={classes.root} id='go-to-work'>
 
@@ -245,7 +314,7 @@ export default function Work() {
             className={classes.snackbar}
             anchorOrigin={{ vertical: 'top', horizontal: 'center'}}
             open={showMern}
-            onMouseLeave={() => setShowMern(false)}
+            onClick={() => setShowMern(false)}
             message={
               <div>
                 <p className={classes.text}><span className={classes.color}>M</span >ongo/<span className={classes.color}>M</span>ySQL Database</p>
@@ -258,7 +327,7 @@ export default function Work() {
         </div>
       )}
 
-      {windowWidth > 768 ?
+      {windowX.width > 768 ?
         <Collapse in={checked} {... (checked ? { timeout: 1000 } : {})}>
           {WorkData.map((work) => (
             <ButtonBase
@@ -273,6 +342,7 @@ export default function Work() {
             >
               <span
                 className={classes.imageSrc}
+                alt={work.title}
                 style={{
                   backgroundImage: `url(${work.src})`,
                 }}
@@ -292,11 +362,73 @@ export default function Work() {
             </ButtonBase>
           ))}
         </Collapse>
-      :(
-        <Collapse in={checked} {... (checked ? { timeout: 1000 } : {})}>
-          
-        </Collapse>
-      )}
+      :
+      <Collapse className={classes.entered} in={checked} {... (checked ? { timeout: 1000 } : {})}>
+       <div style={{ padding: `${chevronWidth}px` }}>
+        <ItemsCarousel
+          className={classes.itemsCarousel}
+          // onStateChange={() => handleStateChange()}
+          requestToChangeActive={setActiveItemIndex}
+          activeItemIndex={activeItemIndex}
+          numberOfCards={2}
+          gutter={20}
+          infiniteLoop={true}
+          showSlither={true}
+          firstAndLastGutter
+          leftChevron={
+            <div className={classes.leftChevronWrapper}>
+              <button 
+                className={classes.chevron}>{'<'}
+              </button>
+            </div>
+          }
+          rightChevron={
+            <div className={classes.rightChevronWrapper}>
+              <button 
+                className={classes.chevron}>{'>'}
+              </button>
+            </div>
+          }
+          outsideChevron={true}
+          chevronWidth={chevronWidth}
+        >
+          {WorkData.map((work) => (
+            <ButtonBase
+              focusRipple
+              key={work.title}
+              className={classes.image}
+              onClick={() => window.open(work.url, '_blank')}
+              focusVisibleClassName={classes.focusVisible}
+              style={{
+                width: work.width,
+              }}
+            >
+              <span
+                className={classes.imageSrc}
+                alt={work.title}
+                style={{
+                  backgroundImage: `url(${work.src})`,
+                }}
+              />
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {/* {activeItemIndex} */}
+                  {work.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </ButtonBase>
+          ))}
+        </ItemsCarousel>
+    </div>
+      </Collapse>
+      }
     </div>
   );
 }

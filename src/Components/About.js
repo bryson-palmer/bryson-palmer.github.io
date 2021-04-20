@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function About() {
+export default function About() {
     const classes = useStyles();
    
 
@@ -17,5 +17,3 @@ function About() {
         </div>
     )
 }
-
-export default About;
