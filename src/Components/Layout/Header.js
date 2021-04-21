@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '100%',
         minHeight: '100vh',
-        backgroundColor: '#F6B2FF',
+        // backgroundColor: '#F6B2FF',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
@@ -82,7 +82,7 @@ export default function Header(props) {
     // State for fading in and out the header
     const [active, setActive] = useState();
 
-    // State for checking 
+    // State for helping delay welcome message by delaying check
     const [checked, setChecked] = useState(false);
 
     // Handle Fade change
@@ -106,7 +106,10 @@ export default function Header(props) {
             }}
         >
             <Fade in={active} timeoute={3000}  >
-                <div className={classes.root} id='header'>
+                <div 
+                    className={classes.root}
+                    style={{backgroundColor: checked ?'#F6B2FF': '#1c1c1c'}}
+                    id='header'>
                     <AppBar className={classes.appbar} elevation={0}>
                         <Toolbar className={classes.appbarWrapper}>
                             <h1 className={classes.appbarName}>
