@@ -92,10 +92,10 @@ export default function Header(props) {
 
     useEffect(() => {
         setChecked(true);
-    }, []);
+    }, [checked]);
 
     console.log('active', active)
-
+    console.log('checked', checked)
     return (
 
         <VizSensor
@@ -107,8 +107,8 @@ export default function Header(props) {
         >
             <Fade in={active} timeoute={3000}  >
                 <div 
-                    className={classes.root}
-                    style={{backgroundColor: checked ?'#F6B2FF': '#1c1c1c'}}
+                    className={classes.root} 
+                    style={{backgroundColor: checked ? '#F6B2FF' : 'transparent'}}
                     id='header'>
                     <AppBar className={classes.appbar} elevation={0}>
                         <Toolbar className={classes.appbarWrapper}>
