@@ -355,8 +355,8 @@ export default function Work() {
       <Collapse 
         className={classes.entered} 
         in={checked} 
-        {... (checked ? { timeout: 1000 } : {})}
-        collapsedHeight={50}
+        {... (checked ? { timeout: 2000 } : {})}
+        collapsedHeight={10}
       >
        <div style={{ padding: `${chevronWidth}px` }}>
         <ItemsCarousel
