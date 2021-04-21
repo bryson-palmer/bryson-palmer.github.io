@@ -313,7 +313,11 @@ export default function Work() {
       )}
 
       {windowX.width > 768 ?
-        <Collapse in={checked} {... (checked ? { timeout: 1000 } : {})}>
+        <Collapse 
+          in={checked} 
+          {... (checked ? { timeout: 2000 } : {})}
+          collapsedHeight={10}
+        >
           {WorkData.map((work) => (
             <ButtonBase
               focusRipple
@@ -348,7 +352,12 @@ export default function Work() {
           ))}
         </Collapse>
       :
-      <Collapse className={classes.entered} in={checked} {... (checked ? { timeout: 1000 } : {})}>
+      <Collapse 
+        className={classes.entered} 
+        in={checked} 
+        {... (checked ? { timeout: 1000 } : {})}
+        collapsedHeight={50}
+      >
        <div style={{ padding: `${chevronWidth}px` }}>
         <ItemsCarousel
           className={classes.itemsCarousel}

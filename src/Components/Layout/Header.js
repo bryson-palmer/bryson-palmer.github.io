@@ -125,8 +125,8 @@ export default function Header(props) {
 
                     <Collapse
                         in={checked}
-                        {... (checked ? { timeout: 3000 } : {})}
-                        collapsedHeight={50}
+                        {... (checked ? { timeout: 4000 } : {})}
+                        collapsedHeight={45}
                     >
                         <div className={classes.container}>
                             <h1 className={classes.welcome}>
