@@ -100,7 +100,7 @@ export default function Header(props) {
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: 700 }}
+            offset={{ top: 600 }}
             onChange={(isVisible) => {
                 setActive(isVisible);
             }}
