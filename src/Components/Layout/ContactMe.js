@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactMe() {
     const classes = useStyles();
-    const window = useWindowWidth();
+    const windowX = useWindowWidth();
 
     return (
         <div className={classes.root} id='contactMe'>
@@ -89,7 +89,7 @@ export default function ContactMe() {
                     className={classes.contact}>
                         <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
                         contact 
-                        {(window.width <= 1024) && (
+                        {(windowX.width <= 1024) && (
                             <EmailOutlinedIcon className={classes.EmailOutlinedIcon}>email</EmailOutlinedIcon>
                         )}
                 </a>

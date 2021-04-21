@@ -53,13 +53,13 @@ function Copyright() {
 
 export default function Footer() {
     const classes = useStyles();
-    const window = useWindowWidth();
+    const windowX = useWindowWidth();
     
     return (
         <div>
             <div className={classes.root}>
                 <div className={classes.icons}>
-                    {(window.width <= 1024) && (
+                    {(windowX.width <= 1024) && (
                         <p >GitHub</p>
                     )}
                     <Tooltip title='GitHub' arrow>
@@ -71,7 +71,7 @@ export default function Footer() {
                     </Tooltip>
                 </div>
                 <div className={classes.icons}>
-                    {(window.width <= 1024) && (
+                    {(windowX.width <= 1024) && (
                         <p >linkedin</p>
                     )}
                     <Tooltip title='Linkedin' arrow>
@@ -83,7 +83,7 @@ export default function Footer() {
                     </Tooltip>
                 </div>
                 <div className={classes.icons}>
-                    {(window.width <= 1024) && (
+                    {(windowX.width <= 1024) && (
                         <p >Resume</p>
                     )}
                     <Tooltip title='My Resume' arrow>
