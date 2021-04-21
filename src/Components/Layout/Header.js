@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse, Typography, Link } 
+import { AppBar, IconButton, Toolbar, Collapse, Typography, Link, Fade } 
     from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
@@ -78,7 +78,16 @@ export default function Header() {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
+    // State for fading in and out the header
+    const [fadeHeader, setFadeHeader] = useState(true);
+
+    // State for checking 
     const [checked, setChecked] = useState(false);
+
+    // Handle Fade change
+    const handleChange = () => {
+        setFadeHeader((prev) => !prev);
+      }
 
     useEffect(() => {
         setChecked(true);
@@ -86,41 +95,43 @@ export default function Header() {
 
     return (
         <div className={classes.root} id='header'>
-            <AppBar className={classes.appbar} elevation={0}>
-                <Toolbar className={classes.appbarWrapper}>
-                    <h1 className={classes.appbarName}>
-                        Bryson Palmer <br /> 
-                        <span className={classes.appbarPortfolio}>Portfolio</span>
-                    </h1>
-                    <Typography>
-                        <Link 
-                            href='../about'
-                            onClick={preventDefault}
-                            className={classes.about}>
-                                <MinimizeIcon className={classes.bar}/>
-                                about
-                        </Link>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <Fade in={fadeHeader}>
+                <AppBar className={classes.appbar} elevation={0}>
+                    <Toolbar className={classes.appbarWrapper}>
+                        <h1 className={classes.appbarName}>
+                            Bryson Palmer <br /> 
+                            <span className={classes.appbarPortfolio}>Portfolio</span>
+                        </h1>
+                        <Typography>
+                            <Link 
+                                href='../about'
+                                onClick={preventDefault}
+                                className={classes.about}>
+                                    <MinimizeIcon className={classes.bar}/>
+                                    about
+                            </Link>
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
 
-            <Collapse 
-                in={checked} 
-                { ... (checked ? { timeout: 3000 } : {})} 
-                collapsedHeight={50}
-            >
-                <div className={classes.container}>
-                    <h1 className={classes.welcome}>
-                        Welcome to <br /> 
-                        My Portfolio
-                    </h1>
-                    <Scroll to="go-to-work" smooth={true}>
-                        <IconButton>
-                            <ExpandMoreIcon className={classes.arrowDown}/>
-                        </IconButton>
-                    </Scroll>
-                </div>
-            </Collapse>
+                <Collapse 
+                    in={checked} 
+                    { ... (checked ? { timeout: 3000 } : {})} 
+                    collapsedHeight={50}
+                >
+                    <div className={classes.container}>
+                        <h1 className={classes.welcome}>
+                            Welcome to <br /> 
+                            My Portfolio
+                        </h1>
+                        <Scroll to="go-to-work" smooth={true}>
+                            <IconButton>
+                                <ExpandMoreIcon className={classes.arrowDown}/>
+                            </IconButton>
+                        </Scroll>
+                    </div>
+                </Collapse>
+            </Fade>
         </div>
     )
 }

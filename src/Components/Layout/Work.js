@@ -198,34 +198,6 @@ const useStyles = makeStyles((theme) => ({
     //   width: '100% !important',
     // },
   },
-  // rightChevronWrapper: {
-  //   width: '40px !important',
-  //   height: '40px !important',
-  //   borderRadius: '5rem',
-  //   backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  //   paddingTop: '0.4rem',
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   alignConten: 'center',
-  //   justifyDirection: 'space-between',
-  //   [theme.breakpoints.down('xs')]: {
-  //     backgroundColor: 'transparent !important',
-  //   },
-  // },
-  // leftChevronWrapper: {
-  //   width: '40px !important',
-  //   height: '40px !important',
-  //   borderRadius: '5rem',
-  //   backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  //   paddingTop: '0.4rem',
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   alignConten: 'center',
-  //   justifyDirection: 'space-between',
-  //   [theme.breakpoints.down('xs')]: {
-  //     backgroundColor: 'transparent !important',
-  //   },
-  // },
   chevron: {
     color: '#00ffea',
     fontSize: '2rem',
@@ -235,14 +207,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1rem !important',
     },
   },
-  // items: {
-  //   height: '300px',
-  //   width: '300px',
-  //   margin: '0 0.5rem',
-  //   border: 'solid 0.5px black',
-  //   background: 'lightblue',
-  // },
-
 }));
 
 export default function Work() {
