@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('415')]: {
             fontSize: '2rem',
             lineHeight: '2.5rem'
-        }
+        },
     },
     arrowDown: {
         color: '#00ffea',

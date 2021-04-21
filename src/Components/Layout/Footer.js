@@ -8,7 +8,7 @@ import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: '2rem',
+        marginTop: '1rem',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         paddingBottom: '2rem',
         fontSize: '0.8rem',
+    },
+    color: {
+        color: '#00ffea',
     }
 }));
 
@@ -37,7 +40,13 @@ function Copyright() {
       <Typography className={classes.copyright} >
         {'© '}
         {new Date().getFullYear()}
-        {' Bryson Palmer | Full-Stack | Developer'}
+        {' '}
+        <span className={classes.color}>|</span>
+        {' Bryson Palmer '}
+        <span className={classes.color}>|</span>
+        {' Full-Stack '}
+        <span className={classes.color}>|</span>
+        {' Developer'}
       </Typography>
     );
 }

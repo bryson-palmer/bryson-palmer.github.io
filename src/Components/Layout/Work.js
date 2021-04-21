@@ -4,6 +4,7 @@ import { Typography, ButtonBase, Collapse, Backdrop, Snackbar }
   from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import InfoIcon from '@material-ui/icons/Info';
 import ItemsCarousel from 'react-items-carousel';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
@@ -20,10 +21,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     minWidth: 300,
     width: '100%',
+    [theme.breakpoints.up('768')]: {
+      marginBottom: '4rem'
+    },
   },
   workHeader: {
     width: '100vw',
-    padding: theme.spacing(4),
+    padding: theme.spacing(4, 2, 4, 2),
     textAlign: 'center',
     color: '#fff',
     fontSize: '3rem',
@@ -52,6 +56,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     color: '#00ffea',
     marginBottom: '-0.3rem'
+  },
+  infoIcon:  {
+    marginLeft: '0.5rem',
+    color: '#00ffea',
   },
   interactive: {
     color: '#00ffea',
@@ -106,14 +114,16 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 300,
     width: 300,
     [theme.breakpoints.down('xs')]: {
-      width: '90% !important',
-      height: 100,
+      width: '275px',
+      height: '275px',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
-      border: '3px solid #00ffea',
-      borderRadius: '55px',
-      boxShadow: '0 0 5px #fff',
+      '& $imageSrc': {
+        border: '3px solid #00ffea',
+        borderRadius: '55px',
+        boxShadow: '0 0 5px #fff',
+      },
       '& $imageBackdrop': {
         opacity: 0,
       },
@@ -141,6 +151,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
     borderRadius: '50px',
+    [theme.breakpoints.down('xs')]: {
+      width: '269px',
+    },
   },
   imageBackdrop: {
     position: 'absolute',
@@ -155,6 +168,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     transition: theme.transitions.create('opacity'),
     borderRadius: '50px',
+    [theme.breakpoints.down('xs')]: {
+      width: '269px',
+    },
   },
   imageTitle: {
     fontSize: '2.5rem',
@@ -176,45 +192,48 @@ const useStyles = makeStyles((theme) => ({
   entered: {
     overflow: 'hidden',
   },
-  // itemsCarousel: {
-  //   maxWidth: 'inherit !important',
+  itemsCarousel: {
+    // margin: 0,
+    // [theme.breakpoints.down('xs')]: {
+    //   width: '100% !important',
+    // },
+  },
+  // rightChevronWrapper: {
+  //   width: '40px !important',
+  //   height: '40px !important',
+  //   borderRadius: '5rem',
+  //   backgroundColor: 'rgba(255, 255, 255, 0.5)',
+  //   paddingTop: '0.4rem',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignConten: 'center',
+  //   justifyDirection: 'space-between',
+  //   [theme.breakpoints.down('xs')]: {
+  //     backgroundColor: 'transparent !important',
+  //   },
   // },
-  rightChevronWrapper: {
-    width: '40px !important',
-    height: '40px !important',
-    borderRadius: '5rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    paddingTop: '0.4rem',
-    display: 'flex',
-    justifyContent: 'center',
-    alignConten: 'center',
-    justifyDirection: 'space-between',
-    '&:hover, &$chevronWrapper': {
-
-    }
-  },
-  leftChevronWrapper: {
-    width: '40px !important',
-    height: '40px !important',
-    borderRadius: '5rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    paddingTop: '0.4rem',
-    display: 'flex',
-    justifyContent: 'center',
-    alignConten: 'center',
-    justifyDirection: 'space-between',
-    '&:hover, &$chevronWrapper': {
-
-    }
-  },
+  // leftChevronWrapper: {
+  //   width: '40px !important',
+  //   height: '40px !important',
+  //   borderRadius: '5rem',
+  //   backgroundColor: 'rgba(255, 255, 255, 0.5)',
+  //   paddingTop: '0.4rem',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignConten: 'center',
+  //   justifyDirection: 'space-between',
+  //   [theme.breakpoints.down('xs')]: {
+  //     backgroundColor: 'transparent !important',
+  //   },
+  // },
   chevron: {
-    color: '#fff',
-    fontSize: '1.5rem',
+    color: '#00ffea',
+    fontSize: '2rem',
     backgroundColor: 'transparent !important',
-    // margin: '1rem',
     border: 'none !important',
-    width: '20px !important',
-    height: '20px !important'
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem !important',
+    },
   },
   // items: {
   //   height: '300px',
@@ -225,8 +244,6 @@ const useStyles = makeStyles((theme) => ({
   // },
 
 }));
-
-
 
 export default function Work() {
   const classes = useStyles();
@@ -243,6 +260,7 @@ export default function Work() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   // width for carousel buttons
   const chevronWidth = 40;
+
   // // State for button event
   // const [buttonState, setButtonState] = useState('');
   // const handleStateChange = (e) => {
@@ -274,12 +292,14 @@ export default function Work() {
         <MinimizeIcon className={classes.bar} />
         WORK <br />
         <span className={classes.text}>As a
-          <span
-            onMouseEnter={() => setShowMern(true)}
-            className={classes.textSpecial}
+          <span className={classes.textSpecial}
           > MERN {' '}
             <MenuRoundedIcon className={classes.stack} />
-            {' '} Full Stack developer
+            {' '} Full-Stack developer
+            <ButtonBase
+              onClick={() => setShowMern(true)}>
+              <InfoIcon className={classes.infoIcon}/>
+            </ButtonBase>
           </span> <br />
           I'm able to build
           <ButtonBase className={classes.interactive}>interactive </ButtonBase>
@@ -317,7 +337,8 @@ export default function Work() {
             onClick={() => setShowMern(false)}
             message={
               <div>
-                <p className={classes.text}><span className={classes.color}>M</span >ongo/<span className={classes.color}>M</span>ySQL Database</p>
+                <p className={classes.color} style={{fontSize: '2rem'}}>M.E.R.N</p>
+                <p className={classes.text}><span className={classes.color}>M</span >ongoDB/<span className={classes.color}>M</span>ySQL Database</p>
                 <p className={classes.text}><span className={classes.color}>E</span>xpress Server</p>
                 <p className={classes.text}><span className={classes.color}>R</span>eact Frontend Framework</p>
                 <p className={classes.text}><span className={classes.color}>N</span>ode JavaScript Environment</p>
@@ -367,27 +388,26 @@ export default function Work() {
        <div style={{ padding: `${chevronWidth}px` }}>
         <ItemsCarousel
           className={classes.itemsCarousel}
-          // onStateChange={() => handleStateChange()}
           requestToChangeActive={setActiveItemIndex}
           activeItemIndex={activeItemIndex}
-          numberOfCards={2}
-          gutter={20}
+          numberOfCards={windowX.width > 375 ? 2 : 1}
+          gutter={windowX.width > 375 ? 45 : 5}
           infiniteLoop={true}
           showSlither={true}
-          firstAndLastGutter
+          // firstAndLastGutter={true}
           leftChevron={
-            <div className={classes.leftChevronWrapper}>
+            // <div className={classes.leftChevronWrapper}>
               <button 
                 className={classes.chevron}>{'<'}
               </button>
-            </div>
+            // </div>
           }
           rightChevron={
-            <div className={classes.rightChevronWrapper}>
+            // <div className={classes.rightChevronWrapper}>
               <button 
                 className={classes.chevron}>{'>'}
               </button>
-            </div>
+            // </div>
           }
           outsideChevron={true}
           chevronWidth={chevronWidth}
@@ -418,7 +438,6 @@ export default function Work() {
                   color="inherit"
                   className={classes.imageTitle}
                 >
-                  {/* {activeItemIndex} */}
                   {work.title}
                   <span className={classes.imageMarked} />
                 </Typography>

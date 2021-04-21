@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Tooltip } from '@material-ui/core';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        marginTop: '4rem',
+        marginTop: '1rem',
     },
     contactTitle: {
         color: '#fff',
@@ -49,16 +50,21 @@ const useStyles = makeStyles((theme) => ({
             textShadow: '0 0 3px #fff',
         },
         [theme.breakpoints.down('xs')]: {
+            fontSize: '2rem',
             marginTop: '6rem',
             marginRight: '1.5rem',
         },
     },
-    email: {
+    EmailOutlinedIcon: {
         color: '#00ffea',
-        fontSize: '1.1rem',
+        fontSize: '1.4rem',
         fontWeight: 'normal',
-        marginTop: '-0.5rem',
-        marginLeft: '7rem',
+        marginBottom: '0.6rem',
+        marginLeft: '0.2rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+            marginLeft: '0.1rem',
+        },
       },
 }));
 
@@ -84,7 +90,7 @@ export default function ContactMe() {
                         <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
                         contact 
                         {(window.width <= 1024) && (
-                            <p className={classes.email}>email</p>
+                            <EmailOutlinedIcon className={classes.EmailOutlinedIcon}>email</EmailOutlinedIcon>
                         )}
                 </a>
             </Tooltip>
