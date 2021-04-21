@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse, Typography, Link, Fade } 
+import { AppBar, IconButton, Toolbar, Collapse, Typography, Link, Fade }
     from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import VizSensor from 'react-visibility-sensor';
 import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
@@ -74,64 +75,74 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Header() {
+export default function Header(props) {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
 
     // State for fading in and out the header
-    const [fadeHeader, setFadeHeader] = useState(true);
+    const [active, setActive] = useState();
 
     // State for checking 
     const [checked, setChecked] = useState(false);
 
     // Handle Fade change
-    const handleChange = () => {
-        setFadeHeader((prev) => !prev);
-      }
+    // const handleChange = () => {
+    //     setActive((prev) => !prev);
+    //   }
 
     useEffect(() => {
         setChecked(true);
     }, []);
 
     return (
-        <div className={classes.root} id='header'>
-            <Fade in={fadeHeader}>
-                <AppBar className={classes.appbar} elevation={0}>
-                    <Toolbar className={classes.appbarWrapper}>
-                        <h1 className={classes.appbarName}>
-                            Bryson Palmer <br /> 
-                            <span className={classes.appbarPortfolio}>Portfolio</span>
-                        </h1>
-                        <Typography>
-                            <Link 
-                                href='../about'
-                                onClick={preventDefault}
-                                className={classes.about}>
-                                    <MinimizeIcon className={classes.bar}/>
-                                    about
-                            </Link>
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
 
-                <Collapse 
-                    in={checked} 
-                    { ... (checked ? { timeout: 3000 } : {})} 
-                    collapsedHeight={50}
-                >
-                    <div className={classes.container}>
-                        <h1 className={classes.welcome}>
-                            Welcome to <br /> 
-                            My Portfolio
-                        </h1>
-                        <Scroll to="go-to-work" smooth={true}>
-                            <IconButton>
-                                <ExpandMoreIcon className={classes.arrowDown}/>
-                            </IconButton>
-                        </Scroll>
-                    </div>
-                </Collapse>
+        <VizSensor
+            partialVisibility={true}
+            offset={{ top: 750 }}
+            onChange={(isNotVisible) => {
+                setActive(isNotVisible);
+            }}
+        >
+            <Fade in={active} timeoute={3000}  >
+                <div className={classes.root} id='header'>
+                    <AppBar className={classes.appbar} elevation={0}>
+                        <Toolbar className={classes.appbarWrapper}>
+                            <h1 className={classes.appbarName}>
+                                Bryson Palmer <br />
+                                <span className={classes.appbarPortfolio}>Portfolio</span>
+                            </h1>
+                            <Typography>
+                                <Link
+                                    href='../about'
+                                    onClick={preventDefault}
+                                    className={classes.about}>
+                                    <MinimizeIcon className={classes.bar} />
+                                        about
+                                </Link>
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+
+                    <Collapse
+                        in={checked}
+                        {... (checked ? { timeout: 3000 } : {})}
+                        collapsedHeight={50}
+                    >
+                        <div className={classes.container}>
+                            <h1 className={classes.welcome}>
+                                Welcome to <br />
+                                My Portfolio
+                            </h1>
+                            <Scroll to="go-to-work" smooth={true}>
+                                <IconButton>
+                                    <ExpandMoreIcon className={classes.arrowDown} />
+                                </IconButton>
+                            </Scroll>
+                        </div>
+                    </Collapse>
+                </div>
             </Fade>
-        </div>
+        </VizSensor>
+
     )
 }
