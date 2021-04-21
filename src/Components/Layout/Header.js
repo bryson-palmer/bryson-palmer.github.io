@@ -94,13 +94,15 @@ export default function Header(props) {
         setChecked(true);
     }, []);
 
+    console.log('active', active)
+
     return (
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: 750 }}
-            onChange={(isNotVisible) => {
-                setActive(isNotVisible);
+            offset={{ top: 700 }}
+            onChange={(isVisible) => {
+                setActive(isVisible);
             }}
         >
             <Fade in={active} timeoute={3000}  >
