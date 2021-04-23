@@ -307,11 +307,11 @@ export default function Work() {
       )}
 
       {windowX.width > 768 ?
-        // <Collapse 
-        //   in={checked} 
-        //   {... (checked ? { timeout: 2000 } : {})}
-        //   collapsedHeight={5}
-        // >
+        <Collapse 
+          in={checked} 
+          {... (checked ? { timeout: 2000 } : {})}
+          collapsedHeight={5}
+        >
         <div>
           {WorkData.map((work) => (
             <ButtonBase
@@ -346,7 +346,7 @@ export default function Work() {
             </ButtonBase>
           ))}
         </div>
-        // </Collapse>
+        </Collapse>
       :
         <Collapse 
           className={classes.entered} 
