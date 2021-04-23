@@ -73,7 +73,7 @@ export default function ContactMe() {
     const windowX = useWindowWidth();
 
     return (
-        <div className={classes.root} id='contactMe'>
+        <div className={classes.root} id='contact-me'>
             <Typography
             className={classes.contactTitle}
             >

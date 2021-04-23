@@ -192,12 +192,6 @@ const useStyles = makeStyles((theme) => ({
   entered: {
     overflow: 'hidden',
   },
-  itemsCarousel: {
-    // margin: 0,
-    // [theme.breakpoints.down('xs')]: {
-    //   width: '100% !important',
-    // },
-  },
   chevron: {
     color: '#00ffea',
     fontSize: '2rem',
@@ -313,113 +307,115 @@ export default function Work() {
       )}
 
       {windowX.width > 768 ?
+        // <Collapse 
+        //   in={checked} 
+        //   {... (checked ? { timeout: 2000 } : {})}
+        //   collapsedHeight={5}
+        // >
+        <div>
+          {WorkData.map((work) => (
+            <ButtonBase
+              focusRipple
+              key={work.title}
+              className={classes.image}
+              onClick={() => window.open(work.url, '_blank')}
+              focusVisibleClassName={classes.focusVisible}
+              style={{
+                width: work.width,
+              }}
+            >
+              <span
+                className={classes.imageSrc}
+                alt={work.title}
+                style={{
+                  backgroundImage: `url(${work.src})`,
+                }}
+              />
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {work.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </ButtonBase>
+          ))}
+        </div>
+        // </Collapse>
+      :
         <Collapse 
+          className={classes.entered} 
           in={checked} 
           {... (checked ? { timeout: 2000 } : {})}
-          collapsedHeight={10}
+          collapsedHeight={5}
         >
-          {WorkData.map((work) => (
-            <ButtonBase
-              focusRipple
-              key={work.title}
-              className={classes.image}
-              onClick={() => window.open(work.url, '_blank')}
-              focusVisibleClassName={classes.focusVisible}
-              style={{
-                width: work.width,
-              }}
+          <div style={{ padding: `${chevronWidth}px` }}>
+            <ItemsCarousel
+              className={classes.itemsCarousel}
+              requestToChangeActive={setActiveItemIndex}
+              activeItemIndex={activeItemIndex}
+              numberOfCards={windowX.width > 375 ? 2 : 1}
+              gutter={windowX.width > 375 ? 45 : 5}
+              infiniteLoop={true}
+              showSlither={true}
+              // firstAndLastGutter={true}
+              leftChevron={
+                // <div className={classes.leftChevronWrapper}>
+                  <button 
+                    className={classes.chevron}>{'<'}
+                  </button>
+                // </div>
+              }
+              rightChevron={
+                // <div className={classes.rightChevronWrapper}>
+                  <button 
+                    className={classes.chevron}>{'>'}
+                  </button>
+                // </div>
+              }
+              outsideChevron={true}
+              chevronWidth={chevronWidth}
             >
-              <span
-                className={classes.imageSrc}
-                alt={work.title}
-                style={{
-                  backgroundImage: `url(${work.src})`,
-                }}
-              />
-              <span className={classes.imageBackdrop} />
-              <span className={classes.imageButton}>
-                <Typography
-                  component="span"
-                  variant="subtitle1"
-                  color="inherit"
-                  className={classes.imageTitle}
+              {WorkData.map((work) => (
+                <ButtonBase
+                  focusRipple
+                  key={work.title}
+                  className={classes.image}
+                  onClick={() => window.open(work.url, '_blank')}
+                  focusVisibleClassName={classes.focusVisible}
+                  style={{
+                    width: work.width,
+                  }}
                 >
-                  {work.title}
-                  <span className={classes.imageMarked} />
-                </Typography>
-              </span>
-            </ButtonBase>
-          ))}
+                  <span
+                    className={classes.imageSrc}
+                    alt={work.title}
+                    style={{
+                      backgroundImage: `url(${work.src})`,
+                    }}
+                  />
+                  <span className={classes.imageBackdrop} />
+                  <span className={classes.imageButton}>
+                    <Typography
+                      component="span"
+                      variant="subtitle1"
+                      color="inherit"
+                      className={classes.imageTitle}
+                    >
+                      {work.title}
+                      <span className={classes.imageMarked} />
+                    </Typography>
+                  </span>
+                </ButtonBase>
+              ))}
+            </ItemsCarousel>
+          </div>
         </Collapse>
-      :
-      <Collapse 
-        className={classes.entered} 
-        in={checked} 
-        {... (checked ? { timeout: 2000 } : {})}
-        collapsedHeight={10}
-      >
-       <div style={{ padding: `${chevronWidth}px` }}>
-        <ItemsCarousel
-          className={classes.itemsCarousel}
-          requestToChangeActive={setActiveItemIndex}
-          activeItemIndex={activeItemIndex}
-          numberOfCards={windowX.width > 375 ? 2 : 1}
-          gutter={windowX.width > 375 ? 45 : 5}
-          infiniteLoop={true}
-          showSlither={true}
-          // firstAndLastGutter={true}
-          leftChevron={
-            // <div className={classes.leftChevronWrapper}>
-              <button 
-                className={classes.chevron}>{'<'}
-              </button>
-            // </div>
-          }
-          rightChevron={
-            // <div className={classes.rightChevronWrapper}>
-              <button 
-                className={classes.chevron}>{'>'}
-              </button>
-            // </div>
-          }
-          outsideChevron={true}
-          chevronWidth={chevronWidth}
-        >
-          {WorkData.map((work) => (
-            <ButtonBase
-              focusRipple
-              key={work.title}
-              className={classes.image}
-              onClick={() => window.open(work.url, '_blank')}
-              focusVisibleClassName={classes.focusVisible}
-              style={{
-                width: work.width,
-              }}
-            >
-              <span
-                className={classes.imageSrc}
-                alt={work.title}
-                style={{
-                  backgroundImage: `url(${work.src})`,
-                }}
-              />
-              <span className={classes.imageBackdrop} />
-              <span className={classes.imageButton}>
-                <Typography
-                  component="span"
-                  variant="subtitle1"
-                  color="inherit"
-                  className={classes.imageTitle}
-                >
-                  {work.title}
-                  <span className={classes.imageMarked} />
-                </Typography>
-              </span>
-            </ButtonBase>
-          ))}
-        </ItemsCarousel>
-    </div>
-      </Collapse>
       }
     </div>
   );

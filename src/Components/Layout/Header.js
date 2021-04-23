@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import VizSensor from 'react-visibility-sensor';
 import { Link as Scroll } from 'react-scroll';
+import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '100%',
         minHeight: '100vh',
-        // backgroundColor: '#F6B2FF',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
@@ -77,10 +77,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
     const classes = useStyles();
+    // const windowX = useWindowWidth();
     const preventDefault = (event) => event.preventDefault();
 
     // State for fading in and out the header
-    const [active, setActive] = useState();
+    const [activeHeader, setActiveHeader] = useState(true);
 
     // State for helping delay welcome message by delaying check
     const [checked, setChecked] = useState(false);
@@ -92,20 +93,20 @@ export default function Header(props) {
 
     useEffect(() => {
         setChecked(true);
-    }, [checked]);
+    }, []);
 
-    console.log('active', active)
+    console.log('activeHeader', activeHeader)
     console.log('checked', checked)
     return (
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: 600 }}
+            offset={{ top: 300 }}
             onChange={(isVisible) => {
-                setActive(isVisible);
+                setActiveHeader(isVisible);
             }}
         >
-            <Fade in={active} timeoute={3000}  >
+            <Fade in={activeHeader} timeout={2000}  >
                 <div 
                     className={classes.root} 
                     style={{backgroundColor: checked ? '#F6B2FF' : 'transparent'}}
@@ -138,7 +139,7 @@ export default function Header(props) {
                                 Welcome to <br />
                                 My Portfolio
                             </h1>
-                            <Scroll to="go-to-work" smooth={true}>
+                            <Scroll to='go-to-work' smooth={true}>
                                 <IconButton>
                                     <ExpandMoreIcon className={classes.arrowDown} />
                                 </IconButton>

@@ -5,11 +5,11 @@ export default function useWindowPosition( id ) {
 
     useLayoutEffect(() => {
         function updatePosition() {
-            // Set offsetHeight equal to where the id element 'header' is in the window document
+            // Set offsetHeight equal to where the id element 'header' isn't in the viewable window
             const offsetHeight = window.document.getElementById( id ).offsetHeight;
             // If the current Y axis is greater than the height of where the header is,
             // Then set animation to true
-            if (window.pageYOffset > offsetHeight * 0.7) {
+            if (window.pageYOffset > offsetHeight * 0.6) {
                 setAnimation(true);
             }
         }
