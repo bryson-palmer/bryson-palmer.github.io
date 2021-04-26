@@ -212,24 +212,18 @@ export default function Work() {
   const [showTime, setShowTime] = useState(false);
   // State for clock values
   const [value, setValue] = useState(new Date());
-  // State for snackbar
+  
+  // State for MERN snackbar
   const [showMern, setShowMern] = useState(false);
+  
   // State for active item in carousel
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   // width for carousel buttons
   const chevronWidth = 40;
 
-  // // State for button event
-  // const [buttonState, setButtonState] = useState('');
-  // const handleStateChange = (e) => {
-  //   const { target } = e;
-  //   const { value } = target;
+  // Button state for projects
+  // const [ project, setProject] = useState('');
 
-  //   setButtonState(
-  //     value
-  //   )
-
-  // }
 
   useEffect(() => {
     const interval = setInterval(
@@ -242,7 +236,8 @@ export default function Work() {
     }
   }, []);
 
-  // console.log('buttonState', buttonState)
+  // console.log('project', project)
+  // console.log('handleOpenWork', handleOpen)
   return (
     <div className={classes.root} id='go-to-work'>
 
@@ -315,20 +310,17 @@ export default function Work() {
         <div>
           {WorkData.map((work) => (
             <ButtonBase
-              focusRipple
-              key={work.title}
+              focusRipple={true}
+              key={work.id}
               className={classes.image}
-              onClick={() => window.open(work.url, '_blank')}
+              // onClick={() => { setProject(work); handleClick(); }}
               focusVisibleClassName={classes.focusVisible}
-              style={{
-                width: work.width,
-              }}
             >
               <span
                 className={classes.imageSrc}
                 alt={work.title}
                 style={{
-                  backgroundImage: `url(${work.src})`,
+                  backgroundImage: `url(${work.src1})`,
                 }}
               />
               <span className={classes.imageBackdrop} />

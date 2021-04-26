@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import VizSensor from 'react-visibility-sensor';
 import { Link as Scroll } from 'react-scroll';
-import useWindowWidth from '../../hook/useWindowWidth';
+// import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
