@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonBase, Collapse, Backdrop, Snackbar }
+import { Typography, ButtonBase, Backdrop, Snackbar }
   from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
@@ -10,7 +10,6 @@ import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 import WorkData from '../../static/WorkData';
 import ProjectCarousel from '../ProjectCarousel';
-import useWindowPosition from '../../hook/useWindowPosition';
 import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
@@ -206,7 +205,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Work() {
   const classes = useStyles();
-  const checked = useWindowPosition('header');
   const windowX = useWindowWidth();
 
   // State for hiding and showing the clock
@@ -224,7 +222,7 @@ export default function Work() {
 
   // State and handler functions for opening/closing project backdrop/carousel
   const [handleOpen, setHandleOpen] = useState(false);
-  
+
   const handleClose = () => {
     setHandleOpen(false);
   };
@@ -314,25 +312,87 @@ export default function Work() {
       )}
 
       {windowX.width > 768 ?
-        <Collapse
-          in={checked}
-          {... (checked ? { timeout: 2000 } : {})}
-          collapsedHeight={5}
-        >
-          <div>
+        <div>
+          {WorkData.map((work) => (
+            <ButtonBase
+              focusRipple={true}
+              key={work.key}
+              className={classes.image}
+              onClick={() => { setProject(work); handleToggle(); }}
+              focusVisibleClassName={classes.focusVisible}
+            >
+              <span
+                className={classes.imageSrc}
+                alt={work.title}
+                style={{
+                  backgroundImage: `url(${work.src[0]})`,
+                }}
+              />
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {work.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </ButtonBase>
+          ))}
+          {handleOpen && (
+            <Backdrop
+              className={classes.backdrop}
+              open={handleOpen}
+            >
+              <ProjectCarousel
+                handleClose={handleClose}
+                project={project}
+              />
+            </Backdrop>
+          )}
+        </div>
+        :
+        <div style={{ padding: `${chevronWidth}px` }}>
+          <ItemsCarousel
+            className={classes.itemsCarousel}
+            requestToChangeActive={setActiveItemIndex}
+            activeItemIndex={activeItemIndex}
+            numberOfCards={windowX.width > 375 ? 2 : 1}
+            gutter={windowX.width > 375 ? 45 : 5}
+            infiniteLoop={true}
+            showSlither={true}
+            leftChevron={
+              <button
+                className={classes.chevron}>{'<'}
+              </button>
+            }
+            rightChevron={
+              <button
+                className={classes.chevron}>{'>'}
+              </button>
+            }
+            outsideChevron={true}
+            chevronWidth={chevronWidth}
+          >
             {WorkData.map((work) => (
               <ButtonBase
-                focusRipple={true}
-                key={work.key}
+                focusRipple
+                key={work.title}
                 className={classes.image}
-                onClick={() => { setProject(work); handleToggle(); }}
+                onClick={() => window.open(work.url, '_blank')}
                 focusVisibleClassName={classes.focusVisible}
+                style={{
+                  width: work.width,
+                }}
               >
                 <span
                   className={classes.imageSrc}
                   alt={work.title}
                   style={{
-                    backgroundImage: `url(${work.src[0]})`,
+                    backgroundImage: `url(${work.src})`,
                   }}
                 />
                 <span className={classes.imageBackdrop} />
@@ -349,83 +409,8 @@ export default function Work() {
                 </span>
               </ButtonBase>
             ))}
-            {handleOpen && (
-              <Backdrop
-                className={classes.backdrop}
-                open={handleOpen}
-              >
-                <ProjectCarousel
-                  handleClose={handleClose}
-                  project={project}
-                />
-              </Backdrop>
-            )}
-          </div>
-        </Collapse>
-        :
-        <Collapse
-          className={classes.entered}
-          in={checked}
-          {... (checked ? { timeout: 2000 } : {})}
-          collapsedHeight={5}
-        >
-          <div style={{ padding: `${chevronWidth}px` }}>
-            <ItemsCarousel
-              className={classes.itemsCarousel}
-              requestToChangeActive={setActiveItemIndex}
-              activeItemIndex={activeItemIndex}
-              numberOfCards={windowX.width > 375 ? 2 : 1}
-              gutter={windowX.width > 375 ? 45 : 5}
-              infiniteLoop={true}
-              showSlither={true}
-              leftChevron={
-                <button
-                  className={classes.chevron}>{'<'}
-                </button>
-              }
-              rightChevron={
-                <button
-                  className={classes.chevron}>{'>'}
-                </button>
-              }
-              outsideChevron={true}
-              chevronWidth={chevronWidth}
-            >
-              {WorkData.map((work) => (
-                <ButtonBase
-                  focusRipple
-                  key={work.title}
-                  className={classes.image}
-                  onClick={() => window.open(work.url, '_blank')}
-                  focusVisibleClassName={classes.focusVisible}
-                  style={{
-                    width: work.width,
-                  }}
-                >
-                  <span
-                    className={classes.imageSrc}
-                    alt={work.title}
-                    style={{
-                      backgroundImage: `url(${work.src})`,
-                    }}
-                  />
-                  <span className={classes.imageBackdrop} />
-                  <span className={classes.imageButton}>
-                    <Typography
-                      component="span"
-                      variant="subtitle1"
-                      color="inherit"
-                      className={classes.imageTitle}
-                    >
-                      {work.title}
-                      <span className={classes.imageMarked} />
-                    </Typography>
-                  </span>
-                </ButtonBase>
-              ))}
-            </ItemsCarousel>
-          </div>
-        </Collapse>
+          </ItemsCarousel>
+        </div>
       }
     </div>
   );

@@ -6,7 +6,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import VizSensor from 'react-visibility-sensor';
 import { Link as Scroll } from 'react-scroll';
-// import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -77,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
     const classes = useStyles();
-    // const windowX = useWindowWidth();
     const preventDefault = (event) => event.preventDefault();
 
     // State for fading in and out the header
@@ -86,17 +84,10 @@ export default function Header(props) {
     // State for helping delay welcome message by delaying check
     const [checked, setChecked] = useState(false);
 
-    // Handle Fade change
-    // const handleChange = () => {
-    //     setActive((prev) => !prev);
-    //   }
-
     useEffect(() => {
         setChecked(true);
     }, []);
 
-    console.log('activeHeader', activeHeader)
-    console.log('checked', checked)
     return (
 
         <VizSensor

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import { Button, Fade } from '@material-ui/core';
 import ItemsCarousel from 'react-items-carousel';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     closeButton: {
         position: 'absolute',
         top: '10px',
-        left: '95%',
+        left: '96%',
     },
     closeIcon: {
         fontSize: '1.5rem',
@@ -67,8 +67,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProjectCarousel({ handleClose, project }) {
-
     const classes = useStyles();
+
+    // State for fading in and out the header
+    const [activeHeader, setActiveHeader] = useState(true);
 
     // State for active item in carousel
     const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -76,57 +78,63 @@ export default function ProjectCarousel({ handleClose, project }) {
     // width for carousel buttons
     const chevronWidth = 40;
 
+    useEffect(() => {
+        setActiveHeader(true);
+    }, []);
+
     return (
-        <div className={classes.root}>
+        <Fade in={activeHeader} timeout={1500}  >
+            <div className={classes.root}>
             
-            <Button className={classes.closeButton} onClick={handleClose}>
-                <CloseRoundedIcon className={classes.closeIcon} />
-            </Button>
-
-            <div className={classes.itemsCarousel}>
-
-                <ItemsCarousel
-                    requestToChangeActive={setActiveItemIndex}
-                    activeItemIndex={activeItemIndex}
-                    numberOfCards={1}
-                    gutter={0}
-                    infiniteLoop={true}
-                    leftChevron={
-                        <button className={classes.chevron}>
-                            {'<'}
-                        </button>
-                    }
-                    rightChevron={
-                        <button className={classes.chevron}>
-                            {'>'}
-                        </button>
-                    }
-                    outsideChevron={true}
-                    chevronWidth={chevronWidth}
-                >
-                    {project.src.map(src => (
-                        <img
-                            key={project.key}
-                            className={classes.image}
-                            src={src}
-                            alt={project.title}
-                        />
-                    ))}
-                </ItemsCarousel>
-            </div>
-
-            <div className={classes.details} onClick={handleClose}>
-                <h1 className={classes.title}>{project.title}</h1>
-                <p className={classes.text}>{project.description}</p>
-                <Button
-                    className={classes.button}
-                    variant='outlined'
-                    onClick={() => window.open(project.url, '_blank')}
-                >
-                    APP
+                <Button className={classes.closeButton} onClick={handleClose}>
+                    <CloseRoundedIcon className={classes.closeIcon} />
                 </Button>
-            </div>
 
-        </div>
+                <div className={classes.itemsCarousel}>
+
+                    <ItemsCarousel
+                        requestToChangeActive={setActiveItemIndex}
+                        activeItemIndex={activeItemIndex}
+                        numberOfCards={1}
+                        gutter={0}
+                        infiniteLoop={true}
+                        leftChevron={
+                            <button className={classes.chevron}>
+                                {'<'}
+                            </button>
+                        }
+                        rightChevron={
+                            <button className={classes.chevron}>
+                                {'>'}
+                            </button>
+                        }
+                        outsideChevron={true}
+                        chevronWidth={chevronWidth}
+                    >
+                        {project.src.map(src => (
+                            <img
+                                key={project.key}
+                                className={classes.image}
+                                src={src}
+                                alt={project.title}
+                            />
+                        ))}
+                    </ItemsCarousel>
+                </div>
+
+                <div className={classes.details} onClick={handleClose}>
+                    <h1 className={classes.title}>{project.title}</h1>
+                    <p className={classes.text}>{project.description}</p>
+                    <Button
+                        className={classes.button}
+                        variant='outlined'
+                        onClick={() => window.open(project.url, '_blank')}
+                    >
+                        APP
+                    </Button>
+                </div>
+            
+            </div>
+        </Fade>
     );
 }
