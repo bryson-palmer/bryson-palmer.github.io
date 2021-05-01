@@ -26,31 +26,54 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   workHeader: {
-    width: '100vw',
+    maxWidth: '60vw',
     padding: theme.spacing(4, 2, 4, 2),
     textAlign: 'center',
     color: '#fff',
-    fontSize: '3rem',
-    lineHeight: '2rem'
+    fontSize: '5rem',
+    lineHeight: '1.3rem',
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '85vw',
+      fontSize: '4rem'
+    },
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '95vw',
+      fontSize: '4rem'
+    },
   },
   bar: {
     color: '#00ffea',
-    fontSize: '3rem',
-    marginBottom: '-0.33rem',
-    marginRight: '-1rem'
+    fontSize: '5rem',
+    marginBottom: '-0.55rem',
+    marginRight: '-1.5rem',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '3rem',
+      marginBottom: '-0.33rem',
+      marginRight: '-1rem',
+    },
   },
   text: {
     color: '#fff',
-    fontSize: '1.1rem',
+    fontSize: '1.7rem',
     fontWeight: 'lighter',
-    lineHeight: '1rem'
+    lineHeight: '1rem',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
+    },
   },
   textSpecial: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
+    },
   },
   stack: {
     color: '#00ffea',
-    marginBottom: '-0.3rem'
+    fontSize: '2rem',
+    marginBottom: '-0.3rem',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.6rem',
+    },
   },
   lilStack: {
     fontSize: '1.2rem',
@@ -58,31 +81,45 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '-0.3rem'
   },
   infoIcon: {
+    fontSize: '1.8rem',
     marginLeft: '0.5rem',
     color: '#00ffea',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
+    },
   },
   interactive: {
     color: '#00ffea',
     fontWeight: 'normal',
-    fontSize: '1.1rem',
-    margin: '0 0.3rem 0.15rem 0.3rem',
+    fontSize: '1.7rem',
+    margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
     '&:hover': {
-      fontSize: '1.25rem',
+      fontSize: '1.8rem',
       textShadow: '0 0 3px #fff',
+      marginBottom: '0.4rem',
+    },
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
     },
   },
   dynamic: {
     color: '#00ffea',
     fontWeight: 'normal',
-    fontSize: '1.1rem',
-    margin: '0 0.3rem 0.15rem 0.3rem',
+    fontSize: '1.7rem',
+    margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
+    },
   },
   future: {
     color: '#00ffea',
-    fontSize: '1.1rem',
+    fontSize: '1.7rem',
     fontWeight: 'normal',
+    [theme.breakpoints.down('768')]: {
+      fontSize: '1.3rem',
+    },
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -91,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'normal',
     display: 'flex',
     flexDirection: 'column',
-    background: 'rgba(2, 2, 2, 0.9)',
+    background: 'rgba(2, 2, 2, 0.97)',
   },
   clockText: {
 
@@ -108,20 +145,42 @@ const useStyles = makeStyles((theme) => ({
     color: '#00ffea',
     fontWeight: 'bold',
   },
+  itemsCarousel: {
+    width: '100%',
+    padding: '0 4rem !important',
+    [theme.breakpoints.down('xs')]: {
+      padding: '0 3rem !important',
+    },
+  },
   image: {
     position: 'relative',
-    margin: theme.spacing(1),
-    minHeight: 300,
-    width: 300,
+    margin: theme.spacing(2),
+    boxShadow: '-8px 8px 11px #0D0C0C',
+    height: 350,
+    width: 475,
+    [theme.breakpoints.down('sm')]: {
+      height: 450,
+      width: 550,
+      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
+      boxShadow: '-5px 5px 15px #0D0C0C',
+    },
     [theme.breakpoints.down('xs')]: {
-      width: '275px',
-      height: '275px',
+      height: 240,
+      width: 280,
+      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
+      boxShadow: '-5px 5px 8px #0D0C0C',
+    },
+    [theme.breakpoints.down('321')]: {
+      height: 200,
+      width: 220,
+      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
+      boxShadow: '-5px 5px 8px #0D0C0C',
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
       '& $imageSrc': {
         border: '3px solid #00ffea',
-        borderRadius: '55px',
+        borderRadius: '8px',
         boxShadow: '0 0 5px #fff',
       },
       '& $imageBackdrop': {
@@ -150,9 +209,9 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
-    borderRadius: '50px',
+    borderRadius: '8px',
     [theme.breakpoints.down('xs')]: {
-      width: '269px',
+      width: '100%',
     },
   },
   imageBackdrop: {
@@ -167,9 +226,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     transition: theme.transitions.create('opacity'),
-    borderRadius: '50px',
+    borderRadius: '8px',
     [theme.breakpoints.down('xs')]: {
-      width: '269px',
+      width: '100%',
     },
   },
   imageTitle: {
@@ -189,16 +248,13 @@ const useStyles = makeStyles((theme) => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
-  entered: {
-    overflow: 'hidden',
-  },
   chevron: {
     color: '#00ffea',
-    fontSize: '2rem',
+    fontSize: '4rem',
     backgroundColor: 'transparent !important',
     border: 'none !important',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1rem !important',
+      fontSize: '2rem !important',
     },
   },
 }));
@@ -267,7 +323,7 @@ export default function Work() {
             className={classes.dynamic}
             onClick={() => setShowTime(true)} >
             {' '} dynamic </ButtonBase>
-          web sites and web applications. <br />
+          web sites and web applications.
           I'm at home in the creative process whether it's engineering or styling software.
           I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
         </span>
@@ -355,15 +411,14 @@ export default function Work() {
           )}
         </div>
         :
-        <div style={{ padding: `${chevronWidth}px` }}>
+        <div className={classes.itemsCarousel} style={{ padding: `${chevronWidth}px` }}>
           <ItemsCarousel
-            className={classes.itemsCarousel}
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
-            numberOfCards={windowX.width > 375 ? 2 : 1}
-            gutter={windowX.width > 375 ? 45 : 5}
+            numberOfCards={1} // windowX.width > 375 ? 2 : 
+            gutter={20} // windowX.width > 375 ? 45 : 
             infiniteLoop={true}
-            showSlither={true}
+            // showSlither={true}
             leftChevron={
               <button
                 className={classes.chevron}>{'<'}
@@ -380,19 +435,19 @@ export default function Work() {
             {WorkData.map((work) => (
               <ButtonBase
                 focusRipple
-                key={work.title}
+                key={work.key}
                 className={classes.image}
-                onClick={() => window.open(work.url, '_blank')}
+                onClick={() => { setProject(work); handleToggle(); }}
                 focusVisibleClassName={classes.focusVisible}
-                style={{
-                  width: work.width,
-                }}
+                // style={{
+                //   width: work.width,
+                // }}
               >
                 <span
                   className={classes.imageSrc}
                   alt={work.title}
                   style={{
-                    backgroundImage: `url(${work.src})`,
+                    backgroundImage: `url(${work.src[0]})`,
                   }}
                 />
                 <span className={classes.imageBackdrop} />
@@ -410,6 +465,17 @@ export default function Work() {
               </ButtonBase>
             ))}
           </ItemsCarousel>
+          {handleOpen && (
+            <Backdrop
+              className={classes.backdrop}
+              open={handleOpen}
+            >
+              <ProjectCarousel
+                handleClose={handleClose}
+                project={project}
+              />
+            </Backdrop>
+          )}
         </div>
       }
     </div>

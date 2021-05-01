@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: '40%',
             marginLeft: '1.5rem',
         },
+        [theme.breakpoints.down('321')]: {
+            fontSize: '0.9rem',
+            marginBottom: '4rem',
+            maxWidth: '50%',
+          },
     },
     cosmic: {
         color: '#00ffea',
@@ -37,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2.5rem',
         marginBottom: '-0.31rem',
         marginRight: '-0.5rem',
+        [theme.breakpoints.down('321')]: {
+            fontSize: '1.4rem',
+            marginBottom: '-0.2rem',
+            marginRight: '-0.35rem',
+          },
     },
     contact: {
         color: '#00ffea',
@@ -54,6 +64,11 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '6rem',
             marginRight: '1.5rem',
         },
+        [theme.breakpoints.down('321')]: {
+            fontSize: '1.7rem',
+            marginTop: '6rem',
+            marginRight: '1rem',
+          },
     },
     EmailOutlinedIcon: {
         color: '#00ffea',
@@ -65,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1rem',
             marginLeft: '0.1rem',
         },
+        [theme.breakpoints.down('321')]: {
+            fontSize: '1rem',
+            marginBottom: '0.5rem',
+          },
       },
 }));
 

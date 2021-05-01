@@ -92,12 +92,13 @@ export default function Header(props) {
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: 200 }}
+            offset={{ top: 600 }}
+            scrollDelay={10}
             onChange={(isVisible) => {
                 setActiveHeader(isVisible);
             }}
         >
-            <Fade in={activeHeader} timeout={2000}  >
+            <Fade in={activeHeader} timeout={1500}  >
                 <div 
                     className={classes.root} 
                     style={{backgroundColor: checked ? '#F6B2FF' : 'transparent'}}
