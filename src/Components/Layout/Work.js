@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    minWidth: 300,
+    minWidth: 280,
     width: '100%',
     [theme.breakpoints.up('768')]: {
       marginBottom: '4rem'
@@ -54,14 +54,15 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: '#fff',
-    fontSize: '1.7rem',
+    fontSize: '1.5rem',
     fontWeight: 'lighter',
-    lineHeight: '1rem',
+    lineHeight: '2rem',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1rem',
+      lineHeight: '1.2rem',
     },
   },
   textSpecial: {
@@ -100,6 +101,12 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.1rem',
     },
   },
+  mern: {
+    lineHeight: '2rem',
+  },
+  [theme.breakpoints.down('xs')]: {
+    lineHeight: '0',
+  },
   interactive: {
     color: '#00ffea',
     fontWeight: 'normal',
@@ -107,9 +114,9 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
     '&:hover': {
-      fontSize: '1.8rem',
+      fontSize: '120%',
       textShadow: '0 0 3px #fff',
-      marginBottom: '0.4rem',
+      marginBottom: '0.2rem',
     },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
@@ -144,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
+    minWidth: '280px !important',
     color: '#fff',
     fontSize: '1.1rem',
     fontWeight: 'normal',
@@ -158,6 +166,9 @@ const useStyles = makeStyles((theme) => ({
     background: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '50%',
     marginTop: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '0rem',
+    },
   },
   snackbar: {
     maxWidth: '200px',
@@ -283,6 +294,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Work() {
   const classes = useStyles();
   const windowX = useWindowWidth().width;
+  const windowY = useWindowWidth().height;
 
   // State for hiding and showing the clock
   const [showTime, setShowTime] = useState(false);
@@ -355,15 +367,23 @@ export default function Work() {
             className={classes.backdrop}
             open={showTime}
             onClick={() => setShowTime(false)}
+            style={{
+              flexDirection: windowX > windowY ? 'row' : 'column'
+            }}
           >
-            <p className={classes.clockText}>
+            <p 
+              className={classes.clockText}
+              style={{
+                marginRight: windowX > windowY && '1rem'
+              }}
+            >
               Lik<MenuRoundedIcon className={classes.lilStack} />
               grabbing this clock here
             </p>
             <Clock
               value={value}
               className={classes.clock}
-              size={300}
+              size={250}
             />
           </Backdrop>
         </div>
@@ -376,7 +396,7 @@ export default function Work() {
             open={showMern}
             onClick={() => setShowMern(false)}
             message={
-              <div>
+              <div className={classes.mern}>
                 <p className={classes.color} style={{ fontSize: '2rem' }}>M.E.R.N</p>
                 <p className={classes.text}><span className={classes.color}>M</span >ongoDB/<span className={classes.color}>M</span>ySQL Database</p>
                 <p className={classes.text}><span className={classes.color}>E</span>xpress Server</p>
