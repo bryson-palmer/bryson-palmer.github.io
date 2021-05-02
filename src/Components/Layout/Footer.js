@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0.5rem',
         paddingBottom: '2rem',
         fontSize: '0.8rem',
+        [theme.breakpoints.down('sm')]: {
+            marginTop: '3rem',
+            paddingBottom: '3rem',
+        },
     },
     color: {
         color: '#00ffea',

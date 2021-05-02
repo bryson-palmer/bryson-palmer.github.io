@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        minHeight: '30vh',
+        minHeight: '40vh',
         backgroundColor: '#F6B2FF',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
         backgroundBlendMode: 'multiply',
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         marginBottom: '6rem',
         marginLeft: '6rem',
+        [theme.breakpoints.down('md')]: {
+            marginTop: '1rem', 
+        },
         [theme.breakpoints.down('xs')]: {
             maxWidth: '40%',
             marginLeft: '1.5rem',
@@ -89,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactMe() {
     const classes = useStyles();
-    const windowX = useWindowWidth();
+    const windowX = useWindowWidth().width;
 
     return (
         <div className={classes.root} id='contact-me'>
@@ -108,7 +111,7 @@ export default function ContactMe() {
                     className={classes.contact}>
                         <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
                         contact 
-                        {(windowX.width <= 1024) && (
+                        {(windowX <= 1024) && (
                             <EmailOutlinedIcon className={classes.EmailOutlinedIcon}>email</EmailOutlinedIcon>
                         )}
                 </a>

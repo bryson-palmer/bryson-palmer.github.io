@@ -54,9 +54,9 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: '#fff',
-    fontSize: '1.5rem',
+    fontSize: '1.4rem',
     fontWeight: 'lighter',
-    lineHeight: '2rem',
+    lineHeight: '1.6rem',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   stack: {
     color: '#00ffea',
-    fontSize: '2rem',
+    fontSize: '1.7rem',
     marginBottom: '-0.3rem',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.6rem',
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '-0.3rem'
   },
   infoIcon: {
-    fontSize: '1.8rem',
+    fontSize: '1.5rem',
     marginLeft: '0.5rem',
     color: '#00ffea',
     [theme.breakpoints.down('768')]: {
@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mern: {
-    lineHeight: '2rem',
+    lineHeight: '1rem',
   },
   [theme.breakpoints.down('xs')]: {
     lineHeight: '0',
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
   interactive: {
     color: '#00ffea',
     fontWeight: 'normal',
-    fontSize: '1.7rem',
+    fontSize: '1.5rem',
     margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
     '&:hover': {
@@ -128,7 +128,7 @@ const useStyles = makeStyles((theme) => ({
   dynamic: {
     color: '#00ffea',
     fontWeight: 'normal',
-    fontSize: '1.7rem',
+    fontSize: '1.5rem',
     margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
     [theme.breakpoints.down('768')]: {
@@ -140,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
   },
   future: {
     color: '#00ffea',
-    fontSize: '1.7rem',
+    fontSize: '1.5rem',
     fontWeight: 'normal',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
