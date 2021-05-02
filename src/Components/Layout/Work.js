@@ -60,11 +60,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem',
+    },
   },
   textSpecial: {
     fontWeight: 'bold',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem',
     },
   },
   stack: {
@@ -73,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '-0.3rem',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.6rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.3rem',
     },
   },
   lilStack: {
@@ -86,6 +95,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#00ffea',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.1rem',
     },
   },
   interactive: {
@@ -102,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.1rem',
+    },
   },
   dynamic: {
     color: '#00ffea',
@@ -112,6 +127,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.1rem',
+    },
   },
   future: {
     color: '#00ffea',
@@ -119,6 +137,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'normal',
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem',
     },
   },
   backdrop: {
@@ -261,7 +282,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Work() {
   const classes = useStyles();
-  const windowX = useWindowWidth();
+  const windowX = useWindowWidth().width;
 
   // State for hiding and showing the clock
   const [showTime, setShowTime] = useState(false);
@@ -367,7 +388,7 @@ export default function Work() {
         </div>
       )}
 
-      {windowX.width > 768 ?
+      {windowX > 768 ?
         <div>
           {WorkData.map((work) => (
             <ButtonBase
@@ -398,27 +419,28 @@ export default function Work() {
               </span>
             </ButtonBase>
           ))}
-          {handleOpen && (
+          
             <Backdrop
               className={classes.backdrop}
               open={handleOpen}
             >
+              {handleOpen && (
               <ProjectCarousel
                 handleClose={handleClose}
                 project={project}
               />
+              )}
             </Backdrop>
-          )}
+          
         </div>
         :
         <div className={classes.itemsCarousel} style={{ padding: `${chevronWidth}px` }}>
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
-            numberOfCards={1} // windowX.width > 375 ? 2 : 
-            gutter={20} // windowX.width > 375 ? 45 : 
+            numberOfCards={1} 
+            gutter={20}
             infiniteLoop={true}
-            // showSlither={true}
             leftChevron={
               <button
                 className={classes.chevron}>{'<'}
@@ -439,9 +461,6 @@ export default function Work() {
                 className={classes.image}
                 onClick={() => { setProject(work); handleToggle(); }}
                 focusVisibleClassName={classes.focusVisible}
-                // style={{
-                //   width: work.width,
-                // }}
               >
                 <span
                   className={classes.imageSrc}

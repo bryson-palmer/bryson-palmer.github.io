@@ -8,7 +8,7 @@ import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: '1rem',
+        marginTop: '2rem',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     copyright: {
         color: '#fff',
         textAlign: "center",
+        marginTop: '0.5rem',
         paddingBottom: '2rem',
         fontSize: '0.8rem',
     },

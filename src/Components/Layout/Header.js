@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import VizSensor from 'react-visibility-sensor';
 import { Link as Scroll } from 'react-scroll';
+import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
     const classes = useStyles();
+    const windowY = useWindowWidth().height;
+    const windowX = useWindowWidth().width;
+
     const preventDefault = (event) => event.preventDefault();
 
     // State for fading in and out the header
@@ -92,7 +96,7 @@ export default function Header(props) {
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: 600 }}
+            offset={{ top: windowX < windowY ? 600 : 325}}
             scrollDelay={10}
             onChange={(isVisible) => {
                 setActiveHeader(isVisible);
