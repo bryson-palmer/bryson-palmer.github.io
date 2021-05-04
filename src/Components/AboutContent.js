@@ -7,12 +7,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function About() {
+export default function AboutContent() {
     const classes = useStyles();
    
 
     return (
-        <div className={classes.root} id='about'>
+        <div className={classes.root} id='aboutContent'>
             Hello!!!
         </div>
     )

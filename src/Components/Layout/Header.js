@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
         minHeight: '100vh',
+        minWidth: '100vw',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     appbarPortfolio: {
         color: '#00ffea',
     },
-    about: {
+    aboutContent: {
         color: '#00ffea',
         textDecoration: 'none',
         fontSize: '1.5rem',
@@ -121,9 +121,9 @@ export default function Header() {
                             </h1>
                             <Typography>
                                 <Link
-                                    href='../about'
+                                    href='../aboutContent'
                                     onClick={preventDefault}
-                                    className={classes.about}>
+                                    className={classes.aboutContent}>
                                     <MinimizeIcon className={classes.bar} />
                                         about
                                 </Link>
