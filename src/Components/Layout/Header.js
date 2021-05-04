@@ -111,7 +111,7 @@ export default function Header() {
             <Fade in={activeHeader} timeout={1500}  >
                 <div 
                     className={classes.root} 
-                    style={{backgroundColor: checked ? '#F6B2FF' : 'transparent'}}
+                    style={{backgroundColor: checked ? '#F6B2FF' : '#1c1c1c'}}
                     id='header'>
                     <AppBar className={classes.appbar} elevation={0}>
                         <Toolbar className={classes.appbarWrapper}>
