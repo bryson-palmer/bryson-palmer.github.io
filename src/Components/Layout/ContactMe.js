@@ -68,8 +68,8 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '1.5rem',
         },
         [theme.breakpoints.down('321')]: {
-            fontSize: '1.7rem',
-            marginTop: '6rem',
+            fontSize: '1.2rem',
+            marginTop: '5rem',
             marginRight: '1rem',
           },
     },
@@ -84,8 +84,8 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '0.1rem',
         },
         [theme.breakpoints.down('321')]: {
-            fontSize: '1rem',
-            marginBottom: '0.5rem',
+            fontSize: '0.8rem',
+            marginBottom: '0.3rem',
           },
       },
 }));

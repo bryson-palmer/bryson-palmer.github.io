@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '95vw',
       fontSize: '4rem'
     },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '3rem'
+    },
   },
   bar: {
     color: '#00ffea',
@@ -50,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '3rem',
       marginBottom: '-0.33rem',
       marginRight: '-1rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '2.5rem'
     },
   },
   text: {
@@ -64,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1rem',
       lineHeight: '1.2rem',
     },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '0.9rem',
+      lineHeight: '1.1rem',
+    },
   },
   textSpecial: {
     fontWeight: 'bold',
@@ -72,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '0.9rem',
     },
   },
   stack: {
@@ -83,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.3rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '1.2rem',
     },
   },
   lilStack: {
@@ -124,6 +140,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.1rem',
     },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '1rem',
+      margin: '0 0.4rem 0.10rem 0.4rem',
+    },
   },
   dynamic: {
     color: '#00ffea',
@@ -136,6 +156,10 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.1rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '1rem',
+      margin: '0 0.4rem 0.10rem 0.4rem',
     },
   },
   future: {
@@ -181,26 +205,36 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     padding: '0 4rem !important',
     [theme.breakpoints.down('xs')]: {
+      width: '100%',
       padding: '0 3rem !important',
+    },
+    [theme.breakpoints.down('361')]: {
+      padding: '0 1rem !important',
     },
   },
   image: {
     position: 'relative',
-    margin: theme.spacing(2),
+    margin: theme.spacing(1.5),
     boxShadow: '-8px 8px 11px #0D0C0C',
     height: 350,
     width: 475,
     [theme.breakpoints.down('sm')]: {
-      height: 450,
-      width: 550,
-      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
+      height: 260,
+      width: 450,
+      margin: `${theme.spacing(1)}px`,
       boxShadow: '-5px 5px 15px #0D0C0C',
     },
     [theme.breakpoints.down('xs')]: {
       height: 240,
-      width: 280,
-      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
-      boxShadow: '-5px 5px 8px #0D0C0C',
+      width: 350,
+    },
+    [theme.breakpoints.down('445')]: {
+      height: 240,
+      width: 300,
+    },
+    [theme.breakpoints.down('376')]: {
+      height: 240,
+      width: 240,
     },
     [theme.breakpoints.down('321')]: {
       height: 200,
@@ -262,6 +296,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
+    [theme.breakpoints.down('321')]: {
+      width: '100%',
+    },
   },
   imageTitle: {
     fontSize: '2.5rem',
@@ -270,6 +307,9 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '2.4rem',
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    [theme.breakpoints.down('321')]: {
+      fontSize: '1.7rem',
+    },
   },
   imageMarked: {
     height: 3,
@@ -454,25 +494,33 @@ export default function Work() {
           
         </div>
         :
-        <div className={classes.itemsCarousel} style={{ padding: `${chevronWidth}px` }}>
+        <div className={classes.itemsCarousel} style={{ padding: windowX > 375 ? `${chevronWidth}px` : 0}}>
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={1} 
-            gutter={20}
+            gutter={(windowX > 376 && 50) || (windowX > 361 && 10) || (windowX > 321 && 25) || (windowX > 300 && 20) || (windowX < 300 && 7)}
             infiniteLoop={true}
+            outsideChevron={windowX > 376 ? true : false}
+            chevronWidth={windowX > 376 ? chevronWidth : 0}
+            showSlither={windowX > 376 ? false : true}
+            firstAndLastGutter={windowX > 376 ? false : true}
             leftChevron={
-              <button
-                className={classes.chevron}>{'<'}
-              </button>
+              windowX > 376 ?
+                <button
+                  className={classes.chevron}>{'<'}
+                </button>
+              :
+                null
             }
             rightChevron={
-              <button
-                className={classes.chevron}>{'>'}
-              </button>
+              windowX > 376 ?
+                <button
+                  className={classes.chevron}>{'>'}
+                </button>
+              :
+                null
             }
-            outsideChevron={true}
-            chevronWidth={chevronWidth}
           >
             {WorkData.map((work) => (
               <ButtonBase

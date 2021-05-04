@@ -92,11 +92,15 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             width: '45%',
-            marginTop: '2rem',
+            marginTop: '3rem',
         },
         [theme.breakpoints.down('376')]: {
             width: '45%',
+            marginTop: '5rem',
         },
+        // [theme.breakpoints.down('321')]: {
+        //     marginTop: '3rem',
+        // },
     },
     chevron: {
         zIndex: theme.zIndex.drawer + 2,

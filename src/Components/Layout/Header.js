@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
     appbarName: {
         flexGrow: '1',
         lineHeight: '1.5rem',
+        [theme.breakpoints.down('361')]: {
+            fontSize: '1.1rem',
+            lineHeight: '1.1rem'
+        },
     },
     appbarPortfolio: {
         color: '#00ffea',
@@ -46,12 +50,18 @@ const useStyles = makeStyles((theme) => ({
             textDecoration: 'none',
             textShadow: '0 0 3px #fff',
         },
+        [theme.breakpoints.down('361')]: {
+            fontSize: '1.1rem',
+        },
     },
     bar: {
         color: '#00ffea',
         fontSize: '1.5rem',
         marginBottom: '-0.2rem',
         marginRight: '-0.3rem',
+        [theme.breakpoints.down('361')]: {
+            fontSize: '1.1rem',
+        },
     },
     container: {
         textAlign: 'center',
@@ -61,12 +71,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4.5rem',
         lineHeight: '5rem',
         [theme.breakpoints.down('md')]: {
-            fontSize: '3.5rem',
-            lineHeight: '4rem',
-        },
-        [theme.breakpoints.down('415')]: {
             fontSize: '2rem',
-            lineHeight: '2.5rem'
+            lineHeight: '2rem'
         },
     },
     arrowDown: {
@@ -75,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Header(props) {
+export default function Header() {
     const classes = useStyles();
     const windowY = useWindowWidth().height;
     const windowX = useWindowWidth().width;
@@ -96,7 +102,7 @@ export default function Header(props) {
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: windowX < windowY ? 600 : 325}}
+            offset={{ top: windowX < windowY ? 500 : 250}}
             scrollDelay={10}
             onChange={(isVisible) => {
                 setActiveHeader(isVisible);

@@ -33,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '3rem',
             paddingBottom: '3rem',
         },
+        [theme.breakpoints.down('321')]: {
+            marginTop: '3rem',
+            paddingBottom: '3rem',
+            fontSize: '0.7rem',
+        },
     },
     color: {
         color: '#00ffea',
