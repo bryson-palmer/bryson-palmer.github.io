@@ -1,23 +1,32 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Portfolio from './Pages/Portfolio';
 import About from './Pages/About';
 import './App.css';
 
 
-const useStyles = makeStyles(() => ({
-  root: {
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   root: {
+//   },
+// }));
 
 export default function App() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Portfolio />
-      <About />
-    </div>
+    <Router>
+      {/* <div className={classes.root}>  */}
+        <CssBaseline /> 
+        <Switch>
+          <Route exact path='/'>
+            <Portfolio />
+          </Route>
+          <Route exact path='/about'>
+            <About />
+          </Route>
+        </Switch>
+      {/* </div>  */}
+    </Router>
   );
 }

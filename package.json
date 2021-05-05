@@ -12,6 +12,7 @@
     "react-clock": "^3.0.0",
     "react-dom": "^17.0.2",
     "react-items-carousel": "^2.8.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
     "react-visibility-sensor": "^5.1.1",

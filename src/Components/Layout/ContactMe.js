@@ -43,13 +43,26 @@ const useStyles = makeStyles((theme) => ({
     bar: {
         color: '#00ffea',
         fontSize: '2.5rem',
-        marginBottom: '-0.31rem',
-        marginRight: '-0.5rem',
+        marginBottom: '-0.29rem',
+        marginRight: '-0.6rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '2rem',
+            marginBottom: '-0.2rem',
+            marginRight: '-0.5rem',
+        },
+        [theme.breakpoints.down('415')]: {
+            fontSize: '1.2rem',
+            marginBottom: '-0.2rem',
+            marginRight: '-0.3rem',
+        },
         [theme.breakpoints.down('321')]: {
             fontSize: '1.4rem',
-            marginBottom: '-0.2rem',
-            marginRight: '-0.35rem',
-          },
+        },
+        [theme.breakpoints.down('281')]: {
+            fontSize: '0.9rem',
+            marginBottom: '-0.15rem',
+            marginRight: '-0.25rem',
+        },
     },
     contact: {
         color: '#00ffea',
@@ -67,11 +80,14 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '6rem',
             marginRight: '1.5rem',
         },
-        [theme.breakpoints.down('321')]: {
+        [theme.breakpoints.down('415')]: {
             fontSize: '1.2rem',
             marginTop: '5rem',
             marginRight: '1rem',
-          },
+        },
+        [theme.breakpoints.down('281')]: {
+            fontSize: '0.9rem',
+        },
     },
     EmailOutlinedIcon: {
         color: '#00ffea',
@@ -82,12 +98,19 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: '1rem',
             marginLeft: '0.1rem',
+            marginBottom: '0.5rem',
+        },
+        [theme.breakpoints.down('415')]: {
+            fontSize: '0.9rem',
+            marginBottom: '0.3rem',
         },
         [theme.breakpoints.down('321')]: {
             fontSize: '0.8rem',
-            marginBottom: '0.3rem',
-          },
-      },
+        },
+        [theme.breakpoints.down('281')]: {
+            marginBottom: '0.1rem',
+        },
+    },
 }));
 
 export default function ContactMe() {
