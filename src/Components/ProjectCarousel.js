@@ -55,17 +55,32 @@ const useStyles = makeStyles((theme) => ({
         top: '20px',
         left: '96.5%',
         [theme.breakpoints.down('lg')]: {
-            top: '10px',
+            top: '20px',
             left: '94%',
         },
         [theme.breakpoints.down('md')]: {
+            top: '18px',
+            left: '93%',
+        },
+        [theme.breakpoints.down('1024')]: {
+            top: '15px',
             left: '92%',
         },
         [theme.breakpoints.down('xs')]: {
-            left: '87% !important',
+            top: '10px',
+            left: '89% !important',
+        },
+        [theme.breakpoints.down('415')]: {
+            top: '10px',
+            left: '86% !important',
+        },
+        [theme.breakpoints.down('376')]: {
+            top: '8px',
+            left: '85% !important',
         },
         [theme.breakpoints.down('321')]: {
-            left: '83% !important',
+            top: '6px',
+            left: '81% !important',
         },
     },
     closeIcon: {
@@ -84,23 +99,18 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('lg')]: {
             width: '45%',
             paddingBottom: '5rem',
-            marginTop: '0rem',
         },
         [theme.breakpoints.down('sm')]: {
             paddingBottom: '0rem',
             marginTop: '1rem',
         },
-        [theme.breakpoints.down('xs')]: {
-            width: '45%',
+        [theme.breakpoints.down('415')]: {
             marginTop: '3rem',
         },
-        [theme.breakpoints.down('376')]: {
+        [theme.breakpoints.down('361')]: {
             width: '45%',
-            marginTop: '5rem',
+            marginTop: '4rem',
         },
-        // [theme.breakpoints.down('321')]: {
-        //     marginTop: '3rem',
-        // },
     },
     chevron: {
         zIndex: theme.zIndex.drawer + 2,
@@ -129,6 +139,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             height: '90%',
             width: '45%',
+            marginBottom: '1rem',
         },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
@@ -139,7 +150,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '45%',
             padding: '0 1rem',
-            marginBottom: '-4rem',
+            // marginBottom: '-4rem',
         },
         [theme.breakpoints.down('415')]: {
             marginBottom: '-7rem',
@@ -201,20 +212,18 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.8rem',
         border: 'solid 1px #00ffea',
         margin: '2rem auto',
-        [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.down('md')]: {
             fontSize: '1rem',
             width: '130px',
-            margin: '1rem auto',
+            margin: '0.7rem auto 12rem auto',
         },
         [theme.breakpoints.down('sm')]: {
-            margin: '0.7rem auto',
+            margin: '0.7rem auto 2.5rem auto',
             fontSize: '0.7rem',
             width: '100px',
         },
-        [theme.breakpoints.down('415')]: {
-            fontSize: '1rem',
-        },
         [theme.breakpoints.down('xs')]: {
+            margin: '0.7rem auto 0rem auto',
             fontSize: '0.6rem',
         },
         [theme.breakpoints.down('321')]: {

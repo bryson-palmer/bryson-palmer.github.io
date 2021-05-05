@@ -183,9 +183,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     background: 'rgba(2, 2, 2, 0.97)',
   },
-  clockText: {
-
-  },
   clock: {
     background: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '50%',
@@ -203,13 +200,10 @@ const useStyles = makeStyles((theme) => ({
   },
   itemsCarousel: {
     width: '100%',
-    padding: '0 4rem !important',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-      padding: '0 3rem !important',
     },
     [theme.breakpoints.down('361')]: {
-      padding: '0 1rem !important',
     },
   },
   image: {
@@ -221,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       height: 260,
       width: 450,
-      margin: `${theme.spacing(1)}px`,
+      margin: `${theme.spacing(1)}px ${theme.spacing(-5)}px`,
       boxShadow: '-5px 5px 15px #0D0C0C',
     },
     [theme.breakpoints.down('xs')]: {
@@ -230,7 +224,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('445')]: {
       height: 240,
-      width: 300,
+      width: 280,
     },
     [theme.breakpoints.down('376')]: {
       height: 240,
@@ -239,7 +233,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('321')]: {
       height: 200,
       width: 220,
-      margin: `${theme.spacing(1)}px ${theme.spacing(0)}px`,
       boxShadow: '-5px 5px 8px #0D0C0C',
     },
     '&:hover, &$focusVisible': {
@@ -346,8 +339,6 @@ export default function Work() {
 
   // State for active item in carousel
   const [activeItemIndex, setActiveItemIndex] = useState(0);
-  // width for carousel buttons
-  const chevronWidth = 40;
 
   // State and handler functions for opening/closing project backdrop/carousel
   const [handleOpen, setHandleOpen] = useState(false);
@@ -494,33 +485,17 @@ export default function Work() {
           
         </div>
         :
-        <div className={classes.itemsCarousel} style={{ padding: windowX > 375 ? `${chevronWidth}px` : 0}}>
+        <div className={classes.itemsCarousel} style={{ padding: 0}}>
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={1} 
-            gutter={(windowX > 376 && 50) || (windowX > 361 && 10) || (windowX > 321 && 25) || (windowX > 300 && 20) || (windowX < 300 && 7)}
+            gutter={(windowX > 767 && 98) || (windowX > 539 && 58) || (windowX > 361 && 40) || (windowX > 321 && 35) || (windowX > 300 && 28) || (windowX < 300 && 15)}
             infiniteLoop={true}
-            outsideChevron={windowX > 376 ? true : false}
-            chevronWidth={windowX > 376 ? chevronWidth : 0}
-            showSlither={windowX > 376 ? false : true}
-            firstAndLastGutter={windowX > 376 ? false : true}
-            leftChevron={
-              windowX > 376 ?
-                <button
-                  className={classes.chevron}>{'<'}
-                </button>
-              :
-                null
-            }
-            rightChevron={
-              windowX > 376 ?
-                <button
-                  className={classes.chevron}>{'>'}
-                </button>
-              :
-                null
-            }
+            outsideChevron={false}
+            chevronWidth={0}
+            showSlither={true}
+            firstAndLastGutter={true}
           >
             {WorkData.map((work) => (
               <ButtonBase
