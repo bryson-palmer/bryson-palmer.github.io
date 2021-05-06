@@ -490,7 +490,7 @@ export default function Work() {
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={1} 
-            gutter={(windowX > 767 && 98) || (windowX > 539 && 58) || (windowX > 400 && 40) || (windowX > 361 && 40) || (windowX > 321 && 35) || (windowX > 300 && 28) || (windowX < 300 && 15)}
+            gutter={(windowX > 767 && 98) || (windowX > 539 && 58) || (windowX > 410 && 40) || (windowX > 389 && 33) || (windowX > 361 && 40) || (windowX > 321 && 35) || (windowX > 300 && 28) || (windowX < 300 && 15)}
             infiniteLoop={true}
             outsideChevron={false}
             chevronWidth={0}
