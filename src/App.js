@@ -9,6 +9,7 @@ import './App.css';
 
 // const useStyles = makeStyles(() => ({
 //   root: {
+//     textDecoration: 'none',
 //   },
 // }));
 
@@ -16,17 +17,14 @@ export default function App() {
   // const classes = useStyles();
   return (
     <Router>
-      {/* <div className={classes.root}>  */}
+      <div>
         <CssBaseline /> 
         <Switch>
-          <Route exact path='/'>
-            <Portfolio />
-          </Route>
-          <Route exact path='/about'>
-            <About />
-          </Route>
+          <Route exact path='/' component={Portfolio} />
+          <Route exact path='/portfolio' component={Portfolio} />
+          <Route exact path='/about' component={About} />
         </Switch>
-      {/* </div>  */}
+      </div>
     </Router>
   );
 }

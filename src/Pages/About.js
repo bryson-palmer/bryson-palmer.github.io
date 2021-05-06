@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from '../Components/NavBar';
+import AboutMe from '../Components/AboutMe';
 import ContactMe from '../Components/Layout/ContactMe';
 import Footer from '../Components/Layout/Footer';
 
@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <NavBar />
+            <AboutMe />
             <ContactMe />
             <Footer />
         </div>        

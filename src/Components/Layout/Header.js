@@ -91,5 +91,5 @@ export default function Header() {
             </Fade>
         </VizSensor>
 
-    )
+    );
 }

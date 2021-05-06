@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Link} from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import { Link as Scroll } from 'react-scroll';
 import useWindowWidth from '../hook/useWindowWidth';
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarPortfolio: {
         color: '#00ffea',
+        textDecoration: 'none',
         [theme.breakpoints.down('281')]: {
             fontSize: '0.9rem',
         },
@@ -89,7 +91,6 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
     const classes = useStyles();
     const windowX = useWindowWidth().width;
-    const preventDefault = (event) => event.preventDefault();
 
     return (
         <AppBar className={classes.appbar} elevation={0}>
@@ -98,20 +99,24 @@ export default function NavBar() {
                             
                 <h1 className={classes.appbarName}>
                     Bryson Palmer <br />
-                    <span className={classes.appbarPortfolio}>Portfolio</span>
+                    <Link 
+                        to={'/portfolio'}
+                        className={classes.appbarPortfolio}>
+                            Portfolio
+                    </Link>
                 </h1>
 
-                <div className={classes.navLinks}>                               
+                <Typography className={classes.navLinks}>                               
                     <Link
-                        href='../aboutContent'
-                        onClick={preventDefault}
+                        to={'/about'}
                         className={classes.link}>
                             <MinimizeIcon className={classes.bar} />
                                 about
                     </Link>
                     <Scroll to='contact-me' smooth={true}> 
                         <IconButton
-                            className={classes.link}>
+                            className={classes.link}
+                            >
                                 <MinimizeIcon 
                                     className={classes.bar} 
                                     style={{ marginRight: windowX > 470 ? '-0.37rem': '-0.25rem',
@@ -119,7 +124,7 @@ export default function NavBar() {
                                     contact
                         </IconButton>
                     </Scroll>
-                </div>
+                </Typography>
             </Toolbar>
         </AppBar>
     )
