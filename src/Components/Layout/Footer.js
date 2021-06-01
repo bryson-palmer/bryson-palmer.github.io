@@ -4,6 +4,7 @@ import { IconButton, Typography, Tooltip } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import ListAltIcon from '@material-ui/icons/ListAlt';
+import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
@@ -96,12 +97,24 @@ export default function Footer() {
                     {(windowX.width <= 1024) && (
                         <p >Resume</p>
                     )}
-                    <Tooltip title='My Resume' arrow>
+                    <Tooltip title='Resume' arrow>
                         <IconButton
-                            aria-label='My Resume'
-                            onClick={() => window.open('https://docs.google.com/document/d/19WL4DclHMyKQ1_jmdgUm_kBA3A-d0P4o2hpSkjHySFw/edit?usp=sharing', '_blank')}>
+                            aria-label='Resume'
+                            onClick={() => window.open('https://docs.google.com/document/d/1szDUSA9ge0nsGIGbld_yJFam1ax_y-NDe0kkOCXN-DY/edit?usp=sharing', '_blank')}>
                             <ListAltIcon className={classes.icon} />
                         </IconButton>
+                    </Tooltip>
+                </div>
+                <div className={classes.icons}>
+                    {(windowX.width <= 1024) && (
+                        <p >Email</p>
+                    )}
+                    <Tooltip title='Eamil' arrow>
+                        <a target='_blank'
+                            rel='noopener noreferrer'
+                            href='mailto:brysonpalmer@gmail.com'>
+                            <EmailOutlinedIcon className={classes.icon}/>
+                        </a>
                     </Tooltip>
                 </div>
             </div>

@@ -2,8 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Tooltip } from '@material-ui/core';
 import MinimizeIcon from '@material-ui/icons/Minimize';
-import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         fontSize: '1.1rem',
         fontWeight: 'bold',
+        maxWidth: '50%',
         marginBottom: '6rem',
         marginLeft: '6rem',
         [theme.breakpoints.down('md')]: {
@@ -40,6 +39,22 @@ const useStyles = makeStyles((theme) => ({
     cosmic: {
         color: '#00ffea',
     },
+    // portrait: {
+    //     position: 'relative',
+    //     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/portrait.png'})`,
+    //     backgroundColor: 'transparent',
+    //     backgroundBlendMode: 'multiply',
+    //     backgroundRepeat: 'no-repeat',
+    //     backgroundSize: '100%',
+    //     marginBottom: '5rem',
+    //     backgroundPosition: 'center 35%',
+    //     backgroundAttachment: 'local',
+    //     height: '50vh',
+    //     width: '30vw',
+    //     border: '1px solid #00ffea',
+    //     borderRadius: '3%',
+
+    // },
     bar: {
         color: '#00ffea',
         fontSize: '2.5rem',
@@ -65,6 +80,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     contact: {
+        position: 'relative',
+        bottom: -80,
         color: '#00ffea',
         textDecoration: 'none',
         fontSize: '2.5rem',
@@ -115,7 +132,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactMe() {
     const classes = useStyles();
-    const windowX = useWindowWidth().width;
 
     return (
         <div className={classes.root} id='contact-me'>
@@ -127,6 +143,7 @@ export default function ContactMe() {
                 affinity for the 
                 <span className={classes.cosmic}>_cosmic</span>
             </Typography>
+            {/* <div className={classes.portrait}></div> */}
             <Tooltip title="Let's connect" arrow>
                 <a target='_blank'
                     rel='noopener noreferrer'
@@ -134,9 +151,6 @@ export default function ContactMe() {
                     className={classes.contact}>
                         <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
                         contact 
-                        {(windowX <= 1024) && (
-                            <EmailOutlinedIcon className={classes.EmailOutlinedIcon}>email</EmailOutlinedIcon>
-                        )}
                 </a>
             </Tooltip>
         </div>

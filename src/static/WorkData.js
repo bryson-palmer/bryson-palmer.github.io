@@ -5,7 +5,7 @@ const WorkData = [
     {
         key: uuidv4(),
         title: "Progressing",
-        description: "A goal tracking app with a simple design for ease of use. We help you define your goal, break it down into milestones, and give you a dashboard of information to keep track of how you're prgessing. Using badges and alerts, we hope to give you more of an interactive feel.",
+        description: "A goal tracking app with a simple design for ease of use. We help you define your goal, break it down into milestones, and give you a dashboard of information to keep track of how you're progressing. Using badges and alerts, we try to give the user more of an interactive feel.",
         src: ["assets/progressing1.png", "assets/progressing2.png", "assets/progressing3.png"],
         url: "https://progressing-pod10.herokuapp.com/",
     },
