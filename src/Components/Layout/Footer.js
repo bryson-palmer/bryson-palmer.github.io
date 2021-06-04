@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         marginTop: '-0.8rem'
     },
+    email: {
+        paddingBottom: '0.7rem',
+        marginLeft: '-0.4rem'
+    },
     copyright: {
         color: '#fff',
         textAlign: "center",
@@ -107,13 +111,15 @@ export default function Footer() {
                 </div>
                 <div className={classes.icons}>
                     {(windowX.width <= 1024) && (
-                        <p >Email</p>
+                        <p className={classes.email}>Email</p>
                     )}
                     <Tooltip title='Eamil' arrow>
                         <a target='_blank'
                             rel='noopener noreferrer'
                             href='mailto:brysonpalmer@gmail.com'>
-                            <EmailOutlinedIcon className={classes.icon}/>
+                            <EmailOutlinedIcon className={classes.icon}
+                            style={{marginBottom: windowX.width <= 1024 ? '0.6rem' : 0}}
+                            />
                         </a>
                     </Tooltip>
                 </div>
