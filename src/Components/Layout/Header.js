@@ -20,26 +20,29 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
     },
-    outer: {
-        width: '30%',
-        borderTop: '1px solid #fff',
-        paddingTop: '18px',
-        margin: '0 auto',
-    },
-    middle: {
-        width: '34%',
-        borderTop: '1px solid #00ffea',
-        paddingTop: '20px',
-        margin: '0 auto',
-    },
-    inner: {
-        width: '39%',
-        borderTop: '1px solid #F6B2FF',
-        paddingTop: '10px',
-        margin: '0 auto',
-    },
     container: {
         textAlign: 'center',
+    },
+    outer: {
+        width: '9.5vw',
+        height: '2vh',
+        border: '3px solid #fff',
+        margin: '0rem auto',
+        transform: 'perspective(100px) rotateX(40deg)',
+    },
+    middle: {
+        width: '11.5vw',
+        height: '3vh',
+        border: '3px solid #00ffea',
+        margin: '0.2rem auto',
+        transform: 'perspective(100px) rotateX(35deg)',
+    },
+    inner: {
+        width: '15vw',
+        height: '5vh',
+        border: '5px solid #F6B2FF',
+        margin: '0.5rem auto',
+        transform: 'perspective(100px) rotateX(30deg)',
     },
     welcome: {
         width: '70vw',
@@ -47,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4.5rem',
         lineHeight: '5rem',
         display: 'block',
-        marginTop: '0rem',
-        marginBottom: '15rem',
+        marginTop: '-0.5rem',
+        marginBottom: '13rem',
         transform: 'perspective(100px) rotateX(20deg)',
         [theme.breakpoints.down('md')]: {
             fontSize: '4.5rem',
@@ -131,10 +134,10 @@ export default function Header() {
                         {... (checked ? { timeout: 4000 } : {})}
                         collapsedHeight={5}
                     >
+                        <div className={classes.container}>
                         <div className={classes.outer}></div>
                         <div className={classes.middle}></div>
                         <div className={classes.inner}></div>
-                        <div className={classes.container}>
                             <h1 className={classes.welcome}>
                                 Welcome to <br />
                                 My Portfolio
