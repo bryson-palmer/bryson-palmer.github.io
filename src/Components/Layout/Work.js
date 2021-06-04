@@ -296,6 +296,7 @@ const useStyles = makeStyles((theme) => ({
   imageTitle: {
     fontSize: '2.5rem',
     fontWeight: 'bolder',
+    fontFamily: 'Righteous, cursive',
     textAlign: 'center',
     lineHeight: '2.4rem',
     position: 'relative',

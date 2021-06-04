@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none',
         fontSize: '1.5rem',
         fontWeight: 'bolder',
+        fontFamily: 'Righteous, cursive',
         transition: 'all .5s ease-in-out',
         padding: '0 1rem !important',
         textAlign: 'right',

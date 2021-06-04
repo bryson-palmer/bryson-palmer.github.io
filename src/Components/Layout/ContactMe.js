@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         fontSize: '2rem',
         fontWeight: 'bold',
+        fontFamily: 'Righteous, cursive',
         maxWidth: '50%',
         alignSelf: 'flex-start',
         marginTop: '1rem',
@@ -70,54 +71,40 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/portrait.png'})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: '47vh',
-        backgroundPosition: 'center 100%',
+        backgroundPosition: 'center 110%',
         filter: 'drop-shadow(0px 0px 15px rgba(246, 178, 255, 0.5))',
         backgroundAttachment: 'fixed',
         height: '60vh',
         width: '100vw',
         zIndex: 0,
         [theme.breakpoints.down('md')]: {
-            // backgroundSize: '31vh',
             backgroundPosition: 'center 119%',
         },
         [theme.breakpoints.down('1023')]: {
-            // backgroundSize: '39vh',
             backgroundPosition: 'center 85%',
         },
-        [theme.breakpoints.down('xs')]: {
-            // backgroundSize: '42vh',
-            backgroundPosition: 'center 25%',
-        },
+        // [theme.breakpoints.down('xs')]: {
+        //     backgroundPosition: 'center 25%',
+        // },
         [theme.breakpoints.down('600')]: {
-            // backgroundSize: '42vh',
-            backgroundPosition: 'center 75%',
-        },
-        [theme.breakpoints.down('600')]: {
-            // backgroundSize: '42vh',
             backgroundPosition: 'center 75%',
         },
         [theme.breakpoints.down('541')]: {
-            // backgroundSize: '45vh',
             backgroundPosition: 'center 35%',
         },
         [theme.breakpoints.down('412')]: {
-            // backgroundSize: '45vh',
             backgroundPosition: 'center 45%',
         },
         [theme.breakpoints.down('376')]: {
-            // backgroundSize: '31vh',
-            backgroundPosition: 'center 65%',
+            backgroundPosition: 'center 45%',
         },
         [theme.breakpoints.down('361')]: {
-            // backgroundSize: '31vh',
             backgroundPosition: 'center 17%',
         },
         [theme.breakpoints.down('321')]: {
-            // backgroundSize: '31vh',
             backgroundPosition: 'center -10%',
         },
         [theme.breakpoints.down('281')]: {
-            // backgroundSize: '31vh',
             backgroundPosition: 'center 35%',
         },
     },
@@ -150,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none',
         fontSize: '2rem',
         fontWeight: 'bolder',
+        fontFamily: 'Righteous, cursive',
         alignSelf: 'flex-end',
         marginBottom: '3rem',
         marginRight: '6rem',
