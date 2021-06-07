@@ -399,15 +399,11 @@ export default function Work() {
             className={classes.backdrop}
             open={showTime}
             onClick={() => setShowTime(false)}
-            style={{
-              flexDirection: windowX > windowY ? 'row' : 'column'
-            }}
+            style={{flexDirection: windowX > windowY ? 'row' : 'column'}}
           >
             <p 
               className={classes.clockText}
-              style={{
-                marginRight: windowX > windowY && '1rem'
-              }}
+              style={{marginRight: windowX > windowY && '1rem'}}
             >
               Lik<MenuRoundedIcon className={classes.lilStack} />
               grabbing this clock here
@@ -453,9 +449,7 @@ export default function Work() {
               <span
                 className={classes.imageSrc}
                 alt={work.title}
-                style={{
-                  backgroundImage: `url(${work.src[0]})`,
-                }}
+                style={{backgroundImage: `url(${work.src[0]})`}}
               />
               <span className={classes.imageBackdrop} />
               <span className={classes.imageButton}>
@@ -509,9 +503,7 @@ export default function Work() {
                 <span
                   className={classes.imageSrc}
                   alt={work.title}
-                  style={{
-                    backgroundImage: `url(${work.src[0]})`,
-                  }}
+                  style={{backgroundImage: `url(${work.src[0]})`}}
                 />
                 <span className={classes.imageBackdrop} />
                 <span className={classes.imageButton}>

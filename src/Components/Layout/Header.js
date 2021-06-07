@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4.5rem',
         lineHeight: '5rem',
         display: 'block',
-        marginTop: '-0.5rem',
         marginBottom: '13rem',
         transform: 'perspective(100px) rotateX(20deg)',
         [theme.breakpoints.down('md')]: {
@@ -44,8 +43,13 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '3.5rem',
             lineHeight: '3.5rem'
         },
+        [theme.breakpoints.down('654')]: {
+            marginTop: '5rem',
+            fontSize: '2.5rem',
+            lineHeight: '2.5rem'
+        },
         [theme.breakpoints.down('600')]: {
-
+            marginTop: '0rem',
         },
         [theme.breakpoints.down('541')]: {
             fontSize: '2.5rem',
@@ -116,7 +120,8 @@ export default function Header() {
                         collapsedHeight={5}
                     >
                         <div className={classes.container}>
-                            <h1 className={classes.welcome}>
+                            <h1 className={classes.welcome}
+                                style={{marginBottom: windowX < 824 && '3rem'}}>
                                 Welcome to <br />
                                 My Portfolio
                             </h1>
