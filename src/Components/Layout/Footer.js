@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         lineHeight: '0.5rem',
         margin: '0 1rem',
+        [theme.breakpoints.down('281')]: {
+            margin: '0 auto',
+        }
     },
     icon: {
         color: '#fff',
