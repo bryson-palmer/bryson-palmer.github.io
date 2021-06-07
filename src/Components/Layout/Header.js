@@ -23,27 +23,6 @@ const useStyles = makeStyles((theme) => ({
     container: {
         textAlign: 'center',
     },
-    outer: {
-        width: '9.5vw',
-        height: '2vh',
-        border: '3px solid #fff',
-        margin: '0rem auto',
-        transform: 'perspective(100px) rotateX(40deg)',
-    },
-    middle: {
-        width: '11.5vw',
-        height: '3vh',
-        border: '3px solid #00ffea',
-        margin: '0.2rem auto',
-        transform: 'perspective(100px) rotateX(35deg)',
-    },
-    inner: {
-        width: '15vw',
-        height: '5vh',
-        border: '5px solid #F6B2FF',
-        margin: '0.5rem auto',
-        transform: 'perspective(100px) rotateX(30deg)',
-    },
     welcome: {
         width: '70vw',
         color: '#fff',
@@ -57,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '4.5rem',
             lineHeight: '4.5rem'
         },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '3.5rem',
-            lineHeight: '3.5rem'
-        },
+        // [theme.breakpoints.down('sm')]: {
+        //     fontSize: '3.5rem',
+        //     lineHeight: '3.5rem'
+        // },
         [theme.breakpoints.down('1023')]: {
             fontSize: '3.5rem',
             lineHeight: '3.5rem'
@@ -84,7 +63,9 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('321')]: {
             fontSize: '1.5rem',
-            lineHeight: '1.5rem'
+            lineHeight: '1.5rem',
+            marginTop: '-0.3rem',
+            transform: 'perspective(60px) rotateX(20deg)',
         },
         [theme.breakpoints.down('281')]: {
      
@@ -135,9 +116,6 @@ export default function Header() {
                         collapsedHeight={5}
                     >
                         <div className={classes.container}>
-                        <div className={classes.outer}></div>
-                        <div className={classes.middle}></div>
-                        <div className={classes.inner}></div>
                             <h1 className={classes.welcome}>
                                 Welcome to <br />
                                 My Portfolio
