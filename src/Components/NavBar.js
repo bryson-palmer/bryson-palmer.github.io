@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
     appbarPortfolio: {
         color: '#00ffea',
         textDecoration: 'none',
+        transition: 'all .5s ease-in-out',
+        '&:hover': {
+            textDecoration: 'none',
+            textShadow: '0 0 3px #fff',
+        },
         [theme.breakpoints.down('281')]: {
             fontSize: '0.9rem',
         },

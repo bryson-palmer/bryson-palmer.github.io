@@ -65,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
     arrowDown: {
         color: '#00ffea',
         fontSize: '4rem',
+        transition: 'all .5s ease-in-out',
+        '&:hover': {
+            filter: 'drop-shadow(0px 0px 2px #fff)',
+        },
     },
 }));
 
