@@ -35,10 +35,6 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '4.5rem',
             lineHeight: '4.5rem'
         },
-        // [theme.breakpoints.down('sm')]: {
-        //     fontSize: '3.5rem',
-        //     lineHeight: '3.5rem'
-        // },
         [theme.breakpoints.down('1023')]: {
             fontSize: '3.5rem',
             lineHeight: '3.5rem'
@@ -59,20 +55,11 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '2rem',
             lineHeight: '2rem'
         },
-        [theme.breakpoints.down('376')]: {
-       
-        },
-        [theme.breakpoints.down('361')]: {
-       
-        },
         [theme.breakpoints.down('321')]: {
             fontSize: '1.5rem',
             lineHeight: '1.5rem',
             marginTop: '-0.3rem',
             transform: 'perspective(60px) rotateX(20deg)',
-        },
-        [theme.breakpoints.down('281')]: {
-     
         },
     },
     arrowDown: {

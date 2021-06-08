@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('md')]: {
             width: '98.8%',
-            // height: '41vh',
-            // marginTop: '-0.7rem',
         },
         [theme.breakpoints.down('1025')]: {
             width: '98.5%',
@@ -45,9 +43,6 @@ const useStyles = makeStyles((theme) => ({
             height: '41vh',
             marginTop: '-0.4rem',
         },
-        // [theme.breakpoints.down('600')]: {
-        //    
-        // },
         [theme.breakpoints.down('541')]: {
             height: '41.2vh',
             marginTop: '-0.3rem',
@@ -91,8 +86,6 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('md')]: {
             width: '98.8%',
-            // height: '42.4vh',
-            // marginTop: '-0.6rem',
         },
         [theme.breakpoints.down('1025')]: {
             width: '98.5%',
@@ -104,9 +97,6 @@ const useStyles = makeStyles((theme) => ({
             height: '42.1vh',
             marginTop: '-0.4rem',
         },
-        // [theme.breakpoints.down('600')]: {
-        //
-        // },
         [theme.breakpoints.down('541')]: {
             width: '98.6%',
             height: '42.2vh',
@@ -174,9 +164,6 @@ const useStyles = makeStyles((theme) => ({
         height: '50vh',
         width: '100vw',
         zIndex: 0,
-        // [theme.breakpoints.down('md')]: {
-        //     backgroundPosition: 'center 119%',
-        // },
         [theme.breakpoints.down('1025')]: {
             backgroundPosition: 'center 25%',
             backgroundAttachment: 'local',
@@ -184,27 +171,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             backgroundPosition: 'center 27%',
         },
-        // [theme.breakpoints.down('600')]: {
-        //     backgroundPosition: 'center 75%',
-        // },
-        // [theme.breakpoints.down('541')]: {
-        //     backgroundPosition: 'center 35%',
-        // },
-        // [theme.breakpoints.down('412')]: {
-        //     backgroundPosition: 'center 45%',
-        // },
-        // [theme.breakpoints.down('376')]: {
-        //     backgroundPosition: 'center 45%',
-        // },
-        // [theme.breakpoints.down('361')]: {
-        //     backgroundPosition: 'center 17%',
-        // },
-        // [theme.breakpoints.down('321')]: {
-        //     backgroundPosition: 'center -10%',
-        // },
-        // [theme.breakpoints.down('281')]: {
-        //     backgroundPosition: 'center 35%',
-        // },
     },
     bar: {
         color: '#00ffea',
@@ -237,7 +203,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bolder',
         fontFamily: 'Righteous, cursive',
         alignSelf: 'flex-end',
-        marginBottom: '3rem',
+        marginBottom: '2rem',
         marginRight: '5rem',
         zIndex: 2,
         transition: 'all .5s ease-in-out',
@@ -248,25 +214,15 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.5rem', 
         },
         [theme.breakpoints.down('xs')]: {
-            // marginTop: '3rem',
             marginRight: '0.5rem',
         },
         [theme.breakpoints.down('415')]: {
             fontSize: '1.2rem',
-            // marginTop: '4rem',
             marginRight: '1rem',
-        },
-        [theme.breakpoints.down('376')]: {
-            // fontSize: '1.2rem',
-            // marginTop: '2rem',
-            // marginRight: '1rem',
         },
         [theme.breakpoints.down('321')]: {
             fontSize: '0.9rem',
           },
-        // [theme.breakpoints.down('281')]: {
-        //     fontSize: '0.9rem',
-        // },
     },
     EmailOutlinedIcon: {
         color: '#00ffea',
@@ -303,12 +259,11 @@ export default function ContactMe() {
                         className={classes.contactTitle}
                     >
                         Let's build the 
-                        <span className={classes.cosmic}>_future</span>
+                        <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
+                        <span className={classes.cosmic}>future</span>
                     </Typography>
                     <div 
-                        className={classes.portrait}
-                        style={{}}
-                    >
+                        className={classes.portrait}>
                     </div>
                     <Tooltip title="Let's connect" arrow>
                         <a target='_blank'
