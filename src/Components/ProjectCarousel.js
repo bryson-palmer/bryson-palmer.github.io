@@ -250,6 +250,8 @@ export default function ProjectCarousel({ handleClose, project }) {
     }, []);
 
     return (
+
+        // Fade in project modal
         <Fade in={activeHeader} timeout={1500}  >
             <div 
                 className={classes.root}
@@ -259,23 +261,23 @@ export default function ProjectCarousel({ handleClose, project }) {
                 }}
             >
             
+                {/* Close button for project modal */}
                 <Button 
                     className={classes.closeButton} 
                     onClick={handleClose}
-                    style={{
-                        left: // (windowY > windowX) && 
-                        (windowX <= 415) && '70%'}}
+                    style={{left: windowX <= 415 && '70%'}}
                 >
                     <CloseRoundedIcon className={classes.closeIcon} />
                 </Button>
 
+                {/* Carousel container */}
                 <div 
                     className={classes.itemsCarousel}
                     style={{
                         width: windowY > windowX && '85%',
                     }}
                 >
-
+                    {/* Carousel of project images */}
                     <ItemsCarousel
                         requestToChangeActive={setActiveItemIndex}
                         activeItemIndex={activeItemIndex}
@@ -295,6 +297,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                         outsideChevron={true}
                         chevronWidth={chevronWidth}
                     >
+                        {/* Mapping over images of project */}
                         {project.src.map(src => (
                             <img
                                 key={project.key}
@@ -306,6 +309,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                     </ItemsCarousel>
                 </div>
 
+                {/* Details container */}
                 <div 
                     className={classes.details} 
                     onClick={handleClose}
@@ -314,19 +318,33 @@ export default function ProjectCarousel({ handleClose, project }) {
                         height: windowY > windowX && '50%',
                     }}
                 >
+                    {/* Details */}
                     <h1 className={classes.title}>
                         {project.title}
                     </h1>
                     <p className={classes.text}>
                         {project.description}
                     </p>
-                    <Button
-                        className={classes.button}
-                        variant='outlined'
-                        onClick={() => window.open(project.url, '_blank')}
-                    >
-                        APP
-                    </Button>
+                    <p className={classes.text}>
+                        {project.concepts}
+                    </p>
+                    <div className={classes.buttonBox}>
+                        <Button
+                            className={classes.button}
+                            variant='outlined'
+                            onClick={() => window.open(project.url, '_blank')}
+                        >
+                            APP
+                        </Button>
+                        <Button
+                            className={classes.button}
+                            variant='outlined'
+                            onClick={() => window.open(project.git, '_blank')}
+                        >
+                            GITHUB
+                        </Button>
+                    </div>
+                    
                 </div>
             
             </div>

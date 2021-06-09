@@ -367,7 +367,7 @@ export default function Work() {
 
   return (
     <div className={classes.root} id='go-to-work'>
-
+      {/* Work header paragraph */}
       <Typography className={classes.workHeader}>
         <MinimizeIcon className={classes.bar} />
         WORK <br />
@@ -393,6 +393,8 @@ export default function Work() {
           I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
         </span>
       </Typography>
+
+      {/* Clock modal */}
       {showTime && (
         <div>
           <Backdrop
@@ -416,6 +418,8 @@ export default function Work() {
           </Backdrop>
         </div>
       )}
+
+      {/* MERN notification */}
       {showMern && (
         <div>
           <Snackbar
@@ -436,6 +440,8 @@ export default function Work() {
         </div>
       )}
 
+      {/* Work projects in a ternary conditional */}
+      {/* When the screen size is greater than 768px use a grid */}
       {windowX > 768 ?
         <div>
           {WorkData.map((work) => (
@@ -466,6 +472,7 @@ export default function Work() {
             </ButtonBase>
           ))}
           
+            {/* Project modal */}
             <Backdrop
               className={classes.backdrop}
               open={handleOpen}
@@ -480,6 +487,8 @@ export default function Work() {
           
         </div>
         :
+
+        // For screen sizes 768px and smaller use a carousel
         <div className={classes.itemsCarousel} style={{ padding: 0}}>
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
@@ -520,6 +529,8 @@ export default function Work() {
               </ButtonBase>
             ))}
           </ItemsCarousel>
+
+          {/* Project modal */}
           {handleOpen && (
             <Backdrop
               className={classes.backdrop}
