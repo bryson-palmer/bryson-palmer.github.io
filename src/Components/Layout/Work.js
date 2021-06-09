@@ -110,6 +110,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.5rem',
     marginLeft: '0.5rem',
     color: '#00ffea',
+    transition: 'all .5s ease-in-out',
+    '&:hover': {
+      filter: 'drop-shadow(0px 0px 1px #fff)',
+  },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -123,17 +127,16 @@ const useStyles = makeStyles((theme) => ({
   [theme.breakpoints.down('xs')]: {
     lineHeight: '0',
   },
-  interactive: {
+  dynamic: {
     color: '#00ffea',
     fontWeight: 'normal',
     fontSize: '1.5rem',
     margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
     '&:hover': {
-      fontSize: '120%',
+      textDecoration: 'none',
       textShadow: '0 0 3px #fff',
-      marginBottom: '0.2rem',
-    },
+  },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -145,12 +148,17 @@ const useStyles = makeStyles((theme) => ({
       margin: '0 0.4rem 0.10rem 0.4rem',
     },
   },
-  dynamic: {
+  interactive: {
     color: '#00ffea',
     fontWeight: 'normal',
     fontSize: '1.5rem',
     margin: '0 0.4rem 0.25rem 0.4rem',
     transition: 'all .5s ease-in-out',
+    '&:hover': {
+      textDecoration: 'none',
+      textShadow: '0 0 3px #fff',
+      marginBottom: '0.2rem',
+    },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -382,12 +390,12 @@ export default function Work() {
             </ButtonBase>
           </span> <br />
           I'm able to build
-          <ButtonBase className={classes.interactive}>interactive </ButtonBase>
+          <ButtonBase className={classes.dynamic}>dynamic </ButtonBase>
           and
           <ButtonBase
-            className={classes.dynamic}
+            className={classes.interactive}
             onClick={() => setShowTime(true)} >
-            {' '} dynamic </ButtonBase>
+            {' '} interactive </ButtonBase>
           web sites and web applications.
           I'm at home in the creative process whether it's engineering or styling software.
           I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
