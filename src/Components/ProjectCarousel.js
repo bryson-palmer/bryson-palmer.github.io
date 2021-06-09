@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-        padding: '0rem 40px',
+        // padding: '0rem 40px',
         [theme.breakpoints.down('lg')]: {
             height: '67%',
         },
@@ -96,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
     itemsCarousel: {
         width: '55%',
         marginTop: '-4rem',
+        padding: '0rem 40px',
         [theme.breakpoints.down('lg')]: {
             width: '45%',
             paddingBottom: '5rem',
@@ -205,6 +206,49 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '0.6rem',
         },
     },
+    bar: {
+        color: '#00ffea',
+        fontSize: '1.8rem',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '1.2rem',
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: '0.9rem',
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.7rem',
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.6rem',
+        },
+    },
+    concept: {
+        color: '#FFF',
+        fontWeight: 'bolder',
+        fontSize: '1.9rem',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '1.3rem',
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: '1rem',
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.8rem',
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.7rem',
+        },
+    },
+    techIcons: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: '2rem 0',
+    },
+    techIcon: {
+        width: '13%',
+        margin: '0 0.3rem',
+    },
     button: {
         width: '180px',
         color: '#00ffea',
@@ -257,7 +301,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                 className={classes.root}
                 style={{
                     flexDirection: windowY > windowX && 'column-reverse',
-                    justifyContent: windowY > windowX && 'center'
+                    justifyContent: windowY > windowX && 'space-around'
                 }}
             >
             
@@ -319,15 +363,35 @@ export default function ProjectCarousel({ handleClose, project }) {
                     }}
                 >
                     {/* Details */}
+                    
+                    {/* Title */}
                     <h1 className={classes.title}>
                         {project.title}
                     </h1>
+                    {/* Description */}
                     <p className={classes.text}>
-                        {project.description}
-                    </p>
-                    <p className={classes.text}>
+                        {project.description} <br />
+                        <span className={classes.bar}> | </span>
+                        <span className={classes.concept}> Concepts </span>  
+                        <span className={classes.bar}> | </span>
                         {project.concepts}
                     </p>
+                    {/* Concepts
+                    <p className={classes.text}>
+                        {project.concepts}
+                    </p> */}
+                    {/* Tech */}
+                    <div className={classes.techIcons}>
+                        {project.tech.map(tech => (
+                            <img
+                                key={project.key}
+                                className={classes.techIcon}
+                                src={tech}
+                                alt={project.title}
+                            />
+                        ))}
+                    </div>
+                    {/* Buttons */}
                     <div className={classes.buttonBox}>
                         <Button
                             className={classes.button}
