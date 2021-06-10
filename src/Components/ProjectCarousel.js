@@ -186,7 +186,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     text: {
-        color: '#FFF',
+        color: '#fff',
         fontSize: '1.8rem',
         lineHeight: '3rem',
         [theme.breakpoints.down('lg')]: {
@@ -204,39 +204,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             lineHeight: '1.2rem',
             fontSize: '0.6rem',
-        },
-    },
-    bar: {
-        color: '#00ffea',
-        fontSize: '1.8rem',
-        [theme.breakpoints.down('lg')]: {
-            fontSize: '1.2rem',
-        },
-        [theme.breakpoints.down('md')]: {
-            fontSize: '0.9rem',
-        },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.7rem',
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '0.6rem',
-        },
-    },
-    concept: {
-        color: '#FFF',
-        fontWeight: 'bolder',
-        fontSize: '1.9rem',
-        [theme.breakpoints.down('lg')]: {
-            fontSize: '1.3rem',
-        },
-        [theme.breakpoints.down('md')]: {
-            fontSize: '1rem',
-        },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.8rem',
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '0.7rem',
         },
     },
     techIcons: {

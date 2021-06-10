@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Fade } from '@material-ui/core';
+import { Fade, Collapse } from '@material-ui/core';
 import VizSensor from 'react-visibility-sensor';
 import NavBar from '../Components/NavBar';
 import AboutMe from '../Components/AboutMe';
@@ -12,17 +12,12 @@ import useWindowWidth from '../hook/useWindowWidth';
 
 const useStyles = makeStyles(() => ({
   root: {
-    position: 'relative',
     minHeight: '100vh',
     minWidth: '100vw',
-    overflow: 'hidden',
-    marginBottom: '500px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignContent: 'center',
     background: '#1c1c1c',
-    backgroundSize: 'cover',
+    fontFamily: 'Righteous, cursive',
 },
 
   // iframe: {
@@ -37,13 +32,8 @@ const useStyles = makeStyles(() => ({
   //   top: 0
   // },
   content: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     minHeight: '100vh',
     minWidth: '100vw',
-    color: '#fff',
-    fontFamily: 'Righteous, cursive',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/milkyway.jpg'})`,
     backgroundBlendMode: 'multiply',
     backgroundRepeat: 'no-repeat',
@@ -106,11 +96,19 @@ export default function About() {
             className={classes.content} 
             style={{backgroundColor: checked ? '#F6B2FF' : '#1c1c1c'}}
             id='header'>
-            <AboutMe />
+
+            <NavBar />
+
+            <Collapse
+              in={checked}
+              {... (checked ? { timeout: 4000 } : {})}
+              collapsedHeight={0}
+            >
+              <AboutMe />
+            </Collapse>
           </div>
         </Fade>
       </VizSensor>
-      <NavBar />
       <ContactMe />
       <Footer />
     </div>
