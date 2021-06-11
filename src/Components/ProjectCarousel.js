@@ -95,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
     },
     itemsCarousel: {
         width: '55%',
-        marginTop: '-4rem',
         padding: '0rem 40px',
         [theme.breakpoints.down('lg')]: {
             width: '45%',
@@ -285,7 +284,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                 <div 
                     className={classes.itemsCarousel}
                     style={{
-                        width: windowY > windowX && '85%',
+                        width: windowY > windowX && '75%',
                     }}
                 >
                     {/* Carousel of project images */}
@@ -327,6 +326,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                     style={{
                         width: windowY > windowX && '90%',
                         height: windowY > windowX && '50%',
+                        marginBottom: windowY > windowX && '4rem',
                     }}
                 >
                     {/* Details */}

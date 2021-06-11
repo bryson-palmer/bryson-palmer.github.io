@@ -71,8 +71,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     inner: {
-        display: 'flex',
-        justifyContent: 'space-between',
+        position: 'relative',
         width: '99.4%',
         height: '41.7vh',
         border: '1px solid #F6B2FF',
@@ -129,17 +128,18 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2rem',
         fontWeight: 'bold',
         fontFamily: 'Righteous, cursive',
-        maxWidth: '50%',
-        alignSelf: 'flex-start',
-        marginTop: '1rem',
-        marginLeft: '4rem',
+        position: 'absolute',
+        top: '5%',
+        right: '0%',
+        bottom: '0%',
+        left: '7%',
         zIndex: 2,
         [theme.breakpoints.down('md')]: {
-            fontSize: '1.5rem', 
+            left: '4%',
         },
         [theme.breakpoints.down('xs')]: {
-            maxWidth: '40%',
-            marginLeft: '1.5rem',
+ 
+            fontSize: '1.5rem',
         },
         [theme.breakpoints.down('415')]: {
             fontSize: '1.2rem',
@@ -153,23 +153,43 @@ const useStyles = makeStyles((theme) => ({
     },
     portrait: {
         position: 'absolute',
-        top: 0,
+        top: 20,
         right: 0,
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/portrait.png'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/profileB.png'})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '47vh',
-        backgroundPosition: 'center 115%',
-        filter: 'drop-shadow(0px 0px 15px rgba(246, 178, 255, 0.5))',
+        backgroundSize: '30vh',
+        backgroundPosition: 'center 57%',
+        filter: 'drop-shadow(2px -2px 2px rgba(246, 178, 255, 0.5 ))', // rgb(0, 255, 234, 0.7) 
         backgroundAttachment: 'fixed',
-        height: '50vh',
-        width: '100vw',
+        height: '39.6vh',
+        width: '93.5vw',
         zIndex: 0,
+        [theme.breakpoints.down('lg')]: {
+             height: '39.6vh',
+             top: 14,
+        },
+        [theme.breakpoints.down('md')]: {
+
+        },
         [theme.breakpoints.down('1025')]: {
-            backgroundPosition: 'center 25%',
+            backgroundPosition: 'center 60%',
             backgroundAttachment: 'local',
+            height: '40vh',
+            backgroundSize: '28vh',
         },
         [theme.breakpoints.down('sm')]: {
-            backgroundPosition: 'center 27%',
+            backgroundPosition: 'center -100%',
+            height: '39.9vh',
+            backgroundSize: '27vh',
+            top: 9,
+        },
+        [theme.breakpoints.down('xs')]: {
+            backgroundPosition: 'center 200%',
+            backgroundSize: '26vh',
+            top: 7,
+        },
+        [theme.breakpoints.down('321')]: {
+            top: 6,
         },
     },
     bar: {
@@ -202,23 +222,35 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2rem',
         fontWeight: 'bolder',
         fontFamily: 'Righteous, cursive',
-        alignSelf: 'flex-end',
-        marginBottom: '2rem',
-        marginRight: '5rem',
+        position: 'absolute',
+        top: '85%',
+        right: '0%',
+        bottom: '0%',
+        left: '93%',
         zIndex: 2,
         transition: 'all .5s ease-in-out',
         '&:hover': {
             textShadow: '0 0 3px #fff',
         },
+        [theme.breakpoints.down('xl')]: {
+            left: '90%',
+        },
+        [theme.breakpoints.down('lg')]: {
+            left: '85%',
+        },
         [theme.breakpoints.down('md')]: {
-            fontSize: '1.5rem', 
+            left: '80%',
+        },
+        [theme.breakpoints.down('sm')]: {
+            left: '70%',
         },
         [theme.breakpoints.down('xs')]: {
-            marginRight: '0.5rem',
+            // left: '70%',
+            fontSize: '1.5rem',
         },
         [theme.breakpoints.down('415')]: {
             fontSize: '1.2rem',
-            marginRight: '1rem',
+            left: '65%',
         },
         [theme.breakpoints.down('321')]: {
             fontSize: '0.9rem',
