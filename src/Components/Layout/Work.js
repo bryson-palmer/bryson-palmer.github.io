@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonBase, Backdrop, Snackbar }
+import { Typography, ButtonBase, Backdrop, Snackbar, Collapse }
   from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
@@ -298,6 +298,35 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+  backgroundInfo: {
+    position: 'absolute',
+    left: 2,
+    right: 2,
+    top: '40%',
+    bottom: 2,
+    color: '#fff',
+    fontWeight: 'normal',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    background: 'rgba(2, 2, 2, 0.8)',
+    borderRadius: '0 0 8px 8px',
+    padding: '1rem',
+  },
+  role: {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    marginBottom: '0.5rem',
+  },
+  responsibilities: {
+    fontSize: '1rem',
+    textAlign: 'justify',
+    marginBottom: '0.5rem',
+  },
+  details: {
+    fontSize: '0.8rem',
+  },
   imageBackdrop: {
     position: 'absolute',
     left: 0,
@@ -548,6 +577,11 @@ export default function Work() {
                 alt={work.title}
                 style={{ backgroundImage: `url(${work.src[0]})` }}
               />
+              <span className={classes.backgroundInfo} >
+                <span className={classes.role}>{work.role}</span> 
+                <span className={classes.responsibilities}>{work.responsibilities}</span> 
+                <span className={classes.details}>{work.details} </span>
+              </span>
               <span className={classes.imageBackdrop} />
               <span className={classes.imageButton}>
                 <Typography
