@@ -60,7 +60,7 @@ function Copyright() {
         {new Date().getFullYear()}
         {' '}
         <span className={classes.color}>|</span>
-        {' Bryson Palmer '}
+        {' brysonpalmer@gmail.com '}
         <span className={classes.color}>|</span>
         {' Full-Stack '}
         <span className={classes.color}>|</span>

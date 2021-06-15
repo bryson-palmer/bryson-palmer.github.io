@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     transition: 'all .5s ease-in-out',
     '&:hover': {
       filter: 'drop-shadow(0px 0px 1px #fff)',
-  },
+    },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
       textShadow: '0 0 3px #fff',
-  },
+    },
     [theme.breakpoints.down('768')]: {
       fontSize: '1.3rem',
     },
@@ -351,7 +351,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
       textShadow: '0 0 3px #fff',
-  },
+    },
     [theme.breakpoints.down('sm')]: {
       fontSize: '2.5rem',
       height: 260,
@@ -384,7 +384,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       textDecoration: 'none',
       textShadow: '0 0 3px #fff',
-  },
+    },
     [theme.breakpoints.down('sm')]: {
       fontSize: '2.5rem',
       height: 260,
@@ -492,11 +492,11 @@ export default function Work() {
             className={classes.backdrop}
             open={showTime}
             onClick={() => setShowTime(false)}
-            style={{flexDirection: windowX > windowY ? 'row' : 'column'}}
+            style={{ flexDirection: windowX > windowY ? 'row' : 'column' }}
           >
-            <p 
+            <p
               className={classes.clockText}
-              style={{marginRight: windowX > windowY && '1rem'}}
+              style={{ marginRight: windowX > windowY && '1rem' }}
             >
               Lik<MenuRoundedIcon className={classes.lilStack} />
               grabbing this clock here
@@ -546,7 +546,7 @@ export default function Work() {
               <span
                 className={classes.imageSrc}
                 alt={work.title}
-                style={{backgroundImage: `url(${work.src[0]})`}}
+                style={{ backgroundImage: `url(${work.src[0]})` }}
               />
               <span className={classes.imageBackdrop} />
               <span className={classes.imageButton}>
@@ -562,29 +562,29 @@ export default function Work() {
               </span>
             </ButtonBase>
           ))}
-          
-            {/* Project modal */}
-            <Backdrop
-              className={classes.backdrop}
-              open={handleOpen}
-            >
-              {handleOpen && (
+
+          {/* Project modal */}
+          <Backdrop
+            className={classes.backdrop}
+            open={handleOpen}
+          >
+            {handleOpen && (
               <ProjectCarousel
                 handleClose={handleClose}
                 project={project}
               />
-              )}
-            </Backdrop>
-          
+            )}
+          </Backdrop>
+
         </div>
         :
 
         // For screen sizes 768px and smaller use a carousel
-        <div className={classes.itemsCarousel} style={{ padding: 0}}>
+        <div className={classes.itemsCarousel} style={{ padding: 0 }}>
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
-            numberOfCards={1} 
+            numberOfCards={1}
             gutter={(windowX > 767 && 63) || (windowX > 539 && 40) || (windowX > 410 && 30.5) || (windowX > 389 && 27) || (windowX > 361 && 31.5) || (windowX > 321 && 28) || (windowX > 300 && 25) || (windowX < 300 && 15)}
             infiniteLoop={true}
             outsideChevron={false}
@@ -605,7 +605,7 @@ export default function Work() {
                 <span
                   className={classes.imageSrc}
                   alt={work.title}
-                  style={{backgroundImage: `url(${work.src[0]})`}}
+                  style={{ backgroundImage: `url(${work.src[0]})` }}
                 />
                 <span className={classes.imageBackdrop} />
                 <span className={classes.imageButton}>
