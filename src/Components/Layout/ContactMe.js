@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Tooltip } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import MinimizeIcon from '@material-ui/icons/Minimize';
+import useWindowWidth from '../../hook/useWindowWidth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -123,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
             height: '42.4vh',
         },
     },
-    contactTitle: {
+    title: {
         color: '#fff',
         fontSize: '2rem',
         fontWeight: 'bold',
@@ -151,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
     cosmic: {
         color: '#00ffea',
     },
-    portrait: {
+    profileB: {
         position: 'absolute',
         top: 20,
         right: 0,
@@ -178,7 +179,13 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: '28vh',
         },
         [theme.breakpoints.down('sm')]: {
-            backgroundPosition: 'center -100%',
+            backgroundPosition: 'center 250%',
+            height: '39.9vh',
+            backgroundSize: '27vh',
+            top: 9,
+        },
+        [theme.breakpoints.down('770')]: {
+            backgroundPosition: 'center 160%',
             height: '39.9vh',
             backgroundSize: '27vh',
             top: 9,
@@ -187,6 +194,9 @@ const useStyles = makeStyles((theme) => ({
             backgroundPosition: 'center 200%',
             backgroundSize: '26vh',
             top: 7,
+        },
+        [theme.breakpoints.down('541')]: {
+            backgroundPosition: 'center 84%',
         },
         [theme.breakpoints.down('321')]: {
             top: 6,
@@ -216,96 +226,49 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '-0.25rem',
         },
     },
-    contact: {
-        color: '#00ffea',
-        textDecoration: 'none',
-        fontSize: '2rem',
-        fontWeight: 'bolder',
-        fontFamily: 'Righteous, cursive',
-        position: 'absolute',
-        top: '85%',
-        right: '0%',
-        bottom: '0%',
-        left: '93%',
-        zIndex: 2,
-        transition: 'all .5s ease-in-out',
-        '&:hover': {
-            textShadow: '0 0 3px #fff',
-        },
-        [theme.breakpoints.down('xl')]: {
-            left: '90%',
-        },
-        [theme.breakpoints.down('lg')]: {
-            left: '85%',
-        },
-        [theme.breakpoints.down('md')]: {
-            left: '80%',
-        },
-        [theme.breakpoints.down('sm')]: {
-            left: '70%',
-        },
-        [theme.breakpoints.down('xs')]: {
-            // left: '70%',
-            fontSize: '1.5rem',
-        },
-        [theme.breakpoints.down('415')]: {
-            fontSize: '1.2rem',
-            left: '65%',
-        },
-        [theme.breakpoints.down('321')]: {
-            fontSize: '0.9rem',
-          },
-    },
-    EmailOutlinedIcon: {
-        color: '#00ffea',
-        fontSize: '1.4rem',
-        fontWeight: 'normal',
-        marginBottom: '0.6rem',
-        marginLeft: '0.2rem',
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '1rem',
-            marginLeft: '0.1rem',
-            marginBottom: '0.5rem',
-        },
-        [theme.breakpoints.down('415')]: {
-            fontSize: '0.9rem',
-            marginBottom: '0.3rem',
-        },
-        [theme.breakpoints.down('321')]: {
-            fontSize: '0.8rem',
-        },
-        [theme.breakpoints.down('281')]: {
-            marginBottom: '0.1rem',
-        },
-    },
+    
 }));
 
 export default function ContactMe() {
     const classes = useStyles();
+    const windowY = useWindowWidth().height;
+    const windowX = useWindowWidth().width;
 
     return (
         <div className={classes.root} id='contact-me'>
             <div className={classes.middle}>
                 <div className={classes.inner}>
                     <Typography
-                        className={classes.contactTitle}
+                        className={classes.title}
+                        style={{
+                            fontSize: 
+                                windowX > windowY && 
+                                windowX < 850 && '1.2rem',
+                            top:
+                                windowX > windowY &&
+                                windowX < 850 && '15%'
+                        }}
                     >
                         Let's build the 
-                        <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
+                        <MinimizeIcon 
+                            className={classes.bar} 
+                            style={{
+                                fontSize: 
+                                    windowX > windowY &&
+                                    windowX < 850 && '1.2rem',
+                                marginBottom:
+                                    windowX > windowY &&
+                                    windowX < 850 && '-0.16rem',
+                                marginRight:
+                                    windowX > windowY &&
+                                    windowX < 850 && '-0.4rem'
+                            }}
+                        >_</MinimizeIcon>
                         <span className={classes.cosmic}>future</span>
                     </Typography>
                     <div 
-                        className={classes.portrait}>
+                        className={classes.profileB}>
                     </div>
-                    <Tooltip title="Let's connect" arrow>
-                        <a target='_blank'
-                            rel='noopener noreferrer'
-                            href='mailto:brysonpalmer@gmail.com'
-                            className={classes.contact}>
-                            <MinimizeIcon className={classes.bar} >_</MinimizeIcon>
-                            contact 
-                        </a>
-                    </Tooltip>
                 </div>
             </div>
         </div>

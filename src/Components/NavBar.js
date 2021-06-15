@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: '-0.1rem',
         },
         [theme.breakpoints.down('281')]: {
-            marginBottom: '-0.2rem',
+            // marginBottom: '-0.1rem',
         },
     },
 }));
@@ -125,8 +125,13 @@ export default function NavBar() {
                             >
                                 <MinimizeIcon 
                                     className={classes.bar} 
-                                    style={{ marginRight: windowX > 470 ? '-0.37rem': '-0.25rem',
-                                        marginBottom: windowX > 470 ? '0.1rem': '-0.1rem'}} />
+                                    style={{ 
+                                        marginRight: 
+                                            windowX > 281 ? '-0.22rem': '-0.24rem',
+                                        marginBottom: 
+                                            windowX > 281 ? '-0.05rem': '0.2rem'
+                                    }} 
+                                />
                                     contact
                         </IconButton>
                     </Scroll>
