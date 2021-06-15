@@ -185,6 +185,9 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: '27vh',
             top: 9,
         },
+        [theme.breakpoints.down('845')]: {
+            height: '39vh',
+        },
         [theme.breakpoints.down('824')]: {
             height: '39.6vh',
         },
