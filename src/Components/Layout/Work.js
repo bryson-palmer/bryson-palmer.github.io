@@ -215,7 +215,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   detailsLabel: {
+    color: '#fff',
     fontSize: '2rem',
+    margin: '5rem 0 -1rem',
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.5rem'
     },
@@ -448,38 +450,40 @@ export default function Work() {
   return (
     <div className={classes.root} id='go-to-work'>
       {/* Work header paragraph */}
-      <Typography className={classes.workHeader}>
-        <MinimizeIcon className={classes.bar} />
-        WORK <br />
-        <span className={classes.text}>As a
-          <span className={classes.textSpecial}
-          > MERN {' '}
-            <MenuRoundedIcon className={classes.stack} />
-            {' '} Full-Stack developer
+      <header>
+        <Typography className={classes.workHeader}>
+          <MinimizeIcon className={classes.bar} />
+          WORK <br />
+          <span className={classes.text}>As a
+            <span className={classes.textSpecial}
+            > MERN {' '}
+              <MenuRoundedIcon className={classes.stack} />
+              {' '} Full-Stack developer
+              <ButtonBase
+                onClick={() => setShowMern(true)}>
+                <InfoIcon className={classes.infoIcon} />
+              </ButtonBase>
+            </span> <br />
+            I'm able to build
+            <ButtonBase className={classes.dynamic}>dynamic </ButtonBase>
+            and
             <ButtonBase
-              onClick={() => setShowMern(true)}>
-              <InfoIcon className={classes.infoIcon} />
-            </ButtonBase>
-          </span> <br />
-          I'm able to build
-          <ButtonBase className={classes.dynamic}>dynamic </ButtonBase>
-          and
-          <ButtonBase
-            className={classes.interactive}
-            onClick={() => setShowTime(true)} >
-            {' '} interactive </ButtonBase>
-          web sites and web applications.
-          I'm at home in the creative process whether it's engineering or styling software.
-          I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
-        </span>
-        <br />
-        <br />
-        <span className={classes.detailsLabel}
-          // style={{fontSize: '2rem'}}
-        >
+              className={classes.interactive}
+              onClick={() => setShowTime(true)} >
+              {' '} interactive </ButtonBase>
+            web sites and web applications.
+            I'm at home in the creative process whether it's engineering or styling software.
+            I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
+          </span>
+
+        </Typography>
+
+        <Typography>
+          <span className={classes.detailsLabel}>
             Click on a project for details
-        </span>
-      </Typography>
+          </span>
+        </Typography>
+      </header>
 
       {/* Clock modal */}
       {showTime && (
@@ -581,7 +585,7 @@ export default function Work() {
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={1} 
-            gutter={(windowX > 767 && 63) || (windowX > 539 && 40) || (windowX > 410 && 30.5) || (windowX > 361 && 31.5) || (windowX > 321 && 28) || (windowX > 300 && 25) || (windowX < 300 && 15)}
+            gutter={(windowX > 767 && 63) || (windowX > 539 && 40) || (windowX > 410 && 30.5) || (windowX > 389 && 27) || (windowX > 361 && 31.5) || (windowX > 321 && 28) || (windowX > 300 && 25) || (windowX < 300 && 15)}
             infiniteLoop={true}
             outsideChevron={false}
             chevronWidth={25}
