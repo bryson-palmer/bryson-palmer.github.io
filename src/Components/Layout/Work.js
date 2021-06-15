@@ -337,13 +337,62 @@ const useStyles = makeStyles((theme) => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
-  chevron: {
+  chevronLeft: {
+    height: 350,
+    width: 30,
     color: '#00ffea',
     fontSize: '4rem',
-    backgroundColor: 'transparent !important',
-    border: 'none !important',
+    backgroundColor: 'rgba(28, 28, 28, 0.5)',
+    border: 'none',
+    borderRadius: '0 8px 8px 0',
+    padding: 0,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+      height: 260,
+    },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '2rem !important',
+      height: 240,
+    },
+    [theme.breakpoints.down('445')]: {
+      height: 240,
+    },
+    [theme.breakpoints.down('376')]: {
+      height: 240,
+    },
+    [theme.breakpoints.down('321')]: {
+      height: 200,
+    },
+    [theme.breakpoints.down('281')]: {
+      fontSize: '1.5rem',
+    },
+  },
+  chevronRight: {
+    height: 350,
+    width: 30,
+    color: '#00ffea',
+    fontSize: '4rem',
+    backgroundColor: 'rgba(28, 28, 28, 0.5)',
+    border: 'none',
+    borderRadius: '8px 0 0 8px',
+    padding: 0,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+      height: 260,
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: 240,
+    },
+    [theme.breakpoints.down('445')]: {
+      height: 240,
+    },
+    [theme.breakpoints.down('376')]: {
+      height: 240,
+    },
+    [theme.breakpoints.down('321')]: {
+      height: 200,
+    },
+    [theme.breakpoints.down('281')]: {
+      fontSize: '1.5rem',
     },
   },
 }));
@@ -524,12 +573,14 @@ export default function Work() {
             requestToChangeActive={setActiveItemIndex}
             activeItemIndex={activeItemIndex}
             numberOfCards={1} 
-            gutter={(windowX > 767 && 98) || (windowX > 539 && 58) || (windowX > 410 && 40) || (windowX > 361 && 30) || (windowX > 321 && 35) || (windowX > 300 && 28) || (windowX < 300 && 15)}
+            gutter={(windowX > 767 && 63) || (windowX > 539 && 40) || (windowX > 410 && 30.5) || (windowX > 361 && 31.5) || (windowX > 321 && 28) || (windowX > 300 && 25) || (windowX < 300 && 15)}
             infiniteLoop={true}
             outsideChevron={false}
-            chevronWidth={0}
+            chevronWidth={25}
             showSlither={true}
             firstAndLastGutter={true}
+            leftChevron={<button className={classes.chevronLeft}>{'<'}</button>}
+            rightChevron={<button className={classes.chevronRight}>{'>'}</button>}
           >
             {WorkData.map((work) => (
               <ButtonBase
