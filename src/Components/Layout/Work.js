@@ -214,6 +214,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('361')]: {
     },
   },
+  detailsLabel: {
+    fontSize: '2rem',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.5rem'
+    },
+    [theme.breakpoints.down('415')]: {
+      fontSize: '1.3rem'
+    },
+    [theme.breakpoints.down('415')]: {
+      fontSize: '1.3rem'
+    },
+    [theme.breakpoints.down('281')]: {
+      fontSize: '1.1rem'
+    },
+  },
   image: {
     position: 'relative',
     margin: theme.spacing(1.5),
@@ -399,6 +414,13 @@ export default function Work() {
           web sites and web applications.
           I'm at home in the creative process whether it's engineering or styling software.
           I'm full of inspiration and creative drive. Let's build the<span className={classes.future}> future</span>.
+        </span>
+        <br />
+        <br />
+        <span className={classes.detailsLabel}
+          // style={{fontSize: '2rem'}}
+        >
+            Click on a project for details
         </span>
       </Typography>
 
