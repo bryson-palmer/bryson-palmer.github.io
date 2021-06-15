@@ -346,6 +346,10 @@ const useStyles = makeStyles((theme) => ({
     border: 'none',
     borderRadius: '0 8px 8px 0',
     padding: 0,
+    '&:hover': {
+      textDecoration: 'none',
+      textShadow: '0 0 3px #fff',
+  },
     [theme.breakpoints.down('sm')]: {
       fontSize: '2.5rem',
       height: 260,
@@ -375,6 +379,10 @@ const useStyles = makeStyles((theme) => ({
     border: 'none',
     borderRadius: '8px 0 0 8px',
     padding: 0,
+    '&:hover': {
+      textDecoration: 'none',
+      textShadow: '0 0 3px #fff',
+  },
     [theme.breakpoints.down('sm')]: {
       fontSize: '2.5rem',
       height: 260,
