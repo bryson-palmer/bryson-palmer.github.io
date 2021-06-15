@@ -166,11 +166,12 @@ const useStyles = makeStyles((theme) => ({
         width: '93.5vw',
         zIndex: 0,
         [theme.breakpoints.down('lg')]: {
-             height: '39.6vh',
-             top: 14,
+            backgroundPosition: 'center 60%',
+            height: '39.6vh',
+            top: 14,
         },
         [theme.breakpoints.down('md')]: {
-
+           
         },
         [theme.breakpoints.down('1025')]: {
             backgroundPosition: 'center 60%',
@@ -179,24 +180,54 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: '28vh',
         },
         [theme.breakpoints.down('sm')]: {
-            backgroundPosition: 'center 250%',
+            backgroundPosition: 'center 0%',
             height: '39.9vh',
             backgroundSize: '27vh',
             top: 9,
         },
+        [theme.breakpoints.down('824')]: {
+            height: '39.6vh',
+        },
+        [theme.breakpoints.down('813')]: {
+            height: '39vh',
+        },
         [theme.breakpoints.down('770')]: {
-            backgroundPosition: 'center 160%',
+            backgroundPosition: 'center 10%',
             height: '39.9vh',
             backgroundSize: '27vh',
             top: 9,
+        },
+        [theme.breakpoints.down('737')]: {
+            backgroundPosition: 'center 50%',
+            height: '39.3vh',
+            backgroundSize: '27vh',
+            top: 9,
+        },
+        [theme.breakpoints.down('721')]: {
+            height: '39.9vh',
+        },
+        [theme.breakpoints.down('668')]: {
+            height: '39.1vh',
+        },
+        [theme.breakpoints.down('654')]: {
+            height: '38vh',
+        },
+        [theme.breakpoints.down('641')]: {
+            height: '38.7vh',
         },
         [theme.breakpoints.down('xs')]: {
             backgroundPosition: 'center 200%',
+            height: '39.3vh',
             backgroundSize: '26vh',
             top: 7,
         },
         [theme.breakpoints.down('541')]: {
-            backgroundPosition: 'center 84%',
+            // backgroundPosition: 'center 84%',
+            height: '39.9vh',
+        },
+        [theme.breakpoints.down('415')]: {
+            backgroundPosition: 'center 200%',
+            height: '39.7vh',
         },
         [theme.breakpoints.down('321')]: {
             top: 6,
