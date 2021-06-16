@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
-import './index.css';
+// import './index.css';
 import App from './App';
-import theme from './theme';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider>
     <App />
   </ThemeProvider>,
   document.querySelector('#root'),
