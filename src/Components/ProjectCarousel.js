@@ -304,7 +304,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                 <div
                     className={classes.itemsCarousel}
                     style={{
-                        height: windowY > windowX && '45%',
+                        // height: windowY > windowX && '45%',
                         width: windowY > windowX && '75%',
                         marginBottom: windowY > windowX && '0rem',
                         padding: windowY > windowX && '2rem',
