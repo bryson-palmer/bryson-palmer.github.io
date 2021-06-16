@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonBase, Backdrop, Snackbar, Collapse }
+import { Typography, ButtonBase, Backdrop, Snackbar }
   from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';

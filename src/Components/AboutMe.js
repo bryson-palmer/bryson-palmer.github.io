@@ -79,36 +79,7 @@ const useStyles = makeStyles((theme) => ({
     bar: {
         color: '#00ffea',
         fontSize: '100%',
-        // [theme.breakpoints.down('lg')]: {
-        //     fontSize: '1.2rem',
-        // },
-        // [theme.breakpoints.down('md')]: {
-        //     fontSize: '0.9rem',
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //     fontSize: '0.7rem',
-        // },
-        // [theme.breakpoints.down('321')]: {
-        //     fontSize: '0.6rem',
-        // },
     },
-    // mern: {
-    //     color: '#fff',
-    //     fontWeight: 'bolder',
-    //     fontSize: '100%',
-    // [theme.breakpoints.down('lg')]: {
-    //     fontSize: '1.3rem',
-    // },
-    // [theme.breakpoints.down('md')]: {
-    //     fontSize: '1rem',
-    // },
-    // [theme.breakpoints.down('sm')]: {
-    //     fontSize: '0.8rem',
-    // },
-    // [theme.breakpoints.down('xs')]: {
-    //     fontSize: '0.7rem',
-    // },
-    // },
     lists: {
         textAlign: 'left',
     },

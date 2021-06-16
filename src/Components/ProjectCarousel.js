@@ -10,42 +10,41 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         width: '100%',
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'center',
-        // padding: '0rem 40px',
-        [theme.breakpoints.down('lg')]: {
-            height: '67%',
-        },
-        [theme.breakpoints.down('960')]: {
-            height: '45%',
-        },
-        [theme.breakpoints.down('877')]: {
-            height: '75%',
-        },
-        [theme.breakpoints.down('769')]: {
-            height: '60%',
-        },
-        [theme.breakpoints.down('721')]: {
-            height: '55%',
-        },
-        [theme.breakpoints.down('668')]: {
-            height: '70%',
-        },
-        [theme.breakpoints.down('654')]: {
-            height: '100%',
-        },
-        [theme.breakpoints.down('xs')]: {
-            height: '85%',
-        },
-        [theme.breakpoints.down('541')]: {
-            height: '70%',
-        },
-        [theme.breakpoints.down('415')]: {
-            height: '85%',
-        },
-        [theme.breakpoints.down('376')]: {
-            height: '80%',
-        },
+        // [theme.breakpoints.down('lg')]: {
+        //     height: '67%',
+        // },
+        // [theme.breakpoints.down('960')]: {
+        //     height: '45%',
+        // },
+        // [theme.breakpoints.down('877')]: {
+        //     height: '75%',
+        // },
+        // [theme.breakpoints.down('769')]: {
+        //     height: '60%',
+        // },
+        // [theme.breakpoints.down('721')]: {
+        //     height: '55%',
+        // },
+        // [theme.breakpoints.down('668')]: {
+        //     height: '70%',
+        // },
+        // [theme.breakpoints.down('654')]: {
+        //     height: '100%',
+        // },
+        // [theme.breakpoints.down('xs')]: {
+        //     height: '85%',
+        // },
+        // [theme.breakpoints.down('541')]: {
+        //     height: '70%',
+        // },
+        // [theme.breakpoints.down('415')]: {
+        //     height: '85%',
+        // },
+        // [theme.breakpoints.down('376')]: {
+        //     height: '80%',
+        // },
     },
     color: {
         color: '#00ffea',
@@ -94,22 +93,23 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     itemsCarousel: {
-        width: '55%',
-        padding: '0rem 40px',
-        [theme.breakpoints.down('lg')]: {
-            width: '45%',
-            paddingBottom: '5rem',
+        // height: '45%',
+        width: '45%',
+        padding: '0 40px',
+        [theme.breakpoints.down('md')]: {
+            
         },
         [theme.breakpoints.down('sm')]: {
-            paddingBottom: '0rem',
-            marginTop: '1rem',
+          
         },
         [theme.breakpoints.down('415')]: {
-            marginTop: '3rem',
+           
         },
         [theme.breakpoints.down('361')]: {
-            width: '45%',
-            marginTop: '4rem',
+           
+        },
+        [theme.breakpoints.down('321')]: {
+           
         },
     },
     chevron: {
@@ -123,71 +123,72 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     image: {
-        height: '100%',
-        width: '85%',
+        width: '100%',
         borderRadius: '10px',
     },
     details: {
-        height: '50%',
-        width: '40%',
-        padding: '0 2rem',
-        marginBottom: '-6rem',
-        [theme.breakpoints.down('lg')]: {
-            height: '95%',
-            padding: '0 1rem',
-        },
-        [theme.breakpoints.down('md')]: {
-            height: '90%',
-            width: '45%',
-            marginBottom: '1rem',
-        },
-        [theme.breakpoints.down('sm')]: {
-            height: '100%',
-            width: '45%',
-            padding: '0 0.6rem',
-            marginBottom: '-2rem',
-        },
-        [theme.breakpoints.down('xs')]: {
-            width: '45%',
-            padding: '0 1rem',
-        },
-        [theme.breakpoints.down('415')]: {
-            marginBottom: '-7rem',
-        },
-        [theme.breakpoints.down('376')]: {
-            marginBottom: '-4rem',
-        },
-        [theme.breakpoints.down('361')]: {
-            marginBottom: '-4rem',
-        },
-        [theme.breakpoints.down('321')]: {
-            marginBottom: '0rem',
-        },
+        // height: '45%',
+        width: '45%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignContent: 'center',
+        padding: '0 40px',
+        // marginBottom: '-6rem',
+        // [theme.breakpoints.down('lg')]: {
+        //     height: '95%',
+        //     padding: '0 1rem',
+        // },
+        // [theme.breakpoints.down('md')]: {
+        //     height: '90%',
+        //     width: '45%',
+        //     marginBottom: '1rem',
+        // },
+        // [theme.breakpoints.down('sm')]: {
+        //     height: '100%',
+        //     width: '45%',
+        //     padding: '0 0.6rem',
+        //     marginBottom: '-2rem',
+        // },
+        // [theme.breakpoints.down('xs')]: {
+        //     width: '45%',
+        //     padding: '0 1rem',
+        // },
+        // [theme.breakpoints.down('415')]: {
+        //     marginBottom: '-7rem',
+        // },
+        // [theme.breakpoints.down('376')]: {
+        //     marginBottom: '-4rem',
+        // },
+        // [theme.breakpoints.down('361')]: {
+        //     marginBottom: '-4rem',
+        // },
     },
     title: {
-        margin: '0',
-        fontSize: '5rem',
+        margin: 0,
+        fontSize: '3.5rem',
         color: '#00ffea',
-        [theme.breakpoints.down('lg')]: {
-            fontSize: '4rem',
-        },
+        // [theme.breakpoints.down('lg')]: {
+        //     fontSize: '3.5rem',
+        // },
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem',
         },
         [theme.breakpoints.down('sm')]: {
             fontSize: '2rem',
         },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '2rem',
+        [theme.breakpoints.down('654')]: {
+            fontSize: '1.5rem',
         },
-        [theme.breakpoints.down('281')]: {
-            fontSize: '1.8rem',
-        },
+        // [theme.breakpoints.down('281')]: {
+        //     fontSize: '1.3rem',
+        // },
     },
     text: {
         color: '#fff',
         fontSize: '1.8rem',
         lineHeight: '3rem',
+        textAlign: 'justify',
         [theme.breakpoints.down('lg')]: {
             lineHeight: '2.3rem',
             fontSize: '1.2rem',
@@ -197,46 +198,66 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '0.9rem',
         },
         [theme.breakpoints.down('sm')]: {
-            lineHeight: '1.3rem',
+            lineHeight: '1.2rem',
             fontSize: '0.7rem',
         },
-        [theme.breakpoints.down('xs')]: {
-            lineHeight: '1.2rem',
+        [theme.breakpoints.down('668')]: {
+            lineHeight: '0.9rem',
             fontSize: '0.6rem',
         },
+        [theme.breakpoints.down('xs')]: {
+            lineHeight: '0.8rem',
+            fontSize: '0.6rem',
+        },
+    },
+    bar: {
+        color: '#00ffea',
+        fontSize: '100%',
     },
     techIcons: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '2rem 0',
+        marginBottom: '1rem',
     },
     techIcon: {
         width: '13%',
         margin: '0 0.3rem',
     },
+    buttonBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        // [theme.breakpoints.down('321')]: {
+        //     marginBottom: '2rem',
+        // },
+    },
     button: {
         width: '180px',
         color: '#00ffea',
-        fontSize: '1.8rem',
+        fontSize: '1.4rem',
         border: 'solid 1px #00ffea',
-        margin: '2rem auto',
+        borderRadius: '8px',
+        margin: '0.3rem',
         [theme.breakpoints.down('md')]: {
-            fontSize: '1rem',
+            fontSize: '0.9rem',
             width: '130px',
-            margin: '0.7rem auto 12rem auto',
+            // margin: '0.7rem auto 12rem auto',
         },
         [theme.breakpoints.down('sm')]: {
-            margin: '0.7rem auto 2.5rem auto',
+            // margin: '0.7rem auto 2.5rem auto',
             fontSize: '0.7rem',
             width: '100px',
         },
-        [theme.breakpoints.down('xs')]: {
-            margin: '0.7rem auto 0rem auto',
-            fontSize: '0.6rem',
+        [theme.breakpoints.down('668')]: {
+            // margin: '0.7rem auto 2.5rem auto',
+            fontSize: '0.5rem',
+            width: '70px',
         },
-        [theme.breakpoints.down('321')]: {
-            marginBottom: '4rem',
+        [theme.breakpoints.down('xs')]: {
+            // margin: '0.7rem auto 0rem auto',
+            // fontSize: '0.5rem',
+            width: '50px',
         },
     },
 }));
@@ -267,7 +288,6 @@ export default function ProjectCarousel({ handleClose, project }) {
                 className={classes.root}
                 style={{
                     flexDirection: windowY > windowX && 'column-reverse',
-                    justifyContent: windowY > windowX && 'space-around'
                 }}
             >
 
@@ -284,7 +304,10 @@ export default function ProjectCarousel({ handleClose, project }) {
                 <div
                     className={classes.itemsCarousel}
                     style={{
+                        height: windowY > windowX && '45%',
                         width: windowY > windowX && '75%',
+                        marginBottom: windowY > windowX && '0rem',
+                        padding: windowY > windowX && '2rem',
                     }}
                 >
                     {/* Carousel of project images */}
@@ -325,8 +348,8 @@ export default function ProjectCarousel({ handleClose, project }) {
                     onClick={handleClose}
                     style={{
                         width: windowY > windowX && '90%',
-                        height: windowY > windowX && '50%',
-                        marginBottom: windowY > windowX && '4rem',
+                        height: windowY > windowX && '45%',
+                        marginTop: windowY > windowX && '3rem',
                     }}
                 >
                     {/* Details */}
@@ -337,21 +360,20 @@ export default function ProjectCarousel({ handleClose, project }) {
                     </h1>
                     {/* Description */}
                     <p className={classes.text}>
-                        {project.description} <br />
+                        {project.description} <br /> <br />
                         <span className={classes.bar}> | </span>
-                        <span className={classes.concept}> Concepts </span>
+                        <span> Concepts </span>
                         <span className={classes.bar}> | </span>
+
+                        {/* Concepts */}
                         {project.concepts}
                     </p>
-                    {/* Concepts
-                    <p className={classes.text}>
-                        {project.concepts}
-                    </p> */}
+                    
                     {/* Tech */}
                     <div className={classes.techIcons}>
                         {project.tech.map(tech => (
                             <img
-                                key={project.key}
+                                // key={project.tech}
                                 className={classes.techIcon}
                                 src={tech}
                                 alt={project.title}
