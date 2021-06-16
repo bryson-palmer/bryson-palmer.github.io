@@ -32,7 +32,7 @@ const WorkData = [
         key: uuidv4(),
         title: "Trick Trivia",
         role: "Front End Developer",
-        responsibilities: "Purely responsible for styling. Added the background image for all pages and developed the themes for colors. I focused on creating a consistent and visually appealying user interface using Bootstrap and pure CSS.",
+        responsibilities: "Responsible for the background image, the color themes, borders, and buttons. I focused on creating a consistent and visually appealying user interface using Bootstrap and pure CSS.",
         details: "Click here for more details.",
         description: "Trick Trivia pits your wits against a diverse range of trivia questions. You can customize the game by catagory, number, and difficulty. Test your knowledge and get some laughs, too! ",
         concepts: "A Javascript program that makes use of a trivia API for the questions and a giffy API for related videos to right or wrong answers. It also makes use of local storage for saving leader board scores.",

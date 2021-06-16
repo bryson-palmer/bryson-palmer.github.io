@@ -237,6 +237,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '-8px 8px 11px #0D0C0C',
     height: 350,
     width: 475,
+    borderRadius: '8px',
     [theme.breakpoints.down('sm')]: {
       height: 260,
       width: 450,
@@ -294,15 +295,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
     borderRadius: '8px',
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
+    [theme.breakpoints.down('737')]: {
+      backgroundPosition: 'center 0%',
     },
   },
   backgroundInfo: {
     position: 'absolute',
     left: 2,
     right: 2,
-    top: '40%',
+    top: '50%',
     bottom: 2,
     color: '#fff',
     fontWeight: 'normal',
@@ -311,21 +312,63 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignContent: 'center',
     background: 'rgba(2, 2, 2, 0.8)',
-    borderRadius: '0 0 8px 8px',
+    borderRadius: '0 0 6px 6px',
     padding: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      left: 3,
+      right: 3,
+    },
   },
   role: {
-    fontSize: '1.2rem',
+    fontSize: '1.6rem',
     fontWeight: 'bold',
     marginBottom: '0.5rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
+    },
+    [theme.breakpoints.down('569')]: {
+      fontSize: '1.2rem',
+      marginBottom: '0.4rem',
+    },
+    [theme.breakpoints.down('415')]: {
+      fontSize: '1rem',
+      marginBottom: '0.4rem',
+    },
+    [theme.breakpoints.down('376')]: {
+      fontSize: '0.8rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '0.7rem',
+      marginBottom: '0.3rem',
+    },
   },
   responsibilities: {
     fontSize: '1rem',
     textAlign: 'justify',
     marginBottom: '0.5rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem',
+    },
+    [theme.breakpoints.down('569')]: {
+      fontSize: '0.7rem',
+      marginBottom: '0.4rem',
+    },
+    [theme.breakpoints.down('376')]: {
+      fontSize: '0.6rem',
+      marginBottom: '0.5rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      marginBottom: '0.3rem',
+    },
   },
   details: {
     fontSize: '0.8rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.6rem',
+    },
+    [theme.breakpoints.down('321')]: {
+      fontSize: '0.5rem',
+    },
   },
   imageBackdrop: {
     position: 'absolute',
@@ -355,6 +398,9 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '2.4rem',
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    [theme.breakpoints.down('376')]: {
+      fontSize: '2rem',
+    },
     [theme.breakpoints.down('321')]: {
       fontSize: '1.7rem',
     },
@@ -641,6 +687,13 @@ export default function Work() {
                   alt={work.title}
                   style={{ backgroundImage: `url(${work.src[0]})` }}
                 />
+                
+                <span className={classes.backgroundInfo} >
+                  <span className={classes.role}>{work.role}</span> 
+                  <span className={classes.responsibilities}>{work.responsibilities}</span> 
+                  <span className={classes.details}>{work.details} </span>
+                </span>
+
                 <span className={classes.imageBackdrop} />
                 <span className={classes.imageButton}>
                   <Typography
