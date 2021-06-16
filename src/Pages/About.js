@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     background: '#1c1c1c',
     fontFamily: 'Righteous, cursive',
-},
+  },
   content: {
     minHeight: '100vh',
     minWidth: '100vw',
@@ -41,7 +41,7 @@ export default function About() {
 
   useEffect(() => {
     setChecked(true);
-}, []);
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -54,9 +54,9 @@ export default function About() {
         }}
       >
         <Fade in={activeHeader} timeout={1500} >
-          <div 
-            className={classes.content} 
-            style={{backgroundColor: checked ? '#F6B2FF' : '#1c1c1c'}}
+          <div
+            className={classes.content}
+            style={{ backgroundColor: checked ? '#F6B2FF' : '#1c1c1c' }}
             id='header'>
 
             <NavBar />

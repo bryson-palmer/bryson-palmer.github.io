@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
             width: '10rem',
         },
         [theme.breakpoints.down('sm')]: {
-            
+
         },
         [theme.breakpoints.down('xs')]: {
             height: '7rem',
@@ -96,18 +96,18 @@ const useStyles = makeStyles((theme) => ({
     //     color: '#fff',
     //     fontWeight: 'bolder',
     //     fontSize: '100%',
-        // [theme.breakpoints.down('lg')]: {
-        //     fontSize: '1.3rem',
-        // },
-        // [theme.breakpoints.down('md')]: {
-        //     fontSize: '1rem',
-        // },
-        // [theme.breakpoints.down('sm')]: {
-        //     fontSize: '0.8rem',
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //     fontSize: '0.7rem',
-        // },
+    // [theme.breakpoints.down('lg')]: {
+    //     fontSize: '1.3rem',
+    // },
+    // [theme.breakpoints.down('md')]: {
+    //     fontSize: '1rem',
+    // },
+    // [theme.breakpoints.down('sm')]: {
+    //     fontSize: '0.8rem',
+    // },
+    // [theme.breakpoints.down('xs')]: {
+    //     fontSize: '0.7rem',
+    // },
     // },
     lists: {
         textAlign: 'left',
@@ -124,19 +124,19 @@ export default function AboutMe() {
 
     return (
         <div className={classes.root}
-        style={{marginTop: windowX > windowY && '3rem' }}>
+            style={{ marginTop: windowX > windowY && '3rem' }}>
             <div className={classes.content}>
                 <div className={classes.bio}>
-                <div className={classes.bioPortrait}></div>
+                    <div className={classes.bioPortrait}></div>
 
                     <p className={classes.bioText}>
                         <span className={classes.bar}> | </span>
-                        <span > MERN </span>  
+                        <span > MERN </span>
                         <span className={classes.bar}> | </span>
                         Developer looking to build interactive and responsive web experiences for the future.
                     </p>
 
-                  
+
                     <p className={classes.bioText}>
                         I received a certificate in Full Stack Web Development from the University of Washington. I also have an AAS in Business Administration with an emphasis in Management Information Systems.
                     </p>
@@ -145,7 +145,7 @@ export default function AboutMe() {
                         Passions include creating music, mixed martial arts, space science, and civil rights. Leveraging my passions and experiences I aim to bring the same attention-to-detail, dedication, collaboration, and creativity to see any project succeed. Major strengths include front end, flexibility, innovation, and conflict resolution. I immerse myself into whatever I do.
                     </p>
                 </div>
-            
+
                 <div className={classes.lists}>
                     <h2>Technical Skills</h2>
                     <ul>
@@ -170,7 +170,7 @@ export default function AboutMe() {
                         <li>Self-Motivated &amp; Teachable</li>
                         <li>Strong Communicator</li>
                     </ul>
-                    
+
                     <h2>Life Experience Conclusions</h2>
                     <ul>
                         <li>There is a creative and logical perspective to everything.</li>
@@ -181,9 +181,9 @@ export default function AboutMe() {
                         <li>One step at a time.</li>
                         <li>Aim to be better than you were yesterday.</li>
                         <li>We stand on the shoulders of those that came before us.</li>
-                    </ul>   
+                    </ul>
                 </div>
             </div>
-        </div>           
+        </div>
     );
 }

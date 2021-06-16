@@ -263,25 +263,25 @@ export default function ProjectCarousel({ handleClose, project }) {
 
         // Fade in project modal
         <Fade in={activeHeader} timeout={1500}  >
-            <div 
+            <div
                 className={classes.root}
                 style={{
                     flexDirection: windowY > windowX && 'column-reverse',
                     justifyContent: windowY > windowX && 'space-around'
                 }}
             >
-            
+
                 {/* Close button for project modal */}
-                <Button 
-                    className={classes.closeButton} 
+                <Button
+                    className={classes.closeButton}
                     onClick={handleClose}
-                    style={{left: windowX <= 415 && '70%'}}
+                    style={{ left: windowX <= 415 && '70%' }}
                 >
                     <CloseRoundedIcon className={classes.closeIcon} />
                 </Button>
 
                 {/* Carousel container */}
-                <div 
+                <div
                     className={classes.itemsCarousel}
                     style={{
                         width: windowY > windowX && '75%',
@@ -320,8 +320,8 @@ export default function ProjectCarousel({ handleClose, project }) {
                 </div>
 
                 {/* Details container */}
-                <div 
-                    className={classes.details} 
+                <div
+                    className={classes.details}
                     onClick={handleClose}
                     style={{
                         width: windowY > windowX && '90%',
@@ -330,7 +330,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                     }}
                 >
                     {/* Details */}
-                    
+
                     {/* Title */}
                     <h1 className={classes.title}>
                         {project.title}
@@ -339,7 +339,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                     <p className={classes.text}>
                         {project.description} <br />
                         <span className={classes.bar}> | </span>
-                        <span className={classes.concept}> Concepts </span>  
+                        <span className={classes.concept}> Concepts </span>
                         <span className={classes.bar}> | </span>
                         {project.concepts}
                     </p>
@@ -375,9 +375,9 @@ export default function ProjectCarousel({ handleClose, project }) {
                             GITHUB
                         </Button>
                     </div>
-                    
+
                 </div>
-            
+
             </div>
         </Fade>
     );

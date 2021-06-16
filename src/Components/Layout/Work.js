@@ -293,16 +293,13 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundSize: 'cover',
-    backgroundPosition: 'center 40%',
+    backgroundPosition: 'center 0%',
     borderRadius: '8px',
-    [theme.breakpoints.down('737')]: {
-      backgroundPosition: 'center 0%',
-    },
   },
   backgroundInfo: {
     position: 'absolute',
-    left: 2,
-    right: 2,
+    left: 3,
+    right: 3,
     top: '50%',
     bottom: 2,
     color: '#fff',
@@ -314,10 +311,6 @@ const useStyles = makeStyles((theme) => ({
     background: 'rgba(2, 2, 2, 0.8)',
     borderRadius: '0 0 6px 6px',
     padding: '1rem',
-    [theme.breakpoints.down('sm')]: {
-      left: 3,
-      right: 3,
-    },
   },
   role: {
     fontSize: '1.6rem',
@@ -618,18 +611,26 @@ export default function Work() {
               onClick={() => { setProject(work); handleToggle(); }}
               focusVisibleClassName={classes.focusVisible}
             >
+              {/* Project image */}
               <span
                 className={classes.imageSrc}
                 alt={work.title}
                 style={{ backgroundImage: `url(${work.src[0]})` }}
               />
+
+              {/* Project information half modal */}
               <span className={classes.backgroundInfo} >
-                <span className={classes.role}>{work.role}</span> 
-                <span className={classes.responsibilities}>{work.responsibilities}</span> 
+                <span className={classes.role}>{work.role}</span>
+                <span className={classes.responsibilities}>{work.responsibilities}</span>
                 <span className={classes.details}>{work.details} </span>
               </span>
+
+              {/* Stars image */}
               <span className={classes.imageBackdrop} />
+
+              {/* Image container */}
               <span className={classes.imageButton}>
+
                 <Typography
                   component="span"
                   variant="subtitle1"
@@ -648,6 +649,7 @@ export default function Work() {
             className={classes.backdrop}
             open={handleOpen}
           >
+            {/* Project carousel */}
             {handleOpen && (
               <ProjectCarousel
                 handleClose={handleClose}
@@ -682,19 +684,24 @@ export default function Work() {
                 onClick={() => { setProject(work); handleToggle(); }}
                 focusVisibleClassName={classes.focusVisible}
               >
+                {/* Project image */}
                 <span
                   className={classes.imageSrc}
                   alt={work.title}
                   style={{ backgroundImage: `url(${work.src[0]})` }}
                 />
-                
+
+                {/* Project information half modal */}
                 <span className={classes.backgroundInfo} >
-                  <span className={classes.role}>{work.role}</span> 
-                  <span className={classes.responsibilities}>{work.responsibilities}</span> 
+                  <span className={classes.role}>{work.role}</span>
+                  <span className={classes.responsibilities}>{work.responsibilities}</span>
                   <span className={classes.details}>{work.details} </span>
                 </span>
 
+                {/* Stars image */}
                 <span className={classes.imageBackdrop} />
+
+                {/* Image container */}
                 <span className={classes.imageButton}>
                   <Typography
                     component="span"

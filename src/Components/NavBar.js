@@ -100,39 +100,39 @@ export default function NavBar() {
 
     return (
         <AppBar className={classes.appbar} elevation={0}>
-                        
+
             <Toolbar className={classes.appbarWrapper}>
-                            
+
                 <h1 className={classes.appbarName}>
                     Bryson Palmer <br />
-                    <Link 
+                    <Link
                         to={'/portfolio'}
                         className={classes.appbarPortfolio}>
-                            Portfolio
+                        Portfolio
                     </Link>
                 </h1>
 
-                <Typography className={classes.navLinks}>                               
+                <Typography className={classes.navLinks}>
                     <Link
                         to={'/about'}
                         className={classes.link}>
-                            <MinimizeIcon className={classes.bar} />
-                                about
+                        <MinimizeIcon className={classes.bar} />
+                        about
                     </Link>
-                    <Scroll to='contact-me' smooth={true}> 
+                    <Scroll to='contact-me' smooth={true}>
                         <IconButton
                             className={classes.link}
-                            >
-                                <MinimizeIcon 
-                                    className={classes.bar} 
-                                    style={{ 
-                                        marginRight: 
-                                            windowX > 281 ? '-0.22rem': '-0.24rem',
-                                        marginBottom: 
-                                            windowX > 281 ? '-0.05rem': '0.2rem'
-                                    }} 
-                                />
-                                    contact
+                        >
+                            <MinimizeIcon
+                                className={classes.bar}
+                                style={{
+                                    marginRight:
+                                        windowX > 281 ? '-0.22rem' : '-0.24rem',
+                                    marginBottom:
+                                        windowX > 281 ? '-0.05rem' : '0.2rem'
+                                }}
+                            />
+                            contact
                         </IconButton>
                     </Scroll>
                 </Typography>

@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
             left: '4%',
         },
         [theme.breakpoints.down('xs')]: {
- 
+
             fontSize: '1.5rem',
         },
         [theme.breakpoints.down('415')]: {
@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('321')]: {
             fontSize: '0.9rem',
-          },
+        },
     },
     cosmic: {
         color: '#00ffea',
@@ -171,7 +171,7 @@ const useStyles = makeStyles((theme) => ({
             top: 14,
         },
         [theme.breakpoints.down('md')]: {
-           
+
         },
         [theme.breakpoints.down('1025')]: {
             backgroundPosition: 'center 60%',
@@ -260,7 +260,7 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '-0.25rem',
         },
     },
-    
+
 }));
 
 export default function ContactMe() {
@@ -275,19 +275,19 @@ export default function ContactMe() {
                     <Typography
                         className={classes.title}
                         style={{
-                            fontSize: 
-                                windowX > windowY && 
+                            fontSize:
+                                windowX > windowY &&
                                 windowX < 850 && '1.2rem',
                             top:
                                 windowX > windowY &&
                                 windowX < 850 && '15%'
                         }}
                     >
-                        Let's build the 
-                        <MinimizeIcon 
-                            className={classes.bar} 
+                        Let's build the
+                        <MinimizeIcon
+                            className={classes.bar}
                             style={{
-                                fontSize: 
+                                fontSize:
                                     windowX > windowY &&
                                     windowX < 850 && '1.2rem',
                                 marginBottom:
@@ -300,7 +300,7 @@ export default function ContactMe() {
                         >_</MinimizeIcon>
                         <span className={classes.cosmic}>future</span>
                     </Typography>
-                    <div 
+                    <div
                         className={classes.profileB}>
                     </div>
                 </div>

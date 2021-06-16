@@ -91,18 +91,18 @@ export default function Header() {
 
         <VizSensor
             partialVisibility={true}
-            offset={{ top: windowX < windowY ? 500 : 250}}
+            offset={{ top: windowX < windowY ? 500 : 250 }}
             scrollDelay={10}
             onChange={(isVisible) => {
                 setActiveHeader(isVisible);
             }}
         >
             <Fade in={activeHeader} timeout={1500}  >
-                <div 
-                    className={classes.root} 
-                    style={{backgroundColor: checked ? '#F6B2FF' : '#1c1c1c'}}
+                <div
+                    className={classes.root}
+                    style={{ backgroundColor: checked ? '#F6B2FF' : '#1c1c1c' }}
                     id='header'>
-                    
+
                     <NavBar />
 
                     <Collapse
@@ -112,7 +112,7 @@ export default function Header() {
                     >
                         <div className={classes.container}>
                             <h1 className={classes.welcome}
-                                style={{marginBottom: windowX < 824 && '3rem'}}>
+                                style={{ marginBottom: windowX < 824 && '3rem' }}>
                                 Welcome to <br />
                                 My Portfolio
                             </h1>

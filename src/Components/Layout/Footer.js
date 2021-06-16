@@ -55,24 +55,24 @@ const useStyles = makeStyles((theme) => ({
 function Copyright() {
     const classes = useStyles();
     return (
-      <Typography className={classes.copyright} >
-        {'© '}
-        {new Date().getFullYear()}
-        {' '}
-        <span className={classes.color}>|</span>
-        {' brysonpalmer@gmail.com '}
-        <span className={classes.color}>|</span>
-        {' Full-Stack '}
-        <span className={classes.color}>|</span>
-        {' Developer'}
-      </Typography>
+        <Typography className={classes.copyright} >
+            {'© '}
+            {new Date().getFullYear()}
+            {' '}
+            <span className={classes.color}>|</span>
+            {' brysonpalmer@gmail.com '}
+            <span className={classes.color}>|</span>
+            {' Full-Stack '}
+            <span className={classes.color}>|</span>
+            {' Developer'}
+        </Typography>
     );
 }
 
 export default function Footer() {
     const classes = useStyles();
     const windowX = useWindowWidth();
-    
+
     return (
         <div>
             <div className={classes.root}>
@@ -93,8 +93,8 @@ export default function Footer() {
                         <p >linkedin</p>
                     )}
                     <Tooltip title='Linkedin' arrow>
-                        <IconButton 
-                            aria-label='Linkedin.com' 
+                        <IconButton
+                            aria-label='Linkedin.com'
                             onClick={() => window.open('https://www.linkedin.com/in/bryson-palmer-555b3862/', '_blank')}>
                             <LinkedInIcon className={classes.icon} />
                         </IconButton>
@@ -121,7 +121,7 @@ export default function Footer() {
                             rel='noopener noreferrer'
                             href='mailto:brysonpalmer@gmail.com'>
                             <EmailOutlinedIcon className={classes.icon}
-                            style={{marginBottom: windowX.width <= 1024 ? '0.6rem' : 0}}
+                                style={{ marginBottom: windowX.width <= 1024 ? '0.6rem' : 0 }}
                             />
                         </a>
                     </Tooltip>
