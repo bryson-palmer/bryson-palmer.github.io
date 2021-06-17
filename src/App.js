@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
   root: {
     minWidth: '100vw',
     minHeight: '100vh',
+    background: '#1c1c1c',
   },
 }));
 
