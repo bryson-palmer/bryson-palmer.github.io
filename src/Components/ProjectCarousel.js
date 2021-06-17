@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '10px',
     },
     details: {
-        // height: '45%',
+        maxHeight: '100vh',
         width: '45%',
         display: 'flex',
         flexDirection: 'column',
