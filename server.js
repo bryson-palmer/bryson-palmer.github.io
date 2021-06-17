@@ -8,12 +8,19 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-// Send every request to teh React app
+app.get("/", (req, res) => {
+    return (
+        res.send("Hello world"),
+        console.log("Wakey Wakey Sleepy Heroku!")
+    );
+});
+
+// Send every request to the React app
 // Defiine any API routes before this runs
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
-})
+});
