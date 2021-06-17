@@ -4,11 +4,12 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@uit/glitch-image": "0.0.11",
     "react": "^17.0.2",
     "react-clock": "^3.0.0",
     "react-dom": "^17.0.2",
@@ -18,7 +19,7 @@
     "react-scroll": "^1.8.2",
     "react-visibility-sensor": "^5.1.1",
     "uuid": "^8.3.2",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
