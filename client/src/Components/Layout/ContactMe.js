@@ -269,7 +269,11 @@ export default function ContactMe() {
     const windowX = useWindowWidth().width;
 
     return (
-        <div className={classes.root} id='contact-me'>
+        <div 
+            className={classes.root} 
+            id='contact-me'
+            style={{ width: windowX > windowY && '85vw'}}
+        >
             <div className={classes.middle}>
                 <div className={classes.inner}>
                     <Typography
