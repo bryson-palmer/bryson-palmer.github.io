@@ -272,10 +272,26 @@ export default function ContactMe() {
         <div 
             className={classes.root} 
             id='contact-me'
-            style={{ width: windowX > windowY && '85vw'}}
+            style={{ 
+                width: windowX > windowY && '85vw',
+                height: 
+                    (windowX > windowY && windowX < 845 && '80vh')
+            }}
         >
-            <div className={classes.middle}>
-                <div className={classes.inner}>
+            <div 
+                className={classes.middle}
+                style={{
+                    height: 
+                        (windowX > windowY && windowX < 845 && '82.5vh')
+                }}
+            >
+                <div 
+                    className={classes.inner}
+                    style={{
+                        height: 
+                            (windowX > windowY && windowX < 845 && '85.3vh')
+                    }}
+                >
                     <Typography
                         className={classes.title}
                         style={{
@@ -305,7 +321,16 @@ export default function ContactMe() {
                         <span className={classes.cosmic}>future</span>
                     </Typography>
                     <div
-                        className={classes.profileB}>
+                        className={classes.profileB}
+                        style={{
+                            backgroundSize: 
+                                (windowX > windowY && windowX < 845 && '60vh'),
+                            height:
+                                (windowX > windowY && windowX < 845 && '79.5vh'),
+                            backgroundPosition: 
+                                (windowX > windowY && windowX < 570 && 'center 50%')
+                        }}
+                    >
                     </div>
                 </div>
             </div>
