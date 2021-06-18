@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         width: '70vw',
         color: '#fff',
         fontSize: '4.5rem',
-        lineHeight: '5rem',
+        lineHeight: '4.5rem',
         display: 'block',
         marginBottom: '13rem',
         transform: 'perspective(100px) rotateX(20deg)',
@@ -35,29 +35,28 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '4.5rem',
             lineHeight: '4.5rem'
         },
-        [theme.breakpoints.down('1023')]: {
+        [theme.breakpoints.down('1025')]: {
+            fontSize: '4rem',
+            lineHeight: '4rem',
+            marginBottom: '10rem',
+        },
+        [theme.breakpoints.down('845')]: {
             fontSize: '3.5rem',
-            lineHeight: '3.5rem'
+            lineHeight: '3.5rem',
+            marginBottom: '1rem',
         },
-        [theme.breakpoints.down('654')]: {
+        [theme.breakpoints.down('668')]: {
             marginTop: '5rem',
+            fontSize: '3rem',
+            lineHeight: '3rem'
+        },
+        [theme.breakpoints.down('415')]: {
             fontSize: '2.5rem',
             lineHeight: '2.5rem'
-        },
-        [theme.breakpoints.down('600')]: {
-            marginTop: '0rem',
-        },
-        [theme.breakpoints.down('541')]: {
-            fontSize: '2.5rem',
-            lineHeight: '2.5rem'
-        },
-        [theme.breakpoints.down('412')]: {
-            fontSize: '2rem',
-            lineHeight: '2rem'
         },
         [theme.breakpoints.down('321')]: {
-            fontSize: '1.5rem',
-            lineHeight: '1.5rem',
+            fontSize: '2rem',
+            lineHeight: '2rem',
             marginTop: '-0.3rem',
             transform: 'perspective(60px) rotateX(20deg)',
         },
@@ -68,6 +67,18 @@ const useStyles = makeStyles((theme) => ({
         transition: 'all .5s ease-in-out',
         '&:hover': {
             filter: 'drop-shadow(0px 0px 2px #fff)',
+        },
+        [theme.breakpoints.down('654')]: {
+            fontSize: '3rem',
+        },
+        [theme.breakpoints.down('541')]: {
+            fontSize: '3rem',
+        },
+        [theme.breakpoints.down('415')]: {
+            fontSize: '2.5rem',
+        },
+        [theme.breakpoints.down('321')]: {
+            fontSize: '2rem',
         },
     },
 }));
@@ -111,8 +122,7 @@ export default function Header() {
                         collapsedHeight={5}
                     >
                         <div className={classes.container}>
-                            <h1 className={classes.welcome}
-                                style={{ marginBottom: windowX < 824 && '3rem' }}>
+                            <h1 className={classes.welcome}>
                                 Welcome to <br />
                                 My Portfolio
                             </h1>
