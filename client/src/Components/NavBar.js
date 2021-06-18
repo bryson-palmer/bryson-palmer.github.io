@@ -18,11 +18,12 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarName: {
         maxWidth: '50%',
+        paddingLeft: '1rem',
         flexGrow: '1',
         lineHeight: '2rem',
         [theme.breakpoints.down('415')]: {
             fontSize: '1.1rem',
-            lineHeight: '1.5rem',
+            lineHeight: '1.8rem',
         },
         [theme.breakpoints.down('281')]: {
             fontSize: '0.9rem',
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bolder',
         fontFamily: 'Righteous, cursive',
         transition: 'all .5s ease-in-out',
-        padding: '0 1rem !important',
+        padding: '0 1rem',
         textAlign: 'right',
         '&:hover': {
             textDecoration: 'none',
@@ -126,8 +127,8 @@ export default function NavBar() {
                             <MinimizeIcon
                                 className={classes.bar}
                                 style={{
-                                    marginRight:
-                                        windowX > 281 ? '-0.22rem' : '-0.24rem',
+                                    // marginRight:
+                                    //     windowX > 281 ? '-0.22rem' : '-0.24rem',
                                     marginBottom:
                                         windowX > 281 ? '-0.05rem' : '0.2rem'
                                 }}
