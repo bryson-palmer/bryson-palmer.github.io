@@ -12,39 +12,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        // [theme.breakpoints.down('lg')]: {
-        //     height: '67%',
-        // },
-        // [theme.breakpoints.down('960')]: {
-        //     height: '45%',
-        // },
-        // [theme.breakpoints.down('877')]: {
-        //     height: '75%',
-        // },
-        // [theme.breakpoints.down('769')]: {
-        //     height: '60%',
-        // },
-        // [theme.breakpoints.down('721')]: {
-        //     height: '55%',
-        // },
-        // [theme.breakpoints.down('668')]: {
-        //     height: '70%',
-        // },
-        // [theme.breakpoints.down('654')]: {
-        //     height: '100%',
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //     height: '85%',
-        // },
-        // [theme.breakpoints.down('541')]: {
-        //     height: '70%',
-        // },
-        // [theme.breakpoints.down('415')]: {
-        //     height: '85%',
-        // },
-        // [theme.breakpoints.down('376')]: {
-        //     height: '80%',
-        // },
     },
     color: {
         color: '#00ffea',
@@ -92,25 +59,30 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.4rem',
         },
     },
-    itemsCarousel: {
-        // height: '45%',
-        width: '45%',
-        padding: '0 40px',
+    demoLogIn: {
+        lineHeight: '0.7rem',
+        fontSize: '1.8rem',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '1.2rem',
+        },
         [theme.breakpoints.down('md')]: {
-            
+            fontSize: '0.9rem',
         },
         [theme.breakpoints.down('sm')]: {
-          
+            fontSize: '0.7rem',
         },
-        [theme.breakpoints.down('415')]: {
-           
+        [theme.breakpoints.down('668')]: {
+            lineHeight: '0.5rem',
+            fontSize: '0.6rem',
         },
-        [theme.breakpoints.down('361')]: {
-           
+        [theme.breakpoints.down('xs')]: {
+            lineHeight: '0.4rem',
+            fontSize: '0.6rem',
         },
-        [theme.breakpoints.down('321')]: {
-           
-        },
+    },
+    itemsCarousel: {
+        width: '45%',
+        padding: '0 40px',
     },
     chevron: {
         zIndex: theme.zIndex.drawer + 2,
@@ -134,43 +106,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignContent: 'center',
         padding: '0 40px',
-        // marginBottom: '-6rem',
-        // [theme.breakpoints.down('lg')]: {
-        //     height: '95%',
-        //     padding: '0 1rem',
-        // },
-        // [theme.breakpoints.down('md')]: {
-        //     height: '90%',
-        //     width: '45%',
-        //     marginBottom: '1rem',
-        // },
-        // [theme.breakpoints.down('sm')]: {
-        //     height: '100%',
-        //     width: '45%',
-        //     padding: '0 0.6rem',
-        //     marginBottom: '-2rem',
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //     width: '45%',
-        //     padding: '0 1rem',
-        // },
-        // [theme.breakpoints.down('415')]: {
-        //     marginBottom: '-7rem',
-        // },
-        // [theme.breakpoints.down('376')]: {
-        //     marginBottom: '-4rem',
-        // },
-        // [theme.breakpoints.down('361')]: {
-        //     marginBottom: '-4rem',
-        // },
     },
     title: {
         margin: 0,
         fontSize: '3.5rem',
         color: '#00ffea',
-        // [theme.breakpoints.down('lg')]: {
-        //     fontSize: '3.5rem',
-        // },
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem',
         },
@@ -180,9 +120,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('654')]: {
             fontSize: '1.5rem',
         },
-        // [theme.breakpoints.down('281')]: {
-        //     fontSize: '1.3rem',
-        // },
     },
     text: {
         color: '#fff',
@@ -228,9 +165,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        // [theme.breakpoints.down('321')]: {
-        //     marginBottom: '2rem',
-        // },
     },
     button: {
         width: '180px',
@@ -242,21 +176,16 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             fontSize: '0.9rem',
             width: '130px',
-            // margin: '0.7rem auto 12rem auto',
         },
         [theme.breakpoints.down('sm')]: {
-            // margin: '0.7rem auto 2.5rem auto',
             fontSize: '0.7rem',
             width: '100px',
         },
         [theme.breakpoints.down('668')]: {
-            // margin: '0.7rem auto 2.5rem auto',
             fontSize: '0.5rem',
             width: '70px',
         },
         [theme.breakpoints.down('xs')]: {
-            // margin: '0.7rem auto 0rem auto',
-            // fontSize: '0.5rem',
             width: '50px',
         },
     },
@@ -304,18 +233,33 @@ export default function ProjectCarousel({ handleClose, project }) {
                 <div
                     className={classes.itemsCarousel}
                     style={{
-                        // height: windowY > windowX && '45%',
                         width: windowY > windowX && '75%',
                         marginBottom: windowY > windowX && '0rem',
                         padding: windowY > windowX && '2rem',
                     }}
                 >
+                    {project.email &&
+                        <div>
+                            Demo Log In
+                            <div className={classes.demoLogIn}>
+                                <p>
+                                    email: {project.email}
+                                </p>
+                            </div>
+                            <div>
+                                <p className={classes.demoLogIn}>
+                                    password: {project.password}
+                                </p>
+                            </div>
+                        </div>
+                    }
+
                     {/* Carousel of project images */}
                     <ItemsCarousel
                         requestToChangeActive={setActiveItemIndex}
                         activeItemIndex={activeItemIndex}
                         numberOfCards={1}
-                        gutter={0}
+                        gutter={10}
                         infiniteLoop={true}
                         leftChevron={
                             <button className={classes.chevron}>
@@ -348,7 +292,6 @@ export default function ProjectCarousel({ handleClose, project }) {
                     onClick={handleClose}
                     style={{
                         width: windowY > windowX && '90%',
-                        height: windowY > windowX && '45%',
                         marginTop: windowY > windowX && '3rem',
                     }}
                 >

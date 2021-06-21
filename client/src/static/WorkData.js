@@ -11,6 +11,8 @@ const WorkData = [
         description: "A goal tracking app with simple design. We help the user keep the goal SMART by defining it, breaking it down into milestones, and giving back a dashboard of useful information.",
         concepts: "Full stack MERN app that follows an MVC file structure utilizing a passport strategy authenticating with a JSON Web Token. Uses Mongoose as the ODM for CRUD operations.",
         src: ["assets/progressing1.png", "assets/progressing2.png", "assets/progressing3.png"],
+        email: ["Ada@lovelace.com"],
+        password: ["mathmatics"],
         tech: ["assets/mongoDB.png", "assets/expressJS.png", "assets/reactJS.png", "assets/javaScript.png", "assets/bootstrap.png", "assets/nodeJS.png"],
         url: "https://progressing-pod10.herokuapp.com/",
         git: "https://github.com/JJHPhoto/progressing",
