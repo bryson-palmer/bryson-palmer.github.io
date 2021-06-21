@@ -373,7 +373,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                     <div className={classes.techIcons}>
                         {project.tech.map(tech => (
                             <img
-                                // key={project.tech}
+                                key={tech}
                                 className={classes.techIcon}
                                 src={tech}
                                 alt={project.title}
