@@ -170,9 +170,6 @@ const useStyles = makeStyles((theme) => ({
             height: '39.6vh',
             top: 14,
         },
-        [theme.breakpoints.down('md')]: {
-
-        },
         [theme.breakpoints.down('1025')]: {
             backgroundPosition: 'center 60%',
             backgroundAttachment: 'local',
@@ -225,7 +222,6 @@ const useStyles = makeStyles((theme) => ({
             top: 7,
         },
         [theme.breakpoints.down('541')]: {
-            // backgroundPosition: 'center 84%',
             height: '39.9vh',
         },
         [theme.breakpoints.down('415')]: {
@@ -269,26 +265,26 @@ export default function ContactMe() {
     const windowX = useWindowWidth().width;
 
     return (
-        <div 
-            className={classes.root} 
+        <div
+            className={classes.root}
             id='contact-me'
-            style={{ 
+            style={{
                 width: windowX > windowY && '85vw',
-                height: 
+                height:
                     (windowX > windowY && windowX < 845 && '80vh')
             }}
         >
-            <div 
+            <div
                 className={classes.middle}
                 style={{
-                    height: 
+                    height:
                         (windowX > windowY && windowX < 845 && '82.5vh')
                 }}
             >
-                <div 
+                <div
                     className={classes.inner}
                     style={{
-                        height: 
+                        height:
                             (windowX > windowY && windowX < 845 && '85.3vh')
                     }}
                 >
@@ -323,11 +319,11 @@ export default function ContactMe() {
                     <div
                         className={classes.profileB}
                         style={{
-                            backgroundSize: 
+                            backgroundSize:
                                 (windowX > windowY && windowX < 845 && '60vh'),
                             height:
                                 (windowX > windowY && windowX < 845 && '79.5vh'),
-                            backgroundPosition: 
+                            backgroundPosition:
                                 (windowX > windowY && windowX < 570 && 'center 50%')
                         }}
                     >

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-       
+
     },
     triangleLeft: {
         width: 0,
@@ -208,7 +208,7 @@ export default function Header() {
 
                             <h1 className={classes.welcome}
                                 style={{
-                                    marginTop: 
+                                    marginTop:
                                         (windowX > windowY && windowX < 668 && '2rem'),
                                     fontSize:
                                         (windowX > windowY && windowX < 668 && '2rem'),

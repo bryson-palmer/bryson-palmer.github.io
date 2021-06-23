@@ -18,7 +18,7 @@ export default function App() {
   return (
     <Router>
       <div className={classes.root}>
-        <CssBaseline /> 
+        <CssBaseline />
         <Switch>
           <Route exact path='/' component={Portfolio} />
           <Route exact path='/portfolio' component={Portfolio} />

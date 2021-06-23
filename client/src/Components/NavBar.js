@@ -89,9 +89,6 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.1rem',
             marginBottom: '-0.1rem',
         },
-        [theme.breakpoints.down('281')]: {
-            // marginBottom: '-0.1rem',
-        },
     },
 }));
 
@@ -127,10 +124,7 @@ export default function NavBar() {
                             <MinimizeIcon
                                 className={classes.bar}
                                 style={{
-                                    // marginRight:
-                                    //     windowX > 281 ? '-0.22rem' : '-0.24rem',
-                                    marginBottom:
-                                        windowX > 281 ? '-0.05rem' : '0.2rem'
+                                    marginBottom: windowX > 281 ? '-0.05rem' : '0.2rem'
                                 }}
                             />
                             contact
@@ -141,4 +135,3 @@ export default function NavBar() {
         </AppBar>
     )
 }
-

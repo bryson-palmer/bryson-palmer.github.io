@@ -311,7 +311,7 @@ export default function ProjectCarousel({ handleClose, project }) {
                         {/* Concepts */}
                         {project.concepts}
                     </p>
-                    
+
                     {/* Tech */}
                     <div className={classes.techIcons}>
                         {project.tech.map(tech => (

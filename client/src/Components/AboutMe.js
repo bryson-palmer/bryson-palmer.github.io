@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: '25%',
     },
-    bio: {},
     bioText: {
         Width: '70vw',
     },
@@ -63,9 +62,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             height: '10rem',
             width: '10rem',
-        },
-        [theme.breakpoints.down('sm')]: {
-
         },
         [theme.breakpoints.down('xs')]: {
             height: '7rem',
@@ -97,7 +93,7 @@ export default function AboutMe() {
         <div className={classes.root}
             style={{ marginTop: windowX > windowY && '3rem' }}>
             <div className={classes.content}>
-                <div className={classes.bio}>
+                <div>
                     <div className={classes.bioPortrait}></div>
 
                     <p className={classes.bioText}>

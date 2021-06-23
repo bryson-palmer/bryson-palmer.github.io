@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonBase, Backdrop, Snackbar }
-  from '@material-ui/core';
+import { Typography, ButtonBase, Backdrop, Snackbar } from '@material-ui/core';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import InfoIcon from '@material-ui/icons/Info';
@@ -210,8 +209,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-    },
-    [theme.breakpoints.down('361')]: {
     },
   },
   detailsLabel: {
