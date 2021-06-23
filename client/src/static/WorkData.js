@@ -66,7 +66,7 @@ const WorkData = [
         details: "Click here for more details.",
         description: "This straight forward budget app is set up to be used even if you don't have access to the internet. Keep your budget balanced!",
         concepts: "A PWA that follows an MVC paradigm using mongoose as the ODM for CRUD operations. It's set up so when the user comes back online, there is a bulk post of transactions. Utilizes IndexedDB",
-        src: ["assets/budgetbuddy1.png", "assets/budgetbuddy2.png", "assets/budgetbuddy3.png"],
+        src: ["assets/budgetbuddy1.png", "assets/budgetbuddy1.png", "assets/budgetbuddy1.png"],
         tech: ["assets/nodeJS.png", "assets/expressJS.png", "assets/bootstrap.png", "assets/javaScript.png", "assets/css3.png", "assets/html5.png"],
         url: "https://budget-buddy-web-app.herokuapp.com/",
         git: "https://github.com/bryson-palmer/budget-buddy",
