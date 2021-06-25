@@ -25,7 +25,7 @@ At this point, I already knew I was going to have two or more pages in my portfo
 ### **<a id="landingPage" >Landing Page</a>**
 My next step took me to youtube where I searched for `how to make a landing page using material ui`. That's where I found the tutorial by [Daily Web Coding](https://www.youtube.com/watch?v=rK0Lz8x7npA). I created my React portfolio here with the tutorial and followed till the end. I learned of some very valuable npm packages and techniques. 
 * First, the tutorial showed me how to import and use the `makeStyles` from MUI's core library. I used this in every component avoiding an acutal css file for styles. I can see arguments for separating styles into their own files, but in this case, I really liked this set up. 
-* Next, I installed `react-scroll` and `react-visibility-sensor`. I love these packages and used them throughout my portfolio! The scroll package I used to help smoothly scroll to my work and contact components. The VizSensor package helped me with the effect of having the component disapear after scrolling away from a specified point and reappear after scrolling back to a specified point. This was the behavior I saw in Taylor Ho's portfolio and what I wanted my portfolio to do as well. Adding in the `collapse` and `fade` from MUI's component API and my portfolio was coming along nicely. All of these effects were cultivating some really cool movement. 
+* Next, I installed `react-scroll` and `react-visibility-sensor`. I love these packages and used them throughout my portfolio! The scroll package I used to help smoothly scroll to my work and contact components. The VizSensor package helped me with the effect of having the component disappear after scrolling away from a specified point and reappear after scrolling back to a specified point. This was the behavior I saw in Taylor Ho's portfolio and what I wanted my portfolio to do as well. Adding in the `collapse` and `fade` from MUI's component API and my portfolio was coming along nicely. All of these effects were cultivating some really cool movement. 
 * The last thing I picked up from this tutorial was the use of a `custom hook` to get the user's screen height. I modified the one I got from the tutorial to better suit my needs by getting both the height and the width of the user's screen. This really came in handy later when I was conditionally rendering styles inline when in mobile screen sizes.
 
 This eventually became my header component. Part of me wanted to recreate what Taylor Ho did with his background/hero gif/image, because it's really cool, but I knew I would have to come up with something of my own. After thinking about what made his portfolio feel and look awesome while also being inspired by the music and imagery from **Beck's** Hyperspace album with A.I. exploration from NASA, I decided to explore my love for space. Here I had a lot of fun experimenting with css properties like `backgroundBlendMode`, `transform`, and `border` properties to make the overlapping triangles. I wanted something modern and retro. Something you could read as little into or as much as you wanted to in the work. It has a feel.
@@ -42,7 +42,7 @@ I made all the components responsive for every screen size on google chrome dev 
 ### **<a id="contact" >Contact<a>** [☝️](#toTop)
 Here I wanted to add in sort of a personal banner to separate my work from my contact links. I was inspired by the retro borders used in `The Guardians of the Galaxy Vol.2` end credits. So I added three borders and colors. I played around with different sizes but nothing was as appealling as the 1px size that I used. I accidentally pushed an inner border out and created an interesting effect and decided to refine it and keep it. 
 
-I then reused the hero image for the background and added my profile picture that my wife took. Trying to recreate Taylor Ho's profile image, I had asked her to set up some lighting so I could get a really bright outline and a dark center. We then used lightroom and photoshop to style and cut out the image. It was by happenstance in googling background css properties that I came across `backgroundAttachment`. I have the backgroundAttachment of the profile picture conditionally rendered so that when on desktop, the image drops down into the contact component from the top as you scroll down. I thought it was quite clever and added it to my space theme but it wouldn't work on touch screens. So I had to change it from `fixed` to `local` starting at iPad Pro screen size. 
+I then reused the hero image for the background and added my profile picture that my wife took. Trying to recreate Taylor Ho's profile image, I had asked her to set up some lighting so I could get a really bright outline and a dark center. We then used lightroom and photoshop to style and cut out the image. It was by happenstance in googling background css properties that I came across `backgroundAttachment`. I have the backgroundAttachment of the profile picture conditionally rendered so that when on desktop, the image drops down into the contact component from the top as you scroll down. I thought it was quite clever and added it to my space theme but it wouldn't work on touch screens. So I had to change it from `fixed` to `local` starting at iPad Pro screen size using my custom hook. 
 
 I used that line "`Let's  build the future`" becauase that's really what I'm interested in doing with my new set of skills. Plus, it gels well with the space theme.
 
@@ -55,13 +55,13 @@ I dropped my other image of myself, floating head in the bubble, so a user could
 
 ## **<a id="boringStuff" >Boring Stuff</a>** [☝️](#toTop)
 * I went back and <span style="color: #ffff99">optimized</span> every image in my assets folder to cut file size. 
-* I also went in and used <span style="color: #ffff99">Format Document</span> in all of my files just to make sure I was using best indentation practices.
+* I also went in and used `Format Document` in all of my files just to make sure I was using best indentation practices.
 * Since I wasn't using GitHub pages, I deployed with `Heroku`. One down side to using Heroku, is that the app goes to sleep after 30 minutes of inactivity and goes to sleep for 6 hours in a 24 hr period. I didn't like how long it took for my portfolio to wake up so I knew I needed to find a work around, and I did. I read a blog that introduced me to [cron-job.org](https://cron-job.org/en/). All I had to do was:
-  * Create a server and add a simple `GET` route to my `"/"` page in my app. I had to move my current react portfolio into a client folder to keep file structure standard. 
+  * Create a server using `express` and add a simple `GET` route to my `"/"` page in my app. I had to move my current react portfolio into a client folder to keep file structure standard. 
   * Set up an account at [cron-job.org](https://cron-job.org/en/).
   * Then I had to create a new cron job
   * I had to fill in the name of the app and the URL of my `GET "/"` route.
-  * Then select User-defined in the schedule section.
+  * Then select `User-defined` in the schedule section.
   * Select all options for `Days of month`, `Days of week`, and `Months`.
   * Then select hours `7-23` (app has to sleep from 0-6hrs with free Heroku).
   * Then select minute `0` and `30` from the list. This will automatically ping my apps' `GET` route every 30 minutes for the hours of awake time ensuring a quick load and preventing my app from going to sleep. 
@@ -79,7 +79,7 @@ I originally wanted a video background (like Talyor Ho's about me section) with 
 * I will spend some more time running `lighthouse` in google dev tools to identify any performance and accessibility issues.
 * I would also like to explore using a `skeleton` component from MUI with a shimmer effect on app load. </br>
 These fixes would all add to a better user experience and meet modern user expectations. </br>
-* During the course of this project I became aware of the `Three.js` 3D library and I look forward to exploring depth and perspective more. </br>I can see some powerful web user experience using this library.
+* During the course of this project I became aware of the `Three.js` 3D library and I look forward to exploring depth and perspective more in web development. I can see some powerful web user experience using this library.
 * I also have ambitions to create a project using the `frosted glass` effect and `neumorphism` design. </br>
 All are different looks but have very useful and beautiful applications in modern web development.
 
