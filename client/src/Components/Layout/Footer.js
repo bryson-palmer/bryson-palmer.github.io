@@ -65,13 +65,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     line: {
-        width: '50%',
+        width: '80%',
         margin: '0rem auto',
         paddingBottom: '2rem',
         borderTop: '1px solid rgba(255, 255, 255, 0.5)',
-        [theme.breakpoints.down('541')]: {
-            width: '80%',
-        },
     }
 }));
 
