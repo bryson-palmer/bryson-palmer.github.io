@@ -36,13 +36,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0.5rem',
         paddingBottom: '1rem',
         fontSize: '0.8rem',
-        [theme.breakpoints.down('sm')]: {
-            marginTop: '3rem',
-            paddingBottom: '3rem',
-        },
         [theme.breakpoints.down('321')]: {
-            marginTop: '3rem',
-            paddingBottom: '3rem',
             fontSize: '0.7rem',
         },
     },
@@ -75,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
         margin: '0rem auto',
         paddingBottom: '2rem',
         borderTop: '1px solid rgba(255, 255, 255, 0.5)',
+        [theme.breakpoints.down('541')]: {
+            width: '80%',
+        },
     }
 }));
 
