@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundBlendMode: 'multiply',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        margin: '9rem auto',
+        margin: '3rem auto ',
         position: 'relative',
         border: '1px solid #fff',
         borderRadius: '8px',
