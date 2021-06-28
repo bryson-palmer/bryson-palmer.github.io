@@ -93,3 +93,4 @@ All are different looks but have very useful and beautiful applications in moder
 * React UI framework was [Material-UI](https://material-ui.com/).
 * Most tech icons found from [iconfinder](https://www.iconfinder.com/) others by individual google search.
 * I used the color picker over at **Mozilla's** [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool).
+* Free favicon generator at [favicon.io](https://favicon.io/).
