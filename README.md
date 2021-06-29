@@ -52,17 +52,17 @@ This eventually became my header component. Part of me wanted to recreate what T
 The next component that I needed to tackle was the work and projects section. The layout for this section was inspired by Taylor Ho's. I created a header of text here but I also added in text buttons to make it more interactive and dynamic. For example, the info icon next to MERN shows a MUI `snackbar` component API. This is a little pop out modal that explains to non technical users what a MERN developer is. I also added in the `react-clock` npm package so when a user clicks on the word interactive an old round clock face shows up. I did this because I'm still getting use to adding/using npm packages for React and to create a little Easter egg for the user.
 
 #### **Work Projects**
-![Portfolio Work Projects](readmeAssets/workProjects.gif)
+![Portfolio Work Projects](readmeAssets/workProjects.gif) <br />
 The next section of the work component is for all of my project cards. I went with a grid system layout up until iPad Pro screen size and then conditionally (remember that custom hook?) turned it into a carousel using the `react-items-carousel` npm package. Each project card has a background image of the milkyway by [Felix Wegerer](https://unsplash.com/photos/Gi1kD265cdw) with a title of the project. When a user hovers over a card, it reveals a new background image of the project with a `backdrop` of my role and responsibilities. Here the user should click for more details. I added this backdrop to make it more clear what the user should expect if they click on a project card.
 
 If a user clicks on a project card, they are taken to a full screen `backdrop` with a carousel of project images, demo account log in information (if applicable), project title, app description, concepts used, technologies used, and links to the app and the GitHub. I picked up most of my tech icons from [iconfinder](https://www.iconfinder.com/).
 
 #### **Responsiveness**
-![Portfolio Responsiveness](readmeAssets/responsive.gif)
+![Portfolio Responsiveness](readmeAssets/responsive.gif) <br />
 I made all the components responsive for every screen size on google chrome dev tools and iPhone 12 Pro but the work component had the most complexity and I'm very proud of how it all turned out. It's by far the biggest component in my portfolio.
 
 ### **<a id="contact" >Contact<a>** [☝️](#toTop)
-![Portfolio Contact](readmeAssets/contact.gif)
+![Portfolio Contact](readmeAssets/contact.gif) <br />
 Here I wanted to add in sort of a personal banner to separate my work from my contact links. I was inspired by the retro borders used in `The Guardians of the Galaxy Vol.2` end credits. So I added three borders and colors. I played around with different sizes but nothing was as appealling as the 1px size that I used. I accidentally pushed an inner border out and created an interesting effect and decided to refine it and keep it. 
 
 I then reused the hero image for the background and added my profile picture that my wife took. Trying to recreate Taylor Ho's profile image, I had asked her to set up some lighting so I could get a really bright outline and a dark center. We then used lightroom and photoshop to style and cut out the image. It was by happenstance in googling background css properties that I came across `backgroundAttachment`. I have the backgroundAttachment of the profile picture conditionally rendered so that when on desktop, the image drops down into the contact component from the top as you scroll down. I thought it was quite clever and added it to my space theme but it wouldn't work on touch screens. So I had to change it from `fixed` to `local` starting at iPad Pro screen size using my custom hook. 
@@ -70,7 +70,7 @@ I then reused the hero image for the background and added my profile picture tha
 I used that line "`Let's  build the future`" becauase that's really what I'm interested in doing with my new set of skills. Plus, it gels well with the space theme.
 
 ### **<a id="about" >About<a>** [☝️](#toTop)
-![Portfolio About](readmeAssets/about.gif)
+![Portfolio About](readmeAssets/about.gif) <br />
 Since I made my contact and footer components reuseable, I now needed to make my bio and skills section for my about page. This was a very quick page to set up. I reused the header component as well, minus the welcome text, to keep the same feel in pages. I simply dropped my `brand statement`, `technical skills`, and `transferable skills` into an over flow container and made it scrollable. I also felt the need to add in a `life experience conclusions` list so I could share a bit more about myself.
 
 At first I was going to make my about text use the **Star Wars** opening credits crawl but in the end I decided it would be too much visually and let it go. There are some great resources out there for this effect and I may use it on another project. Perhaps I could create a crawl mode so the user would be able to choose between viewing planes. 
