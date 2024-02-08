@@ -1,0 +1,12 @@
+.main-section {
+  width: 100%;
+  padding-top: min(var(--section-padding-top), 6rem);
+  scroll-snap-align: start;
+}
+
+.section-title {
+  color: var(--text-secondary-dark);
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 4rem;
+}
