@@ -1,4 +1,5 @@
 import { AboutMe } from '@/aboutMe'
+import { Education } from '@/education'
 import { Experience } from '@/experience'
 import { Navbar } from '@/navbar'
 import { Welcome } from '@/welcome'
@@ -10,6 +11,7 @@ function App() {
       <Welcome />
       <AboutMe />
       <Experience />
+      <Education />
     </>
   )
 }
