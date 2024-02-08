@@ -1,3 +1,4 @@
+import { AboutMe } from '@/aboutMe'
 import { Navbar } from '@/navbar'
 import { Welcome } from '@/welcome'
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Navbar />
       <Welcome />
+      <AboutMe />
     </>
   )
 }
