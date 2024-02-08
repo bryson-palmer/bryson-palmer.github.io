@@ -1,4 +1,5 @@
 import { AboutMe } from '@/aboutMe'
+import { Contact } from '@/contact'
 import { Education } from '@/education'
 import { Experience } from '@/experience'
 import { Projects } from '@/projects'
@@ -14,6 +15,7 @@ function App() {
       <Experience />
       <Education />
       <Projects />
+      <Contact />
     </>
   )
 }
