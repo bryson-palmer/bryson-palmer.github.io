@@ -1,0 +1,163 @@
+#portrait {
+  width: 118px;
+  height: 80px;
+  position: absolute;
+  top: 22px;
+  left: 475px;
+  border: 4px solid var(--main-brown);
+  background-color: var(--background-tan);
+}
+
+.figure-head {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  background-color: var(--person-skin);
+  border: thin solid var(--secondary-brown);
+  border-radius: 50%;
+}
+
+.figure-body {
+  width: 21px;
+  height: 30px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  border: thin solid var(--main-black);
+  border-radius: 30% 30% 5% 5%;
+}
+
+.alt-body {
+  width: 18px;
+  height: 25px;
+  left: 1.5px;
+  border-radius: 100% 100% 0 0;
+  border-bottom: none;
+}
+
+.figure-legs {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 48px;
+  left: 1.5px;
+  border: thin solid var(--main-black);
+  border-bottom: none;
+}
+
+.alt-legs {
+  width: 23px;
+  height: 25px;
+  top: 40px;
+  left: -0.75px;
+  border-radius: 100% 100% 0 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.figure.one {
+  position: relative;
+  top: 6px;
+  left: 40px;
+  z-index: 0;
+}
+
+.figure.one .figure-body {
+  background-color: var(--main-black);
+}
+
+.figure.one .figure-legs {
+  background-color: var(--person-pants);
+}
+
+.figure.two {
+  position: relative;
+  top: 14px;
+  left: 57px;
+  transform: scale(90%);
+  z-index: 0;
+}
+
+.figure.two .figure-body,
+.figure.five .figure-body {
+  background-color: var(--person-secondary-pants);
+}
+
+.figure.two .figure-legs,
+.figure.six .figure-legs {
+  background-color: var(--person-secondary-pants);
+}
+
+.figure.three {
+  transform: scale(90%);
+  position: relative;
+  top: 12px;
+  left: 13px;
+  z-index: 1;
+}
+
+.figure.three .figure-body,
+.figure.four .figure-body {
+  background-color: var(--main-red);
+}
+
+.figure.three .figure-legs,
+.figure.four .figure-legs,
+.figure.five .figure-legs {
+  background-color: var(--person-pants);
+}
+
+.figure.four {
+  transform: scale(70%);
+  position: relative;
+  top: 32px;
+  left: 13px;
+  z-index: 1;
+}
+
+.figure.four .figure-legs {
+  height: 10px;
+}
+
+.figure.five {
+  position: relative;
+  top: 25px;
+  left: 66px;
+  transform: scale(80%);
+  z-index: 1;
+}
+
+.figure.five .figure-body {
+  width: 18px;
+  height: 27px;
+  left: 1.5px;
+}
+
+.figure.five .figure-legs {
+  width: 16px;
+  height: 16px;
+  top: 43px;
+  left: 2.5px;
+}
+
+.figure.six {
+  position: relative;
+  top: 29px;
+  left: 37px;
+  transform: scale(75%);
+  z-index: 1;
+}
+
+.figure.six .figure-body {
+  height: 20px;
+  background-color: var(--person-secondary-shirt);
+}
+
+.figure.six .figure-legs {
+  width: 22px;
+  height: 22px;
+  top: 36px;
+  background-color: var(--person-secondary-shirt);
+}

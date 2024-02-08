@@ -1,0 +1,10 @@
+// export all exponents in components here
+export { Belt } from './belt/Belt'
+export { Chair } from './chair/Chair'
+export { Computer } from './computer/Computer'
+export { Guitar } from './guitar/Guitar'
+export { Person } from './person/Person'
+export { Plant } from './plant/Plant'
+export { Portrait } from './portrait/Portrait'
+export { Table } from './table/Table'
+export { Window } from './window/Window'

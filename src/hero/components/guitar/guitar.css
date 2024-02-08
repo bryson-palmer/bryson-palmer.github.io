@@ -1,0 +1,68 @@
+#instrument {
+  position: relative;
+  top: 190px;
+  left: 525px;
+}
+
+.guitar {
+  position: absolute;
+  background-color: var(--guitar-background);
+  border: thin solid var(--main-brown);
+}
+
+.guitar-top {
+  z-index: 0;
+}
+
+.guitar.head {
+  width: 20px;
+  height: 35px;
+  position: absolute;
+  border-radius: 10% 10% 30% 30%;
+}
+
+.guitar-neck {
+  width: 14px;
+  height: 120px;
+  position: absolute;
+  top: 34px;
+  left: 3.25px;
+  background-color: var(--main-brown);
+  border: thin solid var(--guitar-brown);
+}
+
+.guitar-body {
+  position: absolute;
+  top: 110px;
+  left: -24px;
+}
+
+.guitar.body-top {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border-bottom: none;
+  z-index: -1;
+}
+
+.body-hole {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 65px;
+  left: 18px;
+  background-color: var(--main-black);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.guitar.body-bottom {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: -15px;
+  border-radius: 50%;
+  border-top: none;
+  z-index: -1;
+}

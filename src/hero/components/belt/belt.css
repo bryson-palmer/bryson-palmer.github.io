@@ -1,0 +1,12 @@
+#belt {
+  width: 118px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 118px;
+  left: 475px;
+  border: 4px solid var(--main-brown);
+  background-color: var(--background-tan);
+}

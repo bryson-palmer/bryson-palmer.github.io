@@ -1,0 +1,59 @@
+#chair {
+  position: relative;
+  top: 86px;
+  left: 0;
+}
+
+.chair-back {
+  width: 23px;
+  background-color: var(--main-gray);
+  position: absolute;
+  top: 9px;
+  left: 7px;
+}
+
+.chair-back.top {
+  height: 70px;
+  border-radius: 0px 25px 25px 0px;
+  position: absolute;
+  top: 0;
+  border: thin solid var(--main-white);
+}
+
+.chair-back.bottom {
+  height: 115px;
+  position: absolute;
+  border-radius: 5px 25px 25px 5px;
+  border: thin solid var(--main-white);
+}
+
+.chair-back.bottom.one {
+  top: 68px;
+}
+
+.chair-back.bottom.two {
+  top: 180px;
+}
+
+.chair-seat {
+  width: 160px;
+  height: 23px;
+  background-color: var(--main-gray);
+  position: absolute;
+  top: 285px;
+  left: 15px;
+  z-index: -2;
+  border-radius: 10px 10px 8px 8px;
+  border: thin solid var(--main-white);
+}
+
+.chair-base {
+  width: 20px;
+  height: 50px;
+  background-color: var(--main-gray);
+  border: thin solid var(--main-white);
+  position: absolute;
+  top: 300px;
+  left: 80px;
+  z-index: -3;
+}

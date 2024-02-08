@@ -1,0 +1,26 @@
+#computer {
+  position: relative;
+  top: 190px;
+  left: 270px;
+}
+
+.computer-screen {
+  width: 7px;
+  height: 90px;
+  background-color: var(--person-hair);
+  position: absolute;
+  top: 0px;
+  left: 29px;
+  border-radius: 5px;
+  transform: rotate(20deg)
+}
+
+.computer-keyboard {
+  width: 90px;
+  height: 7px;
+  background-color: var(--person-hair);
+  position: absolute;
+  top: 83px;
+  left: -68px;
+  border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+.hero {
+  width: clamp(350px, 100%, 660px);
+  height: 430px;
+  display: flex;
+  transform: scale(0.75, 0.75);
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: var(--main-blue);
+  border: 0.25rem solid var(--text-secondary-dark);
+  border-radius: 35px;
+}
+
+.outline-thin {
+  border: thin solid var(--main-gray);
+}
+
+@media (max-width: 900px) {
+  #hero {
+    margin: 0 auto;
+  }
+}

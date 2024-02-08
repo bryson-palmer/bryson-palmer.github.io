@@ -1,0 +1,16 @@
+.window {
+  width: 250px;
+  height: 160px;
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  border: 0.875rem solid var(--secondary-white);
+  background-color: var(--secondary-blue);
+  background-image: radial-gradient(
+    farthest-corner at 5% 0%,
+    var(--background-light) 10%,
+    var(--main-yellow) 13%,
+    var(--background-blue) 40%
+  );
+  z-index: -1;
+}
