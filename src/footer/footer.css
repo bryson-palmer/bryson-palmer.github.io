@@ -1,0 +1,26 @@
+#footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 3rem;
+  line-height: 1;
+}
+
+.numerical {
+  min-width: fit-content;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  font-family: 'Smooch Sans', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media (max-width: 510px) {
+  .numerical {
+    font-size: 1rem;
+  }
+}
