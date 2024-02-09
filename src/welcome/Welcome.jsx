@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+import DownloadIcon from '@mui/icons-material/Download'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import IconButton from '@mui/material/IconButton'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -13,31 +15,36 @@ export const Welcome = () => {
         <h1>Bryson.</h1>
         <p className='subtitle'>Software Developer / Web Developer</p>
         <div className='quick-links'>
-          {QUICK_LINKS.map(({ href, title= '' }) => {
+          {QUICK_LINKS.map(({ href, title = '' }, index) => {
             const isResume = title === 'Resume'
             return (
-              <a
-                key={href}
-                id={isResume ? 'resume-link' : ''}
-                className='svg'
-                download={isResume}
-                href={href}
-                aria-label={`link to ${title}`}
-                target='_blank'
-                rel='noreferrer'
-              >
-                {isResume
-                  ? title
-                  : (
+              <Fragment key={index}>
+                {isResume ? (
+                  <a
+                    id='resume-link'
+                    className='svg'
+                    download='bpalmer-resume'
+                    href={href}
+                    aria-label={`link to ${title}`}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <DownloadIcon /> {title}
+                  </a>
+                ) : (
+                  <a
+                    className='svg'
+                    href={href}
+                    aria-label={`link to ${title}`}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <IconButton aria-label={`link to ${title}`}>
-                      {title === 'github'
-                        ? <GitHubIcon />
-                        : <LinkedInIcon />
-                      }
+                      {title === 'github' ? <GitHubIcon /> : <LinkedInIcon />}
                     </IconButton>
-                  )
-                }
-            </a>
+                  </a>
+                )}
+              </Fragment>
             )
           })}
         </div>

@@ -66,10 +66,12 @@
 }
 
 #resume-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   border: none;
   border-radius: 0;
   font-weight: bold;
-  align-self: center;
 }
 
 @media (max-width: 900px) {
