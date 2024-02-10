@@ -2,7 +2,14 @@ export const WORK_EXPERIENCE = [
   {
     position: 'Software Engineer 1',
     time: '2021-2023',
-    title: 'METER GROUP (ADDIUM)/AROYA',
+    companyInfo: {
+      companyName: 'ADDIUM',
+      companyLink: 'https://addium.io/',
+      formerName: '(Meter Group)',
+      formerLink: 'https://metergroup.com/',
+      appName: 'Aroya',
+      appLink: 'https://aroya.io/'
+    },
     text: [
       `Served as owner of 2 front-end development domains: taskmanagement updates and compliance error handling.`,
       `Upgraded task form with new css grid layout, accordion collapsible
