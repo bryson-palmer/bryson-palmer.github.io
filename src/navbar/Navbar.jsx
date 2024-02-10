@@ -29,7 +29,7 @@ export const Navbar = () => {
 
       <div id='nav-menu'>
         <label className='menu-icon'>
-          <input type='checkbox' />
+          <input name='menu-checkbox' type='checkbox' />
         </label>
         <aside className='sidebar'>
           <List>
