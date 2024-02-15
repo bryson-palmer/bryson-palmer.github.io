@@ -6,7 +6,7 @@ export const AboutMe = () => {
     <Section id={'about-me'} title={'About Me'}>
       <div className='main-content'>
         <img
-          src='https://avatars.githubusercontent.com/u/71116187?v=4'
+          src='/assets/profile-pic.jpg'
           alt='picture of bryson palmer'
         />
         <div className='text-block'>

@@ -1,6 +1,6 @@
 export const PROJECTS_LIST =[
   {
-    img: 'https://cdn.pixabay.com/photo/2013/06/07/09/53/notepad-117597_640.png',
+    img: '/assets/notepad.png',
     altText: 'illustration of a note pad and pencil',
     stack: ['React', 'React Query', 'Flask', 'SQLite'],
     logo: 'PixIcon',
@@ -11,7 +11,7 @@ export const PROJECTS_LIST =[
     app: 'https://simply-notes.fly.dev/'
   },
   {
-    img: 'https://github.com/bryson-palmer/finance-app-demo/raw/main/client/src/assets/finanseer.png',
+    img: '/assets/finanseer.png',
     altText: 'finanseer dashboard of charts',
     stack: ['React', 'TypeScript', 'Express', 'Mongoose'],
     logo: 'PixIcon',
