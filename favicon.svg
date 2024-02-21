@@ -1,0 +1,40 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" width="200" height="200" preserveAspectRatio="xMidYMid meet">
+  <!-- Background square with rounded edges -->
+  <rect x="0" y="0" width="200" height="200" rx="20" fill="#18191a" stroke="url(#gradient)" stroke-width="16" />
+
+  <defs>
+    <!-- Linear gradient definition -->
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#94add7" />
+      <stop offset="100%" style="stop-color:#88d794" />
+    </linearGradient>
+
+    <!-- Glow filter definition -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+
+      <!-- Change the color of the glow here -->
+      <feFlood flood-color="#4e7ab5" result="glowColor" />
+      <feComposite in="glowColor" in2="glow" operator="in" result="coloredGlow"/>
+      <feMerge>
+        <feMergeNode in="coloredGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+
+    </filter>
+  </defs>
+
+  <!-- Text centered in the square -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#94add7" stroke="#4e7ab5" stroke-width="2" stroke-opacity="1" filter="url(#glow)">
+    <!-- <tspan x="50%" dy="0.35em">BP</tspan> -->
+    <tspan>BP</tspan> 
+  </text>
+</svg>
