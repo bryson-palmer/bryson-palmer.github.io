@@ -1,0 +1,33 @@
+<svg id="svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img">
+  <!-- Background square -->
+  <rect x="0" y="0" width="100" height="100" fill="#18191a" />
+
+  <!-- Text centered in the square -->
+  <text id="text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" fill="#94add7" stroke="#4e7ab5" stroke-width="0.4%" filter="url(#glow)">
+    BP
+  </text>
+
+  <!-- Definitions -->
+  <defs>
+    <!-- Glow filter definition -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+
+      <!-- Change the color of the glow here -->
+      <feFlood flood-color="#4e7ab5" result="glowColor" />
+      <feComposite in="glowColor" in2="glow" operator="in" result="coloredGlow"/>
+      <feMerge>
+        <feMergeNode in="coloredGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
