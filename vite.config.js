@@ -16,50 +16,41 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
-        icons: [
+        name: 'bryson-palmer.github.io',
+        short_name: 'bryson palmer',
+        description: 'Bryson Palmer: frontend developer portfolio',
+        start_url: './',
+        display: 'standalone',
+        lang: 'en',
+        scope: './',
+        background_color: '#18191a',
+        theme_color: '#18191a',
+        icons:[
           {
-            src: '/apple-splash-landscape-2048x1536.png',
-            sizes: '2048x1536',
-            type: 'image/png',
-            purpose: 'any maskable'
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
           },
           {
-            src: '/apple-splash-portrait-1536x2048.png',
-            sizes: '1536x2048',
-            type: 'image/png',
-            purpose: 'any maskable'
+            src: "/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
           },
           {
-            src: '/apple-touch-icon-180x180.png',
-            sizes: '180x180',
-            type: 'image/png',
-            purpose: 'any maskable'
+            src: "/apple-touch-icon.png",
+            type: "image/png"
           },
           {
-            src: '/maskable-icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable'
+            src: "/favicon-16x16.png",
+            sizes: "512x512",
+            type: "image/png"
           },
           {
-            src: '/pwa-64x64.png',
-            sizes: '64x64',
-            type: 'image/png',
-            purpose: 'any maskable'
-          },
-          {
-            src:  '/pwa-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any maskable'
-          },
-          {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable'
+            src: "/favicon-32x32.png",
+            sizes: "512x512",
+            type: "image/png"
           }
-        ]
+        ],
       },
       registerType: 'autoUpdate'
     })
