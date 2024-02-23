@@ -16,7 +16,7 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
-        name: 'bryson-palmer.github.io',
+        name: 'bryson palmer',
         short_name: 'bryson palmer',
         description: 'Bryson Palmer: frontend developer portfolio',
         start_url: './',
@@ -27,31 +27,31 @@ export default defineConfig({
         theme_color: '#18191a',
         icons:[
           {
-            src: "/android-chrome-192x192.png",
+            src: "/icons/android-chrome-192x192.png",
             sizes: "192x192",
             type: "image/png"
           },
           {
-            src: "/android-chrome-512x512.png",
+            src: "/icons/android-chrome-512x512.png",
             sizes: "512x512",
             type: "image/png"
           },
           {
-            src: "/apple-touch-icon.png",
+            src: "/icons/apple-touch-icon.png",
             type: "image/png"
           },
           {
-            src: "/favicon-16x16.png",
+            src: "/icons/favicon-16x16.png",
             sizes: "512x512",
             type: "image/png"
           },
           {
-            src: "/favicon-32x32.png",
+            src: "/icons/favicon-32x32.png",
             sizes: "512x512",
             type: "image/png"
           },
           {
-            src: "/maskable_icon.png",
+            src: "/icons/maskable_icon.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "maskable"
