@@ -49,6 +49,12 @@ export default defineConfig({
             src: "/favicon-32x32.png",
             sizes: "512x512",
             type: "image/png"
+          },
+          {
+            src: "/maskable_icon.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable"
           }
         ],
       },
