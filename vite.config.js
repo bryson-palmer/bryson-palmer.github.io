@@ -16,8 +16,8 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
-        name: 'bryson palmer',
-        short_name: 'bryson palmer',
+        name: 'Bryson Palmer Portfolio 2024',
+        short_name: 'Bryson Palmer',
         description: 'Bryson Palmer: frontend developer portfolio',
         start_url: './',
         display: 'standalone',
