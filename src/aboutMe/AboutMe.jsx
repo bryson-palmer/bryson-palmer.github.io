@@ -11,29 +11,21 @@ export const AboutMe = () => {
         />
         <div className='text-block'>
           <p>
-            I am a software developer with a strong background in web
-            technologies and the frontend. Over the past few years, I&apos;ve
-            honed my abilities with JavaScript, ReactJS, Redux, and Material UI.
-            With a familiarity for the back end (nodeJs/expressJS or
-            Flask/Python) and my collaborative nature, I am an ideal candidate
-            on any software team.
+            As a dedicated <strong className='blue-text'>frontend</strong> developer, I specialize in crafting immersive digital experiences that seamlessly blend innovation and user-centric design. My journey in software development has been anchored by a passion for web technologies and the frontend ecosystem.
           </p>
           <p>
-            I&apos;ve contributed to an enterprise level indoor cultivation
-            platform by upgrading features and integrating new ones. This was a
-            great experience and really shaped my development process. Keeping
-            busy now with refining my frontend skills further while branching
-            out to new languages and technologies.
+            With a competency for JavaScript and many of it&apos;s frameworks and libraries, I thrive on the dynamic landscape of modern web development. While my focus remains steadfast on frontend mastery, I possess a nuanced understanding of backend technologies like Node.js/Express.js and Flask/Python, enriching my collaborative prowess within software teams.
           </p>
           <p>
-            I am driven to bring integrity, quality, and creativity to all of my
-            projects. I have an intrinsic desire to make this world a better
-            place for the future by promoting science, equality, and creativity.
-            Being a problem solver by nature has brought me to interests in
-            software development, Brazilian Jiu Jitsu, and music production.
-            Always learning and always moving forward. Here&apos;s to the
-            future.
+            My recent endeavors include enhancing an enterprise-grade indoor cultivation platform, elevating its functionality through strategic upgrades and seamless integrations. This invaluable experience has not only refined my development acumen but also instilled a meticulous approach to project execution.
           </p>
+          <p>
+            In embracing the ever-evolving landscape of technology, I harness the power of AI tools to expedite development processes without compromising quality. By seamlessly integrating AI-driven solutions into my workflow, I ensure efficient project delivery while staying at the forefront of innovation.
+          </p>
+          <p>
+            Committed to perpetual learning and forward momentum, I am poised to embark on the next chapter of my journey, armed with a steadfast resolve to push boundaries, drive progress, and leave an indelible mark on the digital landscape.
+          </p>
+          <p>Here&apos;s to a future defined by endless possibilities and unparalleled innovation.</p>
         </div>
       </div>
     </Section>

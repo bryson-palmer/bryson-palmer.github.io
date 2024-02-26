@@ -29,6 +29,10 @@
   font-size: 1.1rem;
 }
 
+.blue-text {
+  color: var(--text-blue);
+}
+
 @media (max-width: 900px) {
   .main-content {
     flex-direction: column;
