@@ -74,21 +74,22 @@
   font-weight: bold;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (orientation: portrait) {
   #welcome-section {
     flex-direction: column;
+    justify-content: center;
     align-items: initial;
     padding-top: var(--section-padding-top);
   }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 510px) and (orientation: portrait) {
   #welcome-section {
     padding-top: 65px;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 350px) and (orientation: portrait) {
   .quick-links {
     flex-wrap: wrap;
     align-items: center;

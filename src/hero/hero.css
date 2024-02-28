@@ -1,8 +1,8 @@
 .hero {
   width: clamp(350px, 100%, 660px);
-  height: 430px;
+  min-height: 420px;
   display: flex;
-  transform: scale(0.75, 0.75);
+  transform: scale(0.8, 0.8);
   overflow-x: auto;
   overflow-y: hidden;
   background-color: var(--main-blue);
@@ -14,8 +14,8 @@
   border: thin solid var(--main-gray);
 }
 
-@media (max-width: 900px) {
-  #hero {
+@media (max-width: 900px) and (orientation: portrait) {
+  .hero {
     margin: 0 auto;
   }
 }

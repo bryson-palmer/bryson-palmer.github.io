@@ -9,4 +9,5 @@
   left: 475px;
   border: 4px solid var(--main-brown);
   background-color: var(--background-tan);
+  padding-left: 1px;
 }
