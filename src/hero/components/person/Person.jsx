@@ -15,12 +15,9 @@ export const Person = () => {
             <div className='hair sideburn outline-thin'></div>
           </div>
           <div id='person-face'>
-            <div id='eyebrows'>
-              <div className='brow left'></div>
-            </div>
-            <div id='eyes'>
-              <div className='eye left'></div>
-            </div>
+            <div className='eye-brow'></div>
+            <div className='eye-lid'></div>
+            <div className='eye-pupil'></div>
             <div id='nose'></div>
             <div id='chin'>
               <div id='mouth'></div>

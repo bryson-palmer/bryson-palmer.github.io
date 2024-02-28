@@ -172,7 +172,7 @@
   height: 58px;
   border-top: none;
   border-radius: 0% 50% 50% 900%;
-  position: absoute;
+  position: absolute;
   top: 35px;
   left: -8px;
   z-index: 1;
@@ -195,24 +195,47 @@
   top: 45px;
 }
 
-.eye {
-  width: 0.4rem;
-  height: 0.4rem;
-  background-color: var(--person-eyes);
-  border: 2px solid var(--border-dark);
-  border-radius: 50%;
-  transform: rotate(-10deg);
+.eye-brow {
+  width: 17px;
+  height: 3px;
+  border-top: 4px solid var(--person-secondary-hair); 
+  border-radius: 0% 50% 0% 50%;
+  transform: rotate(-25deg);
+  position: absolute;
+  top: -10px;
+  left: 60px;
+  z-index: 3;
 }
 
-.eye.left {
+.eye-lid {
+  width: 12px;
+  height: 8px;
+  background-color: var(--person-skin);
+  border-bottom: thin solid var(--person-lips);
+  border-right: thin solid var(--person-lips);
+  border-radius: 100% 100% 0% 0%;
+  transform: rotate(-25deg);
   position: absolute;
-  top: -1px;
-  left: 65px;
+  top: -7px;
+  left: 62px;
+  z-index: 2;
+}
+
+.eye-pupil {
+  width: 0.45rem;
+  height: 0.45rem;
+  background-color: var(--person-eyes);
+  border-radius: 50%;
+  transform: rotate(-10deg);
+  position: absolute;
+  top: -2px;
+  left: 67px;
+  z-index: 1;
 }
 
 #nose {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background-color: var(--person-skin);
   border-radius: 0px 30px 30px 0px;
   position: absolute;
@@ -244,13 +267,13 @@
 
 #person-neck {
   width: 34px;
-  height: 42px;
+  height: 40px;
   background-color: var(--person-skin);
   position: absolute;
   top: 96px;
   left: 63px;
   border-bottom: thin solid var(--tertiary-white);
-  border-radius: 0% 0% 37% 25%;
+  border-radius: 0% 0% 6px 6px;
   transform-origin: 0% 100%;
   animation: animate-neck 1.25s linear 0s infinite;
 }
