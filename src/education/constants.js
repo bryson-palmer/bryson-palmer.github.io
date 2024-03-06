@@ -33,8 +33,8 @@ export const EDUCATION_LIST = [
     time: '2002-2005',
     schoolName: 'Columbia Basin College',
     schoolLink: 'https://www.columbiabasin.edu/index.html',
-    schoolDescription: `Transfer degree with honors for business administration with
-    emphasis an emphasis in Management Information Systems.`,
+    schoolDescription: `Transfer degree with honors for business administration and
+    an emphasis in Management Information Systems.`,
     degreeName: 'Degree',
     degreeLink: null,
     degreeText: 'Degree'
