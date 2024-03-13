@@ -51,8 +51,12 @@
   75% {
     left: 8px;
   }
+  99% {
+    opacity: 1;
+  }
   100% {
     left: 8px;
+    opacity: 0;
     display: none;
   }
 }
@@ -72,8 +76,12 @@
   15% {
     left: 50.5%;
   }
+  99% {
+    opacity: 1;
+  }
   100% {
     left: 50.5%;
+    opacity: 0;
     display: none;
   }
 }
