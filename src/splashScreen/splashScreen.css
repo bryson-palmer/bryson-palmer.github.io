@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: animate_splash 0s ease-out 4.5s;
+  animation: animate_splash 0.25s ease-out 3.25s;
   animation-fill-mode: forwards;
 }
 
@@ -12,11 +12,12 @@
   0% {
     opacity: 0;
   }
-  15% {
+  1% {
     opacity: 1;
   }
   100% {
     display: none;
+    opacity: 0;
   }
 }
 
@@ -34,7 +35,7 @@
   top: 0;
   left: 45%;
   color: #42daf5;
-  animation: animate_b 1.75s ease-in-out 0.25s;
+  animation: animate_b 1.1s ease-in 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -42,13 +43,13 @@
   0% {
     left: 45%;
   }
-  15% {
+  18% {
     left: 40%;
   }
   50% {
     left: 40%;
   }
-  75% {
+  80% {
     left: 8px;
   }
   99% {
@@ -66,21 +67,21 @@
   top: 0;
   left: 45%;
   color: #42daf5;
-  animation: animate_p 1.75s ease-in 0.25s;
+  animation: animate_p 1.1s ease-in 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes animate_p {
   0% {
     left: 45%;
   }
-  15% {
-    left: 50.5%;
+  18% {
+    left: 51%;
   }
   99% {
     opacity: 1;
   }
   100% {
-    left: 50.5%;
+    left: 51%;
     opacity: 0;
     display: none;
   }
@@ -90,21 +91,22 @@
   width: max-content;
   color: #42daf5;
   background-color: transparent;
-  animation: animate_name 2.5s ease-in-out 1.75s;
+  animation: animate_name 2.1s ease-in-out 1.4s;
   animation-fill-mode: forwards;
   visibility: hidden;
   padding: 0 8px;
 }
 @keyframes animate_name {
   0% {
+    transform-origin: center center;
     visibility: hidden;
     opacity: 0;
   }
-  10% {
+  8% {
     visibility: visible;
     opacity: 1;
   }
-  30% {
+  15% {
     text-shadow:
     0 0 .1px rgba(255, 255, 255, 0),
     0 0 .3px rgba(255, 255, 255, 0),
@@ -115,7 +117,7 @@
     0 0 3.4px rgba(66, 218, 245, 0),
     0 0 5.5px rgba(66, 218, 245, 0);
   }
-  45% {
+  30% {
     text-shadow:
     0 0 1px rgba(255, 255, 255, 0.5),
     0 0 2px rgba(255, 255, 255, 0.5),
@@ -126,7 +128,7 @@
     0 0 6.5px rgba(66, 218, 245, 0.5),
     0 0 7px rgba(66, 218, 245, 0.5);
   }
-  65% {
+  50% {
     text-shadow:
     0 0 .1px rgba(255, 255, 255, 0),
     0 0 .3px rgba(255, 255, 255, 0),
@@ -137,35 +139,25 @@
     0 0 3.4px rgba(66, 218, 245, 0),
     0 0 5.5px rgba(66, 218, 245, 0);
   }
-  70% {
-    margin-top: 0;
-    opacity: 1;
-  }
-  95% {
-    margin-top: 35px;
-    opacity: 0.5;
-  }
   100% {
     display: none;
-    margin-top: 70px;
-    opacity: 0;
+    visibility: hidden;
   }
 }
 
 #portfolio {
   position: absolute;
-  top: 36px;
+  top: 40px;
   left: 0;
-  padding-left: 12px;
-  padding-bottom: 16px;
+  padding: 0 12px 16px 12px;
+  margin-top: -4px;
   color: var(--text-dark);
-  background-color: var(--background-dark);
   font-size: 18px;
   letter-spacing: 16px;
-  animation: animate_subtitle 1s ease-in-out 3.25s;
+  text-align: center;
+  animation: animate_subtitle 1.755s ease-in-out 1.75s;
   animation-fill-mode: forwards;
   visibility: hidden;
-  z-index: 1;
 }
 
 @keyframes animate_subtitle {
