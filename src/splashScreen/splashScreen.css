@@ -75,13 +75,13 @@
     left: 45%;
   }
   18% {
-    left: 51%;
+    left: 50.5%;
   }
   99% {
     opacity: 1;
   }
   100% {
-    left: 51%;
+    left: 50.5%;
     opacity: 0;
     display: none;
   }
