@@ -44,9 +44,9 @@
   /* dimensions */
   --navbar-height: 10%;
   --section-padding-top: calc(var(--navbar-height) + 2rem);
-  --bar-width: 2.5rem;
-  --bar-height: 0.325rem;
-  --hamburger-gap: 0.325rem;
+  --bar-width: 2.25rem;
+  --bar-height: 0.25rem;
+  --hamburger-gap: 0.25rem;
   --hamburger-height: calc((var(--bar-height) * 3) + (var(--hamburger-gap) * 2));
 
   /* transitions */
