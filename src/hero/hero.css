@@ -1,6 +1,6 @@
 .hero {
   width: clamp(350px, 100%, 660px);
-  min-height: 420px;
+  min-height: clamp(300px, 100%, 420px);
   display: flex;
   transform: scale(0.8, 0.8);
   overflow-x: auto;

@@ -19,8 +19,10 @@
 }
 
 #welcome-card {
+  width: max-content;
   padding-left: 2rem;
   letter-spacing: 1.4px;
+  line-height: 1.25;
   animation: fade-right 0.75s ease-in;
 }
 
@@ -31,14 +33,14 @@
 }
 
 #welcome-card p {
-  opacity: 0.6;
+  opacity: 0.8;
   padding-left: 0.25rem;
   font-weight: 600;
 }
 
 .subtitle {
-  padding-top: 1rem;
-  opacity: 0.8;
+  padding: 0.75rem 1rem 0 0;
+  text-align: end !important;
 }
 
 .quick-links {
@@ -74,6 +76,22 @@
   font-weight: bold;
 }
 
+/* Landscape media queries */
+@media (max-width: 900px) and (orientation: landscape) {
+  .quick-links {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem 0 2rem 2rem;
+  }
+  #welcome-section {
+    padding-top: 3rem;
+  }
+  .subtitle {
+    padding: 0.75rem 0rem 0 0;
+  }
+}
+
+/* Portrait media queries */
 @media (max-width: 900px) and (orientation: portrait) {
   #welcome-section {
     flex-direction: column;

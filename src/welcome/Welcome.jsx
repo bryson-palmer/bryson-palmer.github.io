@@ -11,9 +11,9 @@ export const Welcome = () => {
   return (
     <section id='welcome-section'>
       <div id='welcome-card'>
-        <p>Hi, I&apos;m</p>
-        <h1>Bryson.</h1>
-        <p className='subtitle'>Software Developer / Web Developer</p>
+        <p>Hi, I&apos;m a</p>
+        <h1>frontend</h1>
+        <p className='subtitle'>software developer.</p>
         <div className='quick-links'>
           {QUICK_LINKS.map(({ href, title = '' }, index) => {
             const isResume = title === 'Resume'
