@@ -150,16 +150,18 @@
 }
 
 .sidebar {
-  min-height: 100vh;
+  min-height: fit-content;
   position: absolute;
   top: -30px;
   left: -90px;
   padding-top: calc(var(--hamburger-height) + 2rem);
   padding-right: 1rem;
+  padding-bottom: 1rem;
   padding-left: 1rem;
   text-align: right;
   background-color: var(--background-light);
   color: var(--main-blue);
+  border-bottom-left-radius: 1rem;
   transition: all var(--animation-timing);
   translate: 200%;
 }
@@ -225,5 +227,11 @@
 
     .list-item {
       height: 0;
+    }
+  }
+
+  @media (max-width: 900px) and (orientation: landscape) {
+    #navbar {
+      height: calc(var(--navbar-height) + 2rem);
     }
   }
