@@ -8,22 +8,12 @@
   color: var(--text-secondary-dark);
   font-size: 2rem;
   text-align: center;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 /* Landscape media queries */
 @media (max-width: 900px) and (orientation: landscape) {
   .main-section {
     padding-top: min(var(--section-padding-top), 4rem);
-  }
-  .section-title {
-    padding-bottom: 2rem;
-  }
-}
-
-/* Landscape media queries */
-@media (max-width: 900px) and (orientation: portrait) {
-  .section-title {
-    padding-bottom: 0rem;
   }
 }
