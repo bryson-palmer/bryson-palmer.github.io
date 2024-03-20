@@ -13,7 +13,7 @@ export const EDUCATION_LIST = [
     time: '2023',
     schoolName: 'freeCodeCamp',
     schoolLink: 'https://www.freecodecamp.org/brysonpalmer',
-    schoolDescription: `In this JavaScript Algorithm and Data Structures Certification, we covered JavaScript fundamentals, Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, & how to fetch data using an API.`,
+    schoolDescription: `This course covered fundamentals, OOP, Functional Programming, and algorithmic thinking.`,
     degreeName: 'Certificate',
     degreeLink: 'https://www.freecodecamp.org/certification/brysonpalmer/javascript-algorithms-and-data-structures'
   },
