@@ -92,6 +92,9 @@
 }
 
 @media (max-width: 650px) {
+  .education-stack {
+    padding: 0 2rem;
+  }
   .education-header {
     flex-direction: column;
     align-items: flex-start;
