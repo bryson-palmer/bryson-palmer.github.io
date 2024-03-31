@@ -1,10 +1,30 @@
+import { useCallback, useState } from 'react'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import Button from '@mui/material/Button'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { Section } from '@/ui'
 import './aboutMe.css'
 
+
 export const AboutMe = () => {
+  const [showMore, setShowMore] = useState(false)
+  const isMobileLandscape = useMediaQuery('(max-width: 900px) and (orientation: landscape)')
+
+  const toggleShowMore = useCallback(() => setShowMore(!showMore), [showMore])
+
   return (
     <Section id={'about-me'} title={'About Me'}>
-      <div className='main-content'>
+      <div
+        className='main-content'
+        style={isMobileLandscape && !showMore ? ({
+            maxHeight: '204px',
+            overflowY: 'hidden',
+          }) : ({
+            maxHeight: '100%',
+            overflowY: 'visible',
+          })
+        }
+      >
         <img
           src='/assets/profile-pic.jpg'
           alt='picture of bryson palmer'
@@ -28,6 +48,16 @@ export const AboutMe = () => {
           <p>Here&apos;s to a future defined by endless possibilities and unparalleled innovation.</p>
         </div>
       </div>
+      <Button
+        className='read-more-about'
+        aria-label='read more'
+        variant='text'
+        onClick={toggleShowMore}
+        endIcon={<ExpandMoreIcon sx={{ transform: showMore ? 'rotate(180deg)' : 'rotate(0deg)' }} />}
+        href={showMore ? '#about-me' : ''}
+      >
+        {showMore ? 'Read less' : 'Read more'}
+      </Button>
     </Section>
   )
 }

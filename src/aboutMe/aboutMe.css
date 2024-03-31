@@ -1,5 +1,6 @@
 .main-content {
   width: clamp(300px, 100%, 900px);
+  transition: all 0.25s ease-in-out 0.25s;
   margin: 0 auto;
 }
 
@@ -36,11 +37,25 @@
   color: var(--text-blue);
 }
 
+.read-more-about {
+  display: none !important;
+}
+
 @media (max-width: 900px) and (orientation: landscape) {
   #about-me img {
     width: 25%;
     padding: 3% 2rem;
     transition: padding 0.5s;
+  }
+
+  .read-more-about {
+    display: flex !important;
+    font-family: inherit !important;
+    color: var(--text-dark) !important;
+    text-transform: initial !important;
+    position: absolute !important;
+    left: 44%;
+    opacity: 0.65;
   }
 }
  
