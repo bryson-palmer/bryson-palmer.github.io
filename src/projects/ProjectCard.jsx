@@ -43,8 +43,28 @@ export const ProjectCard = ({
           <p className='project-text'>
             {text}
           </p>
+          <div className='card-footer-landscape'>
+            <a
+              className='github-svg'
+              href={github}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <IconButton aria-label={`link to ${title} app`}>
+                <GitHubIcon />
+              </IconButton>
+            </a>
+            <a
+              className='project-link'
+              href={app}
+              target='_blank'
+              rel='noreferrer'
+            >
+              {title}
+            </a>
+          </div>
         </div>
-        <div className='card-footer'>
+        <div className='card-footer-portrait'>
           <a
             className='github-svg'
             href={github}
