@@ -73,7 +73,8 @@
   margin: 0;
 }
 html, body {
-  height: 100%;
+  height: 100dvh;
+  width: 100dvw;
   scroll-behavior: smooth;
 }
 body {
@@ -85,7 +86,6 @@ body {
   color: var(--main-white) !important;
   overflow-x: hidden !important;
   overflow-y: scroll !important;
-  scroll-snap-type: y mandatory !important;
   background-color: var(--background-dark) !important;
 }
 img, picture, video, canvas, svg {
