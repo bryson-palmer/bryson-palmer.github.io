@@ -81,7 +81,7 @@ export const ExperienceCard = ({
         style={
           isMobileLandscape && !showMore
             ? {
-                maxHeight: "134px",
+                maxHeight: "90px",
                 overflowY: "hidden",
               }
             : {

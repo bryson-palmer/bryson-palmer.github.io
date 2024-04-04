@@ -17,7 +17,7 @@ export const AboutMe = () => {
       <div
         className='main-content'
         style={isMobileLandscape && !showMore ? ({
-            maxHeight: '204px',
+            maxHeight: '180px',
             overflowY: 'hidden',
           }) : ({
             maxHeight: '100%',
