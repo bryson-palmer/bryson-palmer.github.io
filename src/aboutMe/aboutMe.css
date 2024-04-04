@@ -18,7 +18,6 @@
 .text-block {
   padding: 0 2rem;
   line-height: 1.7rem;
-  font-size: 1.1rem;
 }
 
 .text-block > p {
@@ -46,6 +45,12 @@
     width: 25%;
     padding: 3% 2rem;
     transition: padding 0.5s;
+  }
+
+  .text-block {
+    font-size: 0.75rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .read-more-about {
