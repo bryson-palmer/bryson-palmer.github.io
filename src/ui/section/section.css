@@ -16,4 +16,8 @@
   .main-section {
     padding-top: min(var(--section-padding-top), 4rem);
   }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
 }
