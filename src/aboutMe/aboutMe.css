@@ -43,7 +43,7 @@
 @media (max-width: 900px) and (orientation: landscape) {
   #about-me img {
     width: 25%;
-    padding: 3% 2rem;
+    padding: 3% 1rem;
     transition: padding 0.5s;
   }
 
