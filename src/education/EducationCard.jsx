@@ -25,7 +25,7 @@ export const EducationCard = ({
       >
         {schoolName}
       </a>
-      <p>
+      <p className='education-text'>
         {schoolDescription}
       </p>
       {degreeLink ? (

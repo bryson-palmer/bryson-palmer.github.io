@@ -86,6 +86,11 @@
     font-size: 0.9rem;
   }
 
+  .education-text {
+    font-size: 0.75rem;
+    line-height: 1.7;
+  }
+
   .numeral-text {
     font-size: 1rem;
   }
