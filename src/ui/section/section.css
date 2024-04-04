@@ -1,7 +1,7 @@
 .main-section {
   width: 100%;
   padding-top: min(var(--section-padding-top), 6rem);
-  scroll-snap-align: start;
+  padding-bottom: 4rem;
 }
 
 .section-title {
