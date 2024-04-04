@@ -2,6 +2,10 @@
   padding-bottom: 1rem;
 }
 
+#contact > p {
+  font-size: 0.75rem;
+}
+
 #contact-list {
   max-width: 1000px;
   display: flex;
