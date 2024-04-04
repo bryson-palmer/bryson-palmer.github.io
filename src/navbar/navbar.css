@@ -233,5 +233,12 @@
   @media (max-width: 900px) and (orientation: landscape) {
     #navbar {
       height: calc(var(--navbar-height) + 2rem);
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #nav-menu {
+      top: 15px;
+      right: 40px;
     }
   }
