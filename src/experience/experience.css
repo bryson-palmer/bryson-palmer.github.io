@@ -74,6 +74,14 @@
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
+  .experience-role {
+    font-size: 0.875rem;
+  }
+
+  .experience-text {
+    font-size: 0.75rem;
+  }
+
   .read-more-experience {
     display: flex !important;
     font-family: inherit !important;
