@@ -8,8 +8,6 @@ import { Hero } from '@/hero'
 import './welcome.css'
 
 export const Welcome = () => {
-  const isMobile = navigator?.userAgentData?.mobile
-  console.log({isMobile})
   return (
     <section id='welcome-section'>
       <div id='welcome-card'>
@@ -26,7 +24,7 @@ export const Welcome = () => {
                     id='resume-link'
                     className='svg'
                     download='bpalmer-resume'
-                    href={isMobile ? `https://bryson-palmer.github.io/${href}` : href}
+                    href={href}
                     aria-label={`link to ${title}`}
                     target='_blank'
                     rel='noreferrer'
