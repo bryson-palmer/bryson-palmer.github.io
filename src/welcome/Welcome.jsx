@@ -26,8 +26,6 @@ export const Welcome = () => {
                     download='bpalmer-resume'
                     href={href}
                     aria-label={`link to ${title}`}
-                    target='_blank'
-                    rel='noreferrer'
                   >
                     <DownloadIcon /> {title}
                   </a>
