@@ -8,7 +8,7 @@ import { Hero } from '@/hero'
 import './welcome.css'
 
 export const Welcome = () => {
-  const isMobile = navigator.userAgentData.mobile
+  const isMobile = navigator?.userAgentData?.mobile
   console.log({isMobile})
   return (
     <section id='welcome-section'>
