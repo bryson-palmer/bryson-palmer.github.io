@@ -16,7 +16,7 @@ export const Welcome = () => {
         <p className='subtitle'>software developer.</p>
         <div className='quick-links'>
           {QUICK_LINKS.map(({ href, title = '' }, index) => {
-            const isResume = title === 'Resume'
+            const isResume = title === 'resume'
             return (
               <Fragment key={index}>
                 {isResume ? (
@@ -28,6 +28,9 @@ export const Welcome = () => {
                     aria-label={`link to ${title}`}
                     target='_blank'
                     rel='noreferrer'
+                    style={{
+                      color: navigator.userAgentData.mobile ? 'green' : 'var(--text-blue)'
+                    }}
                   >
                     <DownloadIcon /> {title}
                   </a>
