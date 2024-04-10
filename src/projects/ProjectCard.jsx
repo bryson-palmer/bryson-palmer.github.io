@@ -25,6 +25,7 @@ export const ProjectCard = ({
       <div className='project-card'>
         <img
           className={`card-img ${isFinanseer ? 'finanseer' : null}`}
+          loading='lazy'
           src={img}
           alt={altText}
         />

@@ -26,6 +26,7 @@ export const AboutMe = () => {
         }
       >
         <img
+          loading='lazy'
           src='/assets/profile-pic.jpg'
           alt='picture of bryson palmer'
         />
