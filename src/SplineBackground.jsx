@@ -13,7 +13,7 @@ const SplineBg = () => {
       loop
       muted
       ref={videoRef}
-      id='spline'
+      id='spline-background'
       height={window.innerHeight}
       width={window.innerWidth}
     >
