@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 export const getElementAsync = async selector => {
   while (document.querySelector(selector) === null) {
     await new Promise( resolve =>  requestAnimationFrame(resolve) )
@@ -36,4 +38,24 @@ export const createObserverById = (id, options) => {
     )
     sectionObserver.observe(selector)
   })
+}
+
+export const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState([
+    window.innerHeight,
+    window.innerWidth,
+  ]);
+
+  useEffect(() => {
+    const windowSizeHandler = () => {
+      setWindowSize([window.innerHeight, window.innerWidth]);
+    };
+    window.addEventListener("resize", windowSizeHandler);
+
+    return () => {
+      window.removeEventListener("resize", windowSizeHandler);
+    };
+  }, []);
+
+  return windowSize;
 }
