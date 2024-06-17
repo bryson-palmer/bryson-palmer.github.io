@@ -37,20 +37,15 @@
   width: 100%;
   height: var(--navbar-height);
   padding: 0 1rem 1rem 2rem;
-  background: linear-gradient(
-    var(--background-dark) 0%,
-     var(--background-dark) 75%,
-    transparent 100%
-  );
-  animation: fade-down 0.75s ease-in;
-  box-shadow: none;
+  background: linear-gradient(107.18deg, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.55) 100%); 
+  animation: fade-down 1s ease-in;
 }
 
 #nav-title {
   min-width: 150px;
   color: var(--text-blue);
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bolder;
   cursor: pointer;
   text-decoration: none;
   align-self: center;
@@ -77,7 +72,7 @@
 
 #nav-menu {
   position: absolute;
-  top: 20px;
+  top: 5dvh;
   right: 60px;
   visibility: hidden;
   animation: fade-out 200ms ease-in-out;
@@ -113,7 +108,7 @@
 .menu-icon:hover::before,
 .menu-icon:hover::after,
   .menu-icon input:hover {
-  border: thin solid var(--background-dark);
+  border: thin solid var(--text-dark-main);
   box-shadow: 0 0 0 0.5px var(--main-white);
 }
 
@@ -152,9 +147,9 @@
 .sidebar {
   min-height: fit-content;
   position: absolute;
-  top: -30px;
+  top: -6dvh;
   left: -90px;
-  padding-top: calc(var(--hamburger-height) + 2rem);
+  padding-top: 9dvh;
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -164,6 +159,7 @@
   border-bottom-left-radius: 1rem;
   transition: all var(--animation-timing);
   translate: 200%;
+  overflow-y: auto;
 }
 
 .menu-icon:has(input:checked) + .sidebar {
@@ -175,7 +171,7 @@
   width: max-content;
   display: block;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 1rem;
   color: inherit;
   text-decoration: none;
@@ -183,13 +179,13 @@
 
 #nav-list a::after,
 #nav-menu a::after {
-  font-weight: bold;
+  font-weight: bolder;
   content: "";
   display: block;
   width: 0px;
   height: 2px;
   transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 #nav-list a::after {
@@ -197,7 +193,7 @@
 }
 
 #nav-menu a::after {
-  background-color: var(--text-blue)
+  background-color: var(--main-blue);
 }
 
 #nav-list a:hover::after,
@@ -205,7 +201,8 @@
   width: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px),
+(max-height: 600px) and (max-width: 1200px) {
   #navbar h2 {
     width: auto;
   }
@@ -230,15 +227,42 @@
     }
   }
 
-  @media (max-width: 900px) and (orientation: landscape) {
+  @media (max-width: 400px) {
+    #nav-menu {
+      top: 34px;
+    }
+  }
+
+  @media (max-height: 330px) and (orientation: landscape) {
+    .sidebar {
+      top: -8dvh;
+    }
+
+    .sidebar ul {
+      padding-top: 2rem;
+    }
+
+    #nav-menu a {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (orientation: landscape) {
     #navbar {
-      height: calc(var(--navbar-height) + 2rem);
       padding-right: 0;
       padding-left: 0;
     }
 
+    #nav-title {
+      padding: 0 1rem;
+    }
+
     #nav-menu {
-      top: 15px;
+      top: 20px;
       right: 40px;
+    }
+
+    .menu-icon {
+      left: -10px;
     }
   }
