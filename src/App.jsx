@@ -26,12 +26,14 @@ function App() {
       {isLoading ? <SplashScreen /> : (
         <div id='app'>
           <Navbar />
-          <Welcome />
-          <AboutMe />
-          <Experience />
-          <Education />
-          <Projects />
-          <Contact />
+          <div id='app-main'>
+            <Welcome />
+            <AboutMe />
+            <Experience />
+            <Education />
+            <Projects />
+            <Contact />
+          </div>
           <Footer />
         </div>
       )}
