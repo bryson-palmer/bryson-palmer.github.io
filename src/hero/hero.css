@@ -6,7 +6,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   background-color: var(--main-blue);
-  border: 0.25rem solid var(--text-secondary-dark);
+  border: 0.25rem solid var(--text-light-secondary);
   border-radius: 35px;
 }
 
@@ -14,7 +14,13 @@
   border: thin solid var(--main-gray);
 }
 
-@media (max-width: 900px) and (orientation: portrait) {
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    transform: scale(0.7, 0.7);
+  }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
   .hero {
     margin: 0 auto;
   }
