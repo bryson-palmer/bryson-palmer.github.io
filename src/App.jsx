@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-
 import { AboutMe } from '@/aboutMe'
 import { Contact } from '@/contact'
 import { Education } from '@/education'
@@ -20,6 +19,7 @@ function App() {
       setIsLoading(false)
     }, 3500)
   }, [])
+
   return (
     <>
       <SplineBackground />

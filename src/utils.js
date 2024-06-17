@@ -7,7 +7,7 @@ export const getElementAsync = async selector => {
   return document.querySelector(selector);
 }
 
-export const createObserverById = (id, options) => {
+export const createObserver = (id, options) => {
   getElementAsync(id).then(selector => {
     const observerOptions = {
       root: null,
