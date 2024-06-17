@@ -1,5 +1,6 @@
 export const EDUCATION_LIST = [
   {
+    id: 'responsive-cert',
     title: 'Responsive Web Design',
     time: '2024',
     schoolName: 'freeCodeCamp',
@@ -9,6 +10,7 @@ export const EDUCATION_LIST = [
     degreeLink: 'https://www.freecodecamp.org/certification/brysonpalmer/responsive-web-design'
   },
   {
+    id: 'dsa-cert',
     title: 'JavaScript Algorithms and Data Structures',
     time: '2023',
     schoolName: 'freeCodeCamp',
@@ -18,6 +20,7 @@ export const EDUCATION_LIST = [
     degreeLink: 'https://www.freecodecamp.org/certification/brysonpalmer/javascript-algorithms-and-data-structures'
   },
   {
+    id: 'bootcamp',
     title: 'Full-Stack Web Development',
     time: '2020-2021',
     schoolName: 'University of Washington',
@@ -29,6 +32,7 @@ export const EDUCATION_LIST = [
     degreeText: 'Certificate'
   },
   {
+    id: 'aas',
     title: 'Associate in Arts & Sciences',
     time: '2002-2005',
     schoolName: 'Columbia Basin College',
