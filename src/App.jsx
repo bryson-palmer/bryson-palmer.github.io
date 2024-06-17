@@ -8,6 +8,7 @@ import { Footer } from '@/footer'
 import { Projects } from '@/projects'
 import { Navbar } from '@/navbar'
 import { SplashScreen } from '@/splashScreen'
+import SplineBackground from '@/SplineBackground'
 import { Welcome } from '@/welcome'
 import './index.css'
 
@@ -21,6 +22,7 @@ function App() {
   }, [])
   return (
     <>
+      <SplineBackground />
       {isLoading ? <SplashScreen /> : (
         <div id='app'>
           <Navbar />
