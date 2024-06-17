@@ -110,7 +110,6 @@ input, button, textarea, select {
 }
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-  color: var(--text-dark);
 }
 #root, #__next {
   isolation: isolate;
@@ -126,7 +125,7 @@ ul {
   padding: 0
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -163,7 +162,7 @@ ul {
 }
 
 #app {
-  animation: fadeIn 0.75s ease-in;
+  animation: fade-in 0.75s ease-in;
   opacity: 1;
 }
 
