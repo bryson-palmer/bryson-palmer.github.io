@@ -135,7 +135,28 @@ ul {
   }
 }
 
+@keyframes fade-in-spline {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.75
+  }
+}
+
+
 #app {
   animation: fadeIn 0.75s ease-in;
   opacity: 1;
 }
+
+#spline-background {
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: fade-in-spline 1s ease-in 3.5s backwards;
+  opacity: 0.75;
+}
+
