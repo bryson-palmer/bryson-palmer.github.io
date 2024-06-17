@@ -1,15 +1,32 @@
+#contact {
+  height: 100dvh;
+}
+
+#contact .section-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #contact .section-title {
   padding-bottom: 1rem;
 }
 
-#contact > p {
-  font-size: 0.75rem;
+#contact-observer {
+  padding-top: calc(var(--navbar-height) + 4rem);
+}
+
+#contact-observer > p {
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 #contact-list {
   max-width: 1000px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -17,7 +34,7 @@
 #contact-list a {
   width: max-content;
   display: block;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
   padding: 1rem;
   color: inherit;
@@ -43,6 +60,19 @@
 
 .text-center {
   text-align: center;
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  #contact-observer {
+    padding-top:  calc(80px + 2rem);
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  #contact {
+    height: 100dvh;
+    padding-top: var(--navbar-height);
+  }
 }
 
 @media (max-width: 510px) {
