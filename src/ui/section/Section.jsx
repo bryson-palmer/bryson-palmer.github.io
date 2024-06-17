@@ -3,9 +3,11 @@ import './section.css'
 
 export const Section = ({ children, id='', title='' }) => {
   return (
-    <section id={id} className='main-section'>
+    <section id={id} className='section-main'>
       <h2 className='section-title'>{title}</h2>
-      {children}
+      <div className='section-body'>
+        {children}
+      </div>
     </section>
   )
 }
