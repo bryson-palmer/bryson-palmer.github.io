@@ -160,3 +160,10 @@ ul {
   opacity: 0.75;
 }
 
+.glass {
+  background: linear-gradient(107.18deg, var(--text-dark-main) 50%, var(--text-dark-secondary) 100%);
+  border: 5px solid var(--border-glass-light);
+  box-shadow: 0px 10px 25px rgb(0, 0, 0, 0.9);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
