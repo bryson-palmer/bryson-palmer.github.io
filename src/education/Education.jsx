@@ -5,7 +5,7 @@ import { Section } from '@/ui'
 export const Education = () => {
   return (
     <Section id={'education'} title={'Education'}>
-      <div className='education-stack'>
+      <div id='education-stack-observer' className='education-stack'>
         {EDUCATION_LIST.map((schoolInfo, index) => (
           <EducationCard
             key={index}
