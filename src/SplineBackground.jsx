@@ -1,7 +1,10 @@
 import { useRef, useEffect } from "react"
+import { useWindowSize } from "@/utils"
 
 const SplineBg = () => {
   const videoRef = useRef(null)
+  const windowSize = useWindowSize()
+  const [windowHeight, windowWidth] = windowSize
 
   useEffect(() => {
     videoRef.current.playbackRate = 0.25
@@ -14,8 +17,8 @@ const SplineBg = () => {
       muted
       ref={videoRef}
       id='spline-background'
-      height={window.innerHeight}
-      width={window.innerWidth}
+      height={windowHeight}
+      width={windowWidth}
     >
       <source src='/assets/spline-bg.mp4' type="video/mp4" />
       Your browser does not support the video tag.
