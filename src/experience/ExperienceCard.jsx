@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Link from '@mui/material/Link'
 import PropTypes from 'prop-types'
+import { createObserver } from '@/utils'
 import './experience.css'
 
 /*
@@ -28,7 +29,8 @@ export const ExperienceCard = ({
   companyInfo = {},
 }) => {
   const [showMore, setShowMore] = useState(false)
-  const isMobileLandscape = useMediaQuery('(max-width: 900px) and (orientation: landscape)')
+  const isMobile = useMediaQuery('(max-width: 600px')
+  const isMobileLandscape = useMediaQuery('(max-width: 1000px) and (orientation: landscape)')
 
   const toggleShowMore = useCallback(() => setShowMore(!showMore), [showMore])
   const {
@@ -40,35 +42,44 @@ export const ExperienceCard = ({
     appLink = ''
   } = companyInfo
 
+  const observerThreshold = useMemo(() => isMobile ? 0.3 : 0.5, [isMobile])
+  const observerMargin =  useMemo(() => isMobileLandscape ? '0px': '-100px 0px',[isMobileLandscape]) 
+
+  // Creates IntersectionObserver by id 
+  createObserver('#experience-card-observer', { rootMargin: observerMargin, threshold: observerThreshold })
+
   return (
-    <div className="experience-card">
+    <div id='experience-card-observer' className="experience-card glass">
       <div className="experience-header">
-        <div className="experience-title">
-          <Link
-            className="experience-link"
-            href={companyLink}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {companyName}
-          </Link>
-          {formerName ? (
+        <div className="experience-org">
+          <div className='company-name'>
             <Link
               className="experience-link"
-              href={formerLink}
+              href={companyLink}
               target="_blank"
               rel="noreferrer"
             >
-              {formerName}
+              {companyName}
             </Link>
-          ) : null}
+            {formerName ? (
+              <Link
+                className="experience-link"
+                href={formerLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {formerName}
+              </Link>
+            ) : null}
+          </div>
           <Link
-            className="experience-link"
+            className="experience-link platform"
             href={appLink}
             target="_blank"
             rel="noreferrer"
           >
-            / {appName}
+            <span className='platform'>Platform: &nbsp;</span>
+            {appName}
           </Link>
         </div>
         <div className="experience-role">
@@ -81,7 +92,7 @@ export const ExperienceCard = ({
         style={
           isMobileLandscape && !showMore
             ? {
-                maxHeight: "90px",
+                maxHeight: "120px",
                 overflowY: "hidden",
               }
             : {
@@ -100,7 +111,7 @@ export const ExperienceCard = ({
         variant='text'
         onClick={toggleShowMore}
         endIcon={<ExpandMoreIcon sx={{ transform: showMore ? 'rotate(180deg)' : 'rotate(0deg)' }} />}
-        href={showMore ? '#experience' : ''}
+        href={showMore ? '#experience-list' : ''}
       >
         {showMore ? 'Read less' : 'Read more'}
       </Button>
