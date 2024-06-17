@@ -88,13 +88,13 @@
 html, body, #root, #app {
   height: 100dvh;
   width: 100dvw;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Raleway', sans-serif !important;
   font-size: 16px !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
   line-height: 1.4 !important;
   color: var(--main-white) !important;
   overflow-x: hidden !important;
