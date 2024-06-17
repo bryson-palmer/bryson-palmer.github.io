@@ -1,13 +1,25 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import DownloadIcon from '@mui/icons-material/Download'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import IconButton from '@mui/material/IconButton'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import IconButton from '@mui/material/IconButton'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { QUICK_LINKS } from './constants'
 import { Hero } from '@/hero'
+import { createObserver } from '@/utils'
 import './welcome.css'
 
 export const Welcome = () => {
+  const isMobile = useMediaQuery('(max-width: 600px')
+  const isMobileLandscape = useMediaQuery('(orientation: landscape)')
+  const observerThreshold = useMemo(() => isMobile ? 0.3 : 0.5, [isMobile])
+  const observerMargin =  useMemo(() => isMobileLandscape ? '0px': '-270px 0px -190px',[isMobileLandscape]) 
+
+  // Creates IntersectionObserver by id
+  createObserver(
+    '#welcome-section',
+    { rootMargin: observerMargin, threshold: observerThreshold }
+  )
   return (
     <section id='welcome-section'>
       <div id='welcome-card'>
