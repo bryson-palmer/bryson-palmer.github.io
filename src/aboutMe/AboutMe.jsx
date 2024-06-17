@@ -1,36 +1,31 @@
-import { useCallback, useState } from 'react'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Button from '@mui/material/Button'
+import { useMemo } from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Section } from '@/ui'
+import { createObserver } from '@/utils'
 import './aboutMe.css'
 
 
 export const AboutMe = () => {
-  const [showMore, setShowMore] = useState(false)
+  const isMobile = useMediaQuery('(max-width: 600px')
   const isMobileLandscape = useMediaQuery('(max-width: 900px) and (orientation: landscape)')
+  const observerThreshold = useMemo(() => isMobile ? 0.2 : 0.5, [isMobile])
+  const observerMargin = useMemo(() => isMobileLandscape ? '0px' : '-100px 0px', [isMobileLandscape])
 
-  const toggleShowMore = useCallback(() => setShowMore(!showMore), [showMore])
+  // Creates IntersectionObserver by id 
+  createObserver('#about-me-observer', { rootMargin: observerMargin, threshold: observerThreshold })
 
   return (
     <Section id={'about-me'} title={'About Me'}>
       <div
+        id='about-me-observer'
         className='main-content'
-        style={isMobileLandscape && !showMore ? ({
-            maxHeight: '180px',
-            overflowY: 'hidden',
-          }) : ({
-            maxHeight: '100%',
-            overflowY: 'visible',
-          })
-        }
       >
         <img
           loading='lazy'
           src='/assets/profile-pic.jpg'
           alt='picture of bryson palmer'
         />
-        <div className='text-block'>
+        <div className='text-block glass'>
           <p>
             As a dedicated <strong className='blue-text'>frontend</strong> developer, I specialize in crafting immersive digital experiences that seamlessly blend innovation and user-centric design. My journey in software development has been anchored by a passion for web technologies and the frontend ecosystem.
           </p>
@@ -49,16 +44,6 @@ export const AboutMe = () => {
           <p>Here&apos;s to a future defined by endless possibilities and unparalleled innovation.</p>
         </div>
       </div>
-      <Button
-        className='read-more-about'
-        aria-label='read more'
-        variant='text'
-        onClick={toggleShowMore}
-        endIcon={<ExpandMoreIcon sx={{ transform: showMore ? 'rotate(180deg)' : 'rotate(0deg)' }} />}
-        href={showMore ? '#about-me' : ''}
-      >
-        {showMore ? 'Read less' : 'Read more'}
-      </Button>
     </Section>
   )
 }
