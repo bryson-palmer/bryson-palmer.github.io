@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Link from '@mui/material/Link'
 import List from '@mui/material/List'
@@ -8,11 +7,10 @@ import { NAV_LIST } from './constants'
 import './navbar.css'
 
 export const Navbar = () => {
-
   return (
     <AppBar component='nav'>
       <Toolbar id='navbar'>
-        <Link id='nav-title' href='#welcome-section'>
+        <Link id='nav-title' href='#app-main'>
           Bryson Palmer
         </Link>
 
