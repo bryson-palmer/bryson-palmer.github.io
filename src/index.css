@@ -166,6 +166,10 @@ ul {
   opacity: 1;
 }
 
+#app-main {
+  padding-top: var(--navbar-height);
+}
+
 #spline-background {
   object-fit: cover;
   position: fixed;
